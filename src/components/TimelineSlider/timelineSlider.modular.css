@@ -1,0 +1,61 @@
+#timeline {
+  position: fixed;
+}
+
+#timeline-slider {
+  position: relative;
+  left: -85%;
+  top: -25vh;
+  z-index: 1;
+  width: 150vh;
+  height: 150vh;
+  background: conic-gradient(
+    red 0% 25%,
+    blue 25% 50%,
+    green 50% 75%,
+    yellow 75% 100%
+  ); /*url('https://clipart-library.com/image_gallery2/Football.png');*/
+  background-size: contain;
+  border-radius: 50%;
+}
+
+#timeline-list-container {
+  position: fixed;
+  top: 0;
+  left: 12%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#timeline-list {
+  list-style-type: none;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 20pt;
+}
+
+#timeline-list li {
+  flex: 1;
+  text-align: center;
+}
+
+#timeline-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  width: 200vw;
+  height: 10vh;
+  background: repeating-linear-gradient(
+    to right,
+    ForestGreen 0%,
+    LawnGreen 10%,
+    LawnGreen 20%,
+    ForestGreen 30%
+  ); /*url('https://purepng.com/public/uploads/large/purepng.com-grassgrasstype-of-plantgrasslandgrass-lawn-1411527053446ekjji.png');*/
+  background-repeat: repeat;
+}
