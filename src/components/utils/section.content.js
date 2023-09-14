@@ -27,7 +27,7 @@ module.exports = {
       '\n' +
       '"Es war eine tolle Zeit. Wir sind ...',
 
-    modalTitle: 'Eine Sensation!',
+    modalTitle: 'Der langersehnte Aufstieg!',
     modalText: 'Der entscheidende Sieg zur Rückkehr in die Bundesliga nach 13 Jahren Abstinenz geriet zum Spiegelbild der Saison. Am 30. März 2002 bejubelten 41.500 Zuschauer einen fulminanten 6:0 (4:0)-Erfolg gegen Schweinfurt. Hannover, das zu dem Zeitpunkt bereits 68 Punkte gesammelt und 80 Tore erzielt hatte, war von einem der ersten drei Aufstiegsplätze nicht mehr zu verdrängen.\n' +
       '\n' +
       '"Es war eine tolle Zeit. Wir sind in einem Rausch durch die Saison gegangen", blickte Abwehrchef Carsten Linke im NDR Interview zurück. "Das war zum Ende meiner Karriere, die ich mit dem Aufstieg und einem Jahr in der Bundesliga dann noch krönen konnte."',
