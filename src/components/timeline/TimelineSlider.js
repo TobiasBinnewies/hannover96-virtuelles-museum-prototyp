@@ -47,9 +47,10 @@ export default function TimelineSlider() {
         // }}
         className="relative z-10 -left-[85%] -top-[25vh] w-[150vh] h-[150vh] bg-contain rounded-[50%]" // bg-[image:var(--image-url)]
       ></div>
+      <div id="timeline-slider-indicator"></div>
       <div
         id="timeline-list-container"
-        className="fixed -top-[50vh] left-[12%] h-screen flex justify-center items-center"
+        className="fixed -top-[50vh] left-[13%] h-screen flex justify-center items-center"
       >
         <ol
           id="timeline-list"

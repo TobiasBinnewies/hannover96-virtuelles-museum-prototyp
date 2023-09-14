@@ -14,10 +14,19 @@
   border-radius: 50%;
 }
 
+#timeline-slider-indicator {
+  position: absolute;
+  left: 16%;
+  top: 50vh;
+  border-left: 12px solid red;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
 #timeline-list-container {
   position: fixed;
   top: -50vh;
-  left: 12%;
+  left: 13%;
   height: 100vh;
   display: flex;
   justify-content: center;
