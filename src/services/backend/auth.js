@@ -1,5 +1,5 @@
 import { hash, compare, genSalt } from 'bcrypt'
-import { query } from './db'
+import mongodb from '@backend/db'
 
 export async function hashPassword(password) {
   const salt = await genSalt(12)
@@ -12,18 +12,36 @@ export async function verifyPassword(password, hashedPassword) {
   return isValid
 }
 
-// export async function getSessionFromAuthorizationHeader(req) {
-//   const { id, expires } = req.auth
-//   const { rows, error } = await query('SELECT * FROM users WHERE id = ?', [id])
+export async function verifyUser(username, password) {
+//   const { rows, error } = await query(
+//     'SELECT * FROM users LEFT OUTER JOIN images i ON users.id = i.user_id WHERE email = ? OR username = ?',
+//     [username, username],
+//   )
+
+    const db = await mongodb()
+    const userCollection = db.collection('user')
+    const user = await userCollection.findOne({ $or: [{ username }, { username }] })
+
+    console.log("user: ", user);
 
 //   if (error) {
-//     throw { name: 'Internal Error', message: error.message }
+//     console.log(error)
+//     throw 'Something went wrong: ' + error.message
 //   }
 
 //   const [user] = rows
 
-//   if (!user) {
-//     throw { name: 'No user found', message: 'No user matches this id!' }
-//   }
-//   return { user, expires }
-// }
+  if (!user) {
+    console.log('No user found')
+    throw 'User or Password invalid!'
+  }
+
+  const isValid = await verifyPassword(password, user.password)
+
+  if (!isValid) {
+    console.log('Password is not valid')
+    throw 'User or Password invalid!'
+  }
+
+  return user
+}
