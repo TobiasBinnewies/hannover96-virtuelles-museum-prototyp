@@ -14,9 +14,25 @@ export default function TimelineSlider() {
       const rotationDegrees = (scrollY / adjustedScrollHeight) * 360
       timelineSlider.style.transform = `rotate(${rotationDegrees}deg)`
 
-      const timelineFooter = document.getElementById('timeline-footer')
       const offset = (scrollY / adjustedScrollHeight) * 50
+
+      const timelineFooter = document.getElementById('timeline-footer')
       timelineFooter.style.transform = `translateX(-${offset}%)`
+
+      const timelineListContainer = document.getElementById(
+        'timeline-list-container',
+      )
+      timelineListContainer.style.transform = `translateY(+${offset * 2}%)`
+
+      timelineListContainer.style.setProperty(
+        '--before-height',
+        `${100 - 2 * offset}%`,
+      )
+
+      timelineListContainer.style.setProperty(
+        '--after-height',
+        `${2 * offset}%`,
+      )
     })
   })
 
@@ -33,11 +49,11 @@ export default function TimelineSlider() {
       ></div>
       <div
         id="timeline-list-container"
-        className="fixed top-0 left-[12%] h-screen flex justify-center items-center"
+        className="fixed -top-[50vh] left-[12%] h-screen flex justify-center items-center"
       >
         <ol
           id="timeline-list"
-          className="list-none h-[80vh] flex flex-col justify-between text-2xl"
+          className="list-none h-[80vh] flex flex-col justify-around text-2xl"
         >
           <li className="flex-1 text-center">1900</li>
           <li className="flex-1 text-center">1910</li>
