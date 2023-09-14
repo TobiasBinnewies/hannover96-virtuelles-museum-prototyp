@@ -3,11 +3,13 @@ import SectionTitle from '@/components/utils/SectionTitle'
 import SectionSubtitle from '@/components/utils/SectionSubtitle'
 import SectionText from '@/components/utils/SectionText'
 import SectionModal from '@/components/section/SectionModal'
+import ComponentModel from '@/components/models/ComponentModel'
 
 export default function Section(props) {
   const section = props.obj;
 
   return (
+
     <div className={'bg-amber-50 h-screen flex justify-center'}>
       <div className={'w-[50%] m-auto'}>
         <SectionSubtitle text={section.mainSubtitle} />
@@ -15,6 +17,7 @@ export default function Section(props) {
         <SectionText text={section.mainText} />
         <SectionModal obj={section}/>
       </div>
+      <ComponentModel/>
     </div>
   )
 }
