@@ -1,18 +1,18 @@
 import { errorHandler, jwtMiddleware } from '.'
 
-export function apiHandler(handler) {
-  return async (req, res) => {
+export default function apiHandler(handler) {
+  return async (req) => {
     try {
       const url = req.url
       // global middleware
       if (url.startsWith('/api/secure')) {
-        await jwtMiddleware(req, res)
+        await jwtMiddleware(req)
       }
       // route handler
-      await handler(req, res)
+      return await handler(req)
     } catch (err) {
       // global error handler
-      errorHandler(err, res)
+      return errorHandler(err)
     }
   }
 }

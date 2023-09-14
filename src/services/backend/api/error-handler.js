@@ -1,20 +1,20 @@
+import { NextResponse } from 'next/server'
+
 export { errorHandler }
 
-function errorHandler(err, res) {
+function errorHandler(err) {
   if (typeof err === 'string') {
     // custom application error
-    return res.status(400).json({ message: err })
+    return NextResponse.json({ message: err }, { status: 400 })
   }
 
   if (err.name === 'UnauthorizedError') {
     // jwt authentication error
-    return res.status(401).json({ message: 'Invalid Token' })
+    return NextResponse.json({ message: 'Invalid Token' }, { status: 401 })
   }
 
   if (err.name === 'No user found') {
-    return res.status(403).json({ message: 'No user found' })
+    return NextResponse.json({ message: 'No user found' }, { status: 403 })
   }
-
-  // default to 500 server error
-  return res.status(500).json({ message: err.message })
+  return NextResponse.json({ message: err.message }, { status: 500 })
 }
