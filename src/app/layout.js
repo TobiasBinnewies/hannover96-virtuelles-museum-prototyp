@@ -1,6 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-import TimelineSlider from '@/components/TimelineSlider/TimelineSlider'
+import TimelineSlider from '@/components/timeline/TimelineSlider'
 
 const inter = Inter({ subsets: ['latin'] })
 
