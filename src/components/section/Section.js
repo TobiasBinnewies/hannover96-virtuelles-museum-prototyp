@@ -2,7 +2,6 @@
 import SectionTitle from '@/components/utils/SectionTitle'
 import SectionSubtitle from '@/components/utils/SectionSubtitle'
 import SectionText from '@/components/utils/SectionText'
-import content from '../utils/section.content'
 import SectionModal from '@/components/section/SectionModal'
 
 export default function Section(props) {

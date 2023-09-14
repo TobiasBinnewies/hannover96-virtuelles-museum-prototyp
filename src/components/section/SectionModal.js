@@ -3,7 +3,6 @@ import Modal from 'react-modal'
 import content from '../utils/section.content'
 import ModalTitle from '@/components/utils/ModalTitle'
 import SectionImage from '@/components/utils/SectionImage'
-import hannover from '../images/H96.jpeg'
 export default function SectionModal(props) {
   const [isOpen, setIsOpen] = useState(false)
   const customStyles = {
