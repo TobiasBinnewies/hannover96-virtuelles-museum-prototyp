@@ -3,6 +3,7 @@ import { verifyUser } from '@backend/auth'
 import apiHandler from '@backend/api/api-helper'
 // import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
+// import { cookie } from 'next/headers'
 
 export function POST(req) {
   return apiHandler(handler)(req)
@@ -19,7 +20,7 @@ async function handler(req) {
     { token },
     {
       status: 200,
-      headers: { 'Set-Cookie': `token=${token}` },
+      headers: { 'Set-Cookie': `session-token=${token}; Path=/` },
     },
   )
 }

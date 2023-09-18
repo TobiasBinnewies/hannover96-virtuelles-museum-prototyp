@@ -13,23 +13,25 @@ export async function verifyPassword(password, hashedPassword) {
 }
 
 export async function verifyUser(username, password) {
-//   const { rows, error } = await query(
-//     'SELECT * FROM users LEFT OUTER JOIN images i ON users.id = i.user_id WHERE email = ? OR username = ?',
-//     [username, username],
-//   )
+  //   const { rows, error } = await query(
+  //     'SELECT * FROM users LEFT OUTER JOIN images i ON users.id = i.user_id WHERE email = ? OR username = ?',
+  //     [username, username],
+  //   )
 
-    const db = await mongodb()
-    const userCollection = db.collection('user')
-    const user = await userCollection.findOne({ $or: [{ username }, { username }] })
+  const db = await mongodb()
+  const userCollection = db.collection('user')
+  const user = await userCollection.findOne({
+    $or: [{ username }, { email: username }],
+  })
 
-    console.log("user: ", user);
+  console.log('user', user)
 
-//   if (error) {
-//     console.log(error)
-//     throw 'Something went wrong: ' + error.message
-//   }
+  //   if (error) {
+  //     console.log(error)
+  //     throw 'Something went wrong: ' + error.message
+  //   }
 
-//   const [user] = rows
+  //   const [user] = rows
 
   if (!user) {
     console.log('No user found')

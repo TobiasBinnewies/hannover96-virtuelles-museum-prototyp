@@ -1,6 +1,6 @@
-import Router from 'next/router'
+import { useRouter } from 'next/navigation'
 import { useState, useEffect } from 'react'
-import { useCookies } from 'react-cookie'
+// import { useCookies } from 'react-cookie'
 
 async function sessionLogin(username, password, setCookie) {
   const requestOptions = {
@@ -133,34 +133,31 @@ export function useLogout() {
   return () => sessionLogout(removeCookie)
 }
 
-export function useSession(serverSession) {
-  if (serverSession !== undefined) {
-    return serverSession
-  }
+export function useSession(props = { redirect: true }) {
+  const { redirect } = props
   const [session, setSession] = useState(null)
-  const [cookies, setCookie, removeCookie] = useCookies(['session-token'])
-
+  const router = useRouter()
   useEffect(() => {
-    makeSecureRequest(
-      [cookies, setCookie, removeCookie],
-      'GET',
-      'session',
-    ).then((session) => {
-      setSession(session.ok ? session : undefined)
-    })
-  }, [cookies])
+    fetch('/api/secure/session')
+      .then((res) => {
+        if (res.status === 401) {
+          if (redirect) {
+            router.push('/signin')
+          }
+          return { message: 'Unauthorized' }
+        }
+        if (res.status !== 200) {
+          return { message: 'Unauthorized' }
+        }
+        return res.json()
+      })
+      .then((data) => {
+        if (data.message === 'Unauthorized') {
+          setSession(undefined)
+          return
+        }
+        setSession(data)
+      })
+  }, [])
   return session
-}
-
-export function useSecureRequest() {
-  const [cookies, setCookie, removeCookie] = useCookies(['session-token'])
-
-  return async (type, url, body) => {
-    return await makeSecureRequest(
-      [cookies, setCookie, removeCookie],
-      type,
-      url,
-      body,
-    )
-  }
 }

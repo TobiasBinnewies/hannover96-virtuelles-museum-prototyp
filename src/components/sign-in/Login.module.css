@@ -1,0 +1,59 @@
+.h1 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: auto;
+  margin: 2rem;
+}
+
+.inputfield {
+  position: relative;
+  align-items: center;
+}
+
+.submit {
+  color: white;
+  width: 20rem;
+  height: 2rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: var(--action-color);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.changeView {
+  color: white;
+  width: 20rem;
+  height: 2rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: var(--success-color);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.alertMessage {
+  background: var(--error-background-color);
+  color: var(--primary-color);
+  font-size: 1rem;
+  margin-top: 1rem;
+  border: 2px solid var(--error-color);
+  border-radius: 0.25rem;
+  transition: all 0.3s ease-in-out;
+  width: 20rem;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+  width: 100vw;
+  margin: 0;
+}
