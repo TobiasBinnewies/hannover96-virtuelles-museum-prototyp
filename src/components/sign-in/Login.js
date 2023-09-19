@@ -1,15 +1,15 @@
 'use client'
 
 import { useState } from 'react'
-import styles from './Login.module.css'
+import styles from './SignIn.module.css'
 import { useRouter } from 'next/navigation'
 import CheckedInput from '@components/helper/CheckedInput'
 // import { useLogin } from "@service-frontend/session";
 import { validateUsername } from '@frontend/validate-input'
+import { login } from '@frontend/auth'
 
 export default function Login() {
   const router = useRouter()
-  //   const login = useLogin();
 
   const [username, setUsername] = useState({
     value: '',
@@ -36,25 +36,12 @@ export default function Login() {
       setAlertMessage('Please enter valid username and password')
       return
     }
-    // const result = await login(username.value, password.value);
 
-    const result = await fetch('/api/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        username: username.value,
-        password: password.value,
-      }),
-    })
-    const body = await result.json()
-
-    if (!result.ok) {
-      setAlertMessage(body.message)
-      return
+    try {
+      await login(username.value, password.value, router)
+    } catch (err) {
+      setAlertMessage(err.message)
     }
-    router.push('/profile')
   }
 
   const validateUsernameInput = () => {

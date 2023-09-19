@@ -2,7 +2,7 @@
 import Login from '@components/sign-in/Login'
 import SignUp from '@components/sign-in/SignUp'
 import { useState } from 'react'
-import styles from '@components/sign-in/Login.module.css'
+import styles from '@components/sign-in/SignIn.module.css'
 import { useRouter } from 'next/router'
 
 export default function LoginPage(/*{ session }*/) {
