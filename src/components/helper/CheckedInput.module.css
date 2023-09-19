@@ -4,6 +4,16 @@
   color: var(--primary-color);
   font-weight: 500;
 }
+.inputfield {
+  position: relative;
+  /* display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 20rem;
+  height: 2rem;
+  margin-bottom: 1rem; */
+}
 .input {
   color: var(--primary-color);
   width: 20rem;

@@ -1,4 +1,4 @@
-import mongodb from '@backend/db'
+import { findOneDB, insertDB } from '@backend/db'
 import { hashPassword } from '@backend/auth'
 import apiHandler from '@backend/api/api-helper'
 import { NextResponse } from 'next/server'
@@ -17,10 +17,14 @@ async function handler(req) {
     )
   }
 
-  const db = await mongodb()
-  const userCollection = db.collection('user')
+  // const db = await mongodb()
+  // const userCollection = db.collection('user')
 
-  const user = await userCollection.findOne({ $or: [{ email }, { username }] })
+  // const user = await userCollection.findOne({ $or: [{ email }, { username }] })
+
+  const user = await findOneDB('user', {
+    $or: [{ email }, { username }],
+  })
 
   if (user) {
     return NextResponse.json(
@@ -31,7 +35,7 @@ async function handler(req) {
 
   const hashedPassword = await hashPassword(password)
 
-  const result = await userCollection.insertOne({
+  await insertDB('user', {
     email,
     password: hashedPassword,
     username,

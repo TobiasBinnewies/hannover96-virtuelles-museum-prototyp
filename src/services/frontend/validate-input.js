@@ -1,13 +1,10 @@
 export function validateUsername(username) {
-  if (
+  return !(
     username.length < 3 ||
     username.length > 20 ||
     !username.trim() ||
     !/^[a-zA-Z0-9_\.-]+$/.test(username)
-  ) {
-    return false
-  }
-  return true
+  )
 }
 
 export function validateEmail(email) {
