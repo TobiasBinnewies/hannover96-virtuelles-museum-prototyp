@@ -48,11 +48,10 @@ export default function Login() {
         password: password.value,
       }),
     })
-
-    console.log(result)
+    const body = await result.json()
 
     if (!result.ok) {
-      setAlertMessage(result.message)
+      setAlertMessage(body.message)
       return
     }
     router.push('/profile')

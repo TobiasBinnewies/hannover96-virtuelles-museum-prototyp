@@ -13,6 +13,7 @@
   --error-color: #e74c3c;
   --success-color: #2ecc71;
   --fill-color: #bdc3c7;
+  --error-background-color: #f2dede;
 }
 
 @media (prefers-color-scheme: dark) {
