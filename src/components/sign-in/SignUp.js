@@ -52,6 +52,7 @@ export default function SignUp() {
       setPasswordConfirm((prev) => ({ ...prev, notSet: false }))
       setUsername((prev) => ({ ...prev, notSet: false }))
       setEmail((prev) => ({ ...prev, notSet: false }))
+      setAlertMessage('Please check hints!')
       return
     }
 
@@ -75,25 +76,25 @@ export default function SignUp() {
       }))
       return
     }
-    // // Check if username is taken
-    // const response = await fetch(`/api/taken`, {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({ username: username.value }),
-    // })
-    // const data = await response.json()
-    // if (!response.ok) {
-    //   setAlertMessage('Something went wrong: ' + data.message)
-    //   return
-    // }
+    // Check if username is taken
+    const response = await fetch(`/api/taken`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ username: username.value }),
+    })
+    const data = await response.json()
+    if (!response.ok) {
+      setAlertMessage('Something went wrong: ' + data.message)
+      return
+    }
     setUsername((prev) => ({
       ...prev,
-      isValid: true, // !data.taken,
+      isValid: !data.taken,
       notSet: false,
       loading: false,
-      badge: null, // data.taken ? 'Username is taken!' : null,
+      badge: data.taken ? 'Username is taken!' : null,
     }))
   }
 
@@ -109,25 +110,25 @@ export default function SignUp() {
       }))
       return
     }
-    // // Check if email is taken
-    // const response = await fetch(`/api/taken`, {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({ email: email.value }),
-    // })
-    // const data = await response.json()
-    // if (!response.ok) {
-    //   setAlertMessage('Something went wrong: ' + data.message)
-    //   return
-    // }
+    // Check if email is taken
+    const response = await fetch(`/api/taken`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email: email.value }),
+    })
+    const data = await response.json()
+    if (!response.ok) {
+      setAlertMessage('Something went wrong: ' + data.message)
+      return
+    }
     setEmail((prev) => ({
       ...prev,
-      isValid: true, // !data.taken,
+      isValid: !data.taken,
       notSet: false,
       loading: false,
-      badge: null, // data.taken ? 'Email is taken!' : null,
+      badge: data.taken ? 'Email is taken!' : null,
     }))
     return
   }
