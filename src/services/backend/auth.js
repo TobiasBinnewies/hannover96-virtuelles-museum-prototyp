@@ -1,5 +1,7 @@
 import { hash, compare, genSalt } from 'bcrypt'
-import mongodb from '@backend/db'
+import { findOneDB } from '@backend/db'
+import jwt from 'jsonwebtoken'
+import { cookies } from 'next/headers'
 
 export async function hashPassword(password) {
   const salt = await genSalt(12)
@@ -18,20 +20,17 @@ export async function verifyUser(username, password) {
   //     [username, username],
   //   )
 
-  const db = await mongodb()
-  const userCollection = db.collection('user')
-  const user = await userCollection.findOne({
+  // const db = await mongodb()
+  // const userCollection = db.collection('user')
+  // const user = await userCollection['findOne']({
+  //   $or: [{ username }, { email: username }],
+  // })
+
+  const user = await findOneDB('user', {
     $or: [{ username }, { email: username }],
   })
 
   console.log('user', user)
-
-  //   if (error) {
-  //     console.log(error)
-  //     throw 'Something went wrong: ' + error.message
-  //   }
-
-  //   const [user] = rows
 
   if (!user) {
     console.log('No user found')
@@ -46,4 +45,14 @@ export async function verifyUser(username, password) {
   }
 
   return user
+}
+
+export async function getUserAuth() {
+  const cookie = cookies()
+  try {
+    const token = cookie.get('session-token').value
+    return jwt.verify(token, process.env.JWT_SECRET)
+  } catch (err) {
+    throw { name: 'UnauthorizedError' }
+  }
 }

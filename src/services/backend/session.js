@@ -1,53 +1,32 @@
-import { jwtMiddleware } from "./api";
-import jwt from "jsonwebtoken";
+import { getUserAuth } from '@backend/auth'
+import jwt from 'jsonwebtoken'
+import { redirect } from 'next/navigation'
 
-export async function getSessionServer(context) {
-  const { cookies } = context.req;
-  const token = cookies["session-token"];
-  if (!token) {
-    return null;
-  }
-  const req = {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  };
+export async function useSession({ redirect: r } = { redirect: true }) {
   try {
-    await jwtMiddleware(req, {}, () => {});
-    return getSessionFromAuthHeader(req);
-  } catch (e) {
-    return null;
+    return await getUserAuth()
+  } catch (err) {
+    console.log('useSession Server', err)
+    if (r) {
+      redirect('/signin')
+    }
+    return undefined
   }
-}
-
-export function getSessionFromAuthHeader(req) {
-  if (!req.auth) {
-    throw { name: "Internal Error" };
-  }
-
-  const { id, username, email, expireDate, profilePicture, colors } = req.auth;
-
-  const session = {
-    user: { id, username, email, profilePicture, colors },
-    expireDate,
-  };
-
-  return session;
 }
 
 export function getTokenFromUser(user) {
-  const { id, username, email } = user;
+  const { id, username, email } = user
 
   // const profilePicture = {
   //   path: image,
   //   position,
   // };
 
-  const current = new Date();
+  const current = new Date()
   const expireDate = new Date(
-    current.getTime() + 86400000 * process.env.SESSION_EXPIRE_TIME
-  );
-  expireDate.toLocaleDateString();
+    current.getTime() + 86400000 * process.env.SESSION_EXPIRE_TIME,
+  )
+  expireDate.toLocaleDateString()
 
   const token = jwt.sign(
     {
@@ -61,7 +40,7 @@ export function getTokenFromUser(user) {
     process.env.JWT_SECRET,
     {
       expiresIn: `${process.env.SESSION_EXPIRE_TIME}d`,
-    }
-  );
-  return token;
+    },
+  )
+  return token
 }
