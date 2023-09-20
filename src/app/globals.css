@@ -26,67 +26,19 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-.triangle {
-  background-image: linear-gradient(to bottom right, black 50%, white 50%);
-  height: 100vh;
+.navbarIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0;
+  margin-top: -65px;
+  padding: 0;
+  height: 109px;
+  width: 150px;
 }
 
-.triangle2 {
-  background-image: linear-gradient(to bottom right, white 50%, green 50% );
-  height: 100vh;
-}
-
-col {
-  position: relative;
-  display: block;  
-  float: left;
-  margin-right: 1.563em;
-  
-  height: 100%;
-  width: 6.25em;
-  
-  cursor: pointer;
-  user-select: none;
-  
-  background: #EEE;
-  color: #555;
-  text-align: center;
-  line-height: 2.5em;
-}
-
-col::before {
-  content: '';
-  position: absolute;
-  display: block; 
- 
-  left: -1.5em;
-  
-  width: 0;
-  height: 0;
-  
-  border-top: 2.5em solid transparent;
-  border-right: 1.563em solid #EEE;
-}
-col::after {
-  content: '';
-  position: absolute;
-  display: block;
-  
-  top: 0;  
-  right: -1.5em;
-  
-  width: 0;
-  height: 0;
-  
-  border-top: 2.5em solid #EEE;
-  border-right: 1.563em solid transparent;
-}
-
-col::before {
-  content: '';
-  left: -1.5em;
-  width: 0;
-  height: 0;
-  border-top: 2.5em solid transparent;
-  border-right: 1.563em solid #EEE;
+.navbarBrand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
