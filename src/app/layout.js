@@ -1,6 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-import Navbar from '../components/Navbar'
+import TimelineSlider from '@/components/timeline/TimelineSlider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -13,9 +13,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
-        
-        </body>
+        <TimelineSlider />
+        {children}
+      </body>
     </html>
   )
 }

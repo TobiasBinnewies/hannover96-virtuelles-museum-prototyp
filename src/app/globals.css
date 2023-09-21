@@ -16,7 +16,7 @@
   --error-background-color: #f2dede;
 }
 
-@media (prefers-color-scheme: white) {
+@media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
@@ -32,21 +32,4 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-}
-
-.navbarIcon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 0;
-  margin-top: -65px;
-  padding: 0;
-  height: 109px;
-  width: 150px;
-}
-
-.navbarBrand {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
