@@ -5,6 +5,6 @@ import { useSession } from '@frontend/session'
 
 export default function Profile() {
   const session = useSession({ redirect: true })
-  console.log('session', session)
+  // console.log('session', session)
   return <div>profile</div>
 }

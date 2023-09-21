@@ -23,7 +23,7 @@ export function useSession({ redirect } = { redirect: true }) {
           setSession(undefined)
           return
         }
-        setSession(data)
+        setSession(data.session)
       })
   }, [])
   return session
