@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Navbar() {
-  const session = useSession({ redirect: false })
+  const {session, logout} = useSession({ redirect: false })
   return (
     <main>
       <header>
@@ -43,7 +43,7 @@ export default function Navbar() {
                       <div className="text-black font-semibold text-sm">
                         {session.username}
                       </div>
-                      <button className="bg-cyan-600 text-white py-1 px-2 rounded mt-1">
+                      <button className="bg-cyan-600 text-white py-1 px-2 rounded mt-1" onClick={logout}>
                         Logout
                       </button>
                     </div>

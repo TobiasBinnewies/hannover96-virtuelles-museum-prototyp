@@ -1,7 +1,9 @@
 import { useRouter } from 'next/navigation'
 import { useState, useEffect } from 'react'
+import { useCookies } from 'react-cookie'
 
 export function useSession({ redirect } = { redirect: true }) {
+  const [cookies, setCookie, removeCookie] = useCookies(['session-token'])
   const [session, setSession] = useState(undefined)
   const router = useRouter()
   useEffect(() => {
@@ -25,6 +27,12 @@ export function useSession({ redirect } = { redirect: true }) {
         }
         setSession(data.session)
       })
-  }, [])
-  return session
+  }, [cookies])
+  return {
+    session,
+    logout: () => {
+      removeCookie('session-token')
+      router.push('/signin')
+    },
+  }
 }
