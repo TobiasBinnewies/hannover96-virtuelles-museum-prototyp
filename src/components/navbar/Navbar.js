@@ -9,7 +9,7 @@ export default function Navbar() {
   return (
     <main>
       <header>
-        <div className="relative bg-white">
+        <div className="absolute left-0 top-0 w-screen bg-white">
           <div
             className="bg-black h-8"
             style={{ width: '100%', height: '64px' }}
