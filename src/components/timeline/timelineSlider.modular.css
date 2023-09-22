@@ -1,79 +1,36 @@
-#timeline {
-  position: fixed;
-}
-
 #timeline-slider {
-  position: relative;
-  left: -85%;
-  top: -25vh;
-  z-index: 1;
-  width: 150vh;
-  height: 150vh;
   background: url('https://clipart-library.com/image_gallery2/Football.png');
   background-size: contain;
-  border-radius: 50%;
 }
 
 #timeline-slider-indicator {
-  position: absolute;
-  left: 16%;
-  top: 50vh;
   border-left: 12px solid red;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
 }
 
-#timeline-list-container {
-  position: fixed;
-  top: -50vh;
-  left: 13%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#timeline-list-container::before {
+#timeline-list::before {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 10;
   content: '';
   width: 100%;
   height: var(--before-height, 100%);
-  background-image: linear-gradient(to bottom, black, transparent);
+  background-image: linear-gradient(to bottom, #fffbeb, transparent);
 }
 
-#timeline-list-container::after {
+#timeline-list::after {
   position: absolute;
   bottom: 0;
   left: 0;
   content: '';
   width: 100%;
   height: var(--after-height, 0%);
-  background-image: linear-gradient(to top, black, transparent);
-}
-
-#timeline-list {
-  list-style-type: none;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-size: 20pt;
-}
-
-#timeline-list li {
-  flex: 1;
-  text-align: center;
+  background-image: linear-gradient(to top, #fffbeb, transparent);
 }
 
 #timeline-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  z-index: 10;
-  width: 200vw;
-  height: 20vh;
   background: url('https://purepng.com/public/uploads/large/purepng.com-grassgrasstype-of-plantgrasslandgrass-lawn-1411527053446ekjji.png');
   background-repeat: repeat;
 }
