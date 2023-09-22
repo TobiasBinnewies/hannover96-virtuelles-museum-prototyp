@@ -68,11 +68,11 @@ export default function TimelineSlider(props) {
       ></div>
       <div
         id="timeline-slider-indicator"
-        className="absolute left-[16%] top-[50vh]"
+        className="absolute z-50 left-[16%] top-[50vh]"
       ></div>
       <div
         id="timeline-list-container"
-        className="fixed -top-[50vh] left-0 h-screen w-[18%] flex justify-end items-center"
+        className="fixed -z-50 -top-[50vh] left-0 h-screen w-[18%] flex justify-end items-center"
       >
         <ol
           id="timeline-list"
@@ -90,7 +90,7 @@ export default function TimelineSlider(props) {
       </div>
       <div
         id="timeline-footer"
-        className="fixed left-0 bottom-0 z-[55] w-[200vw] h-[20vh] bg-repeat"
+        className="fixed z-50 left-0 bottom-0 w-[200vw] h-[20vh] bg-repeat"
       ></div>
     </div>
   )
