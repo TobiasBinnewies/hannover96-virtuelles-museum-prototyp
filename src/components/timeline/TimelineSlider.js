@@ -26,23 +26,23 @@ export default function TimelineSlider(props) {
       const timelineListContainer = document.getElementById(
         'timeline-list-container',
       )
-      timelineListContainer.style.transform = `translateY(+${scrollHeigthPercentage100}%)`
+      timelineListContainer.style.transform = `translateY(-${scrollHeigthPercentage100}%)`
 
       timelineListContainer.style.setProperty(
         '--before-height',
-        `${100 - scrollHeigthPercentage100}%`,
+        `${scrollHeigthPercentage100}%`,
       )
 
       timelineListContainer.style.setProperty(
         '--after-height',
-        `${scrollHeigthPercentage100}%`,
+        `${100 - scrollHeigthPercentage100}%`,
       )
 
       const timelineListElements = timelineListContainer.querySelectorAll('li')
       timelineListElements.forEach((listElement, index) => {
         const page = scrollY / screenHeight
 
-        const pagePosition = index - (timelineListElements.length - page) + 1
+        const pagePosition = index - page
         const offset = Math.pow(3, Math.abs(pagePosition)) * 15
 
         if (pagePosition !== 0) {
@@ -61,18 +61,18 @@ export default function TimelineSlider(props) {
   })
 
   return (
-    <div id="timeline" className="fixed">
+    <div id="timeline" className="fixed z-50">
       <div
         id="timeline-slider"
-        className="relative z-50 -left-[85%] -top-[25vh] w-[150vh] h-[150vh] bg-contain rounded-[50%]"
+        className="relative -left-[85%] -top-[25vh] w-[150vh] h-[150vh] bg-contain rounded-[50%]"
       ></div>
       <div
         id="timeline-slider-indicator"
-        className="absolute z-50 left-[16%] top-[50vh]"
+        className="absolute left-[16%] top-[50vh]"
       ></div>
       <div
         id="timeline-list-container"
-        className="fixed -z-50 -top-[50vh] left-0 h-screen w-[18%] flex justify-end items-center"
+        className="fixed -z-50 top-[50vh] left-0 h-screen w-[18%] flex justify-end items-center"
       >
         <ol
           id="timeline-list"
@@ -90,7 +90,7 @@ export default function TimelineSlider(props) {
       </div>
       <div
         id="timeline-footer"
-        className="fixed z-50 left-0 bottom-0 w-[200vw] h-[20vh] bg-repeat"
+        className="fixed left-0 bottom-0 w-[200vw] h-[20vh] bg-repeat"
       ></div>
     </div>
   )
