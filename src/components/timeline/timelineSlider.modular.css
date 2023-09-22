@@ -9,24 +9,24 @@
   border-bottom: 10px solid transparent;
 }
 
-#timeline-list::before {
+#timeline-list-container::before {
   position: absolute;
   top: 0;
   left: 0;
   z-index: 10;
   content: '';
   width: 100%;
-  height: var(--before-height, 100%);
+  height: 45%;
   background-image: linear-gradient(to bottom, #fffbeb, transparent);
 }
 
-#timeline-list::after {
+#timeline-list-container::after {
   position: absolute;
   bottom: 0;
   left: 0;
   content: '';
   width: 100%;
-  height: var(--after-height, 0%);
+  height: 45%;
   background-image: linear-gradient(to top, #fffbeb, transparent);
 }
 

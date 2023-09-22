@@ -23,22 +23,10 @@ export default function TimelineSlider(props) {
         scrollHeigthPercentage * 50
       }%)`
 
-      const timelineListContainer = document.getElementById(
-        'timeline-list-container',
-      )
-      timelineListContainer.style.transform = `translateY(-${scrollHeigthPercentage100}%)`
+      const timelineList = document.getElementById('timeline-list')
+      timelineList.style.transform = `translateY(-${scrollHeigthPercentage100}%)`
 
-      timelineListContainer.style.setProperty(
-        '--before-height',
-        `${scrollHeigthPercentage100}%`,
-      )
-
-      timelineListContainer.style.setProperty(
-        '--after-height',
-        `${100 - scrollHeigthPercentage100}%`,
-      )
-
-      const timelineListElements = timelineListContainer.querySelectorAll('li')
+      const timelineListElements = timelineList.querySelectorAll('li')
       timelineListElements.forEach((listElement, index) => {
         const page = scrollY / screenHeight
 
@@ -72,11 +60,11 @@ export default function TimelineSlider(props) {
       ></div>
       <div
         id="timeline-list-container"
-        className="fixed -z-50 top-[50vh] left-0 h-screen w-[18%] flex justify-end items-center"
+        className="fixed -z-50 top-0 left-0 h-screen w-[18%] flex justify-end items-center"
       >
         <ol
           id="timeline-list"
-          className="relative h-screen w-full flex flex-col justify-between items-end list-none text-2xl"
+          className="relative -z-50 top-[50vh] h-screen w-full flex flex-col justify-between items-end list-none text-2xl"
         >
           {sections.map((section, index) => (
             <li
