@@ -9,41 +9,40 @@ export default function TimelineSlider(props) {
   useEffect(() => {
     window.addEventListener('scroll', () => {
       const screenHeight = window.innerHeight
-      const adjustedScrollHeight = document.body.scrollHeight - screenHeight
       const scrollY = window.scrollY
-      const scrollHeigthPercentage = scrollY / adjustedScrollHeight
-      const scrollHeigthPercentage100 = scrollHeigthPercentage * 100
+      const scrollPercentage =
+        (scrollY / (document.body.scrollHeight - screenHeight)) * 100
+
+      const setTransform = (element, property, value) => {
+        element.style.transform = `${property}(${value})`
+      }
 
       const timelineSlider = document.getElementById('timeline-slider')
-      const rotationDegrees = scrollHeigthPercentage * 360
-      timelineSlider.style.transform = `rotate(${rotationDegrees}deg)`
+      setTransform(timelineSlider, 'rotate', `${scrollPercentage * 3.6}deg`)
 
       const timelineFooter = document.getElementById('timeline-footer')
-      timelineFooter.style.transform = `translateX(-${
-        scrollHeigthPercentage * 50
-      }%)`
+      setTransform(timelineFooter, 'translateX', `-${scrollPercentage * 0.5}%`)
 
       const timelineList = document.getElementById('timeline-list')
-      timelineList.style.transform = `translateY(-${scrollHeigthPercentage100}%)`
+      setTransform(timelineList, 'translateY', `-${scrollPercentage}%`)
 
       const timelineListElements = timelineList.querySelectorAll('li')
-      timelineListElements.forEach((listElement, index) => {
-        const page = scrollY / screenHeight
+      timelineListElements.forEach((listElement) => {
+        const verticalPosition = Math.min(
+          Math.abs(
+            listElement.getBoundingClientRect().top / screenHeight - 0.5,
+          ),
+          0.5,
+        )
+        const offset =
+          ((Math.pow(10, 3 * verticalPosition) - 1) /
+            (Math.pow(10, 3 * 0.5) - 1)) *
+          300
+        setTransform(listElement, 'translateX', `-${offset}%`)
 
-        const pagePosition = index - page
-        const offset = Math.pow(3, Math.abs(pagePosition)) * 15
-
-        if (pagePosition !== 0) {
-          listElement.style.transform = `translateX(-${offset}%)`
-        }
-
-        if (Math.round(pagePosition) === 0) {
-          listElement.style['color'] = '#10B981'
-          listElement.style['font-weight'] = 'bold'
-        } else {
-          listElement.style['color'] = '#000000'
-          listElement.style['font-weight'] = 'normal'
-        }
+        const roundedPosition = Math.round(verticalPosition * 10)
+        listElement.style.color = roundedPosition === 0 ? '#10B981' : '#000000'
+        listElement.style.fontWeight = roundedPosition === 0 ? 'bold' : 'normal'
       })
     })
   })
