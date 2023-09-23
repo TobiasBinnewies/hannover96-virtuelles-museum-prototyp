@@ -48,7 +48,7 @@ export default function TimelineSlider(props) {
   })
 
   return (
-    <div id="timeline" className="fixed z-50">
+    <div id="timeline" className="fixed">
       <div
         id="timeline-slider"
         className="relative -left-[85%] -top-[25vh] w-[150vh] h-[150vh] bg-contain rounded-[50%]"

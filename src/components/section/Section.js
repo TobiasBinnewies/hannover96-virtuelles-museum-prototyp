@@ -9,7 +9,7 @@ export default function Section(props) {
 
   return (
     <div className={'bg-amber-50 h-screen flex justify-center'}>
-      <div className={'w-[50%] m-auto'}>
+      <div className={'w-[50%] m-auto z-30'}>
         <SectionSubtitle text={section.mainSubtitle} />
         <SectionTitle text={section.mainTitle} />
         <SectionText text={section.mainText} />

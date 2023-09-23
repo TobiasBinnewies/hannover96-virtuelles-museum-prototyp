@@ -8,6 +8,7 @@ export default function SectionModal(props) {
   const customStyles = {
     overlay: {
       backgroundColor: 'rgba(0, 0, 0, 0.6)',
+      zIndex: '1000',
     },
     content: {
       top: '50%',
@@ -23,7 +24,7 @@ export default function SectionModal(props) {
   const section = props.obj
 
   return (
-    <div className={'text-center'}>
+    <div className={'text-center z-10'}>
       <button
         onClick={() => setIsOpen(true)}
         className={'text-2xl text-emerald-500 font-normal'}
