@@ -91,7 +91,7 @@ export default function TimelineSlider(props) {
         </div>
         <div
           id="timeline-footer"
-          className="fixed left-0 bottom-0 w-[200vw] h-[60vh] xl:h-[70vh] bg-repeat"
+          className="fixed left-0 bottom-0 w-[200vw] h-[550px] xl:h-[600px] bg-repeat"
         ></div>
       </div>
     </div>
