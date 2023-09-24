@@ -52,7 +52,7 @@ export default function TimelineSlider(props) {
       <div id="timeline-container" className="relative">
         <div
           id="timeline-slider"
-          className="fixed -left-[1200px] -top-[25vh] w-[150vh] h-[150vh] bg-contain rounded-[50%]"
+          className="fixed -top-[25vh] w-[150vh] h-[150vh] bg-contain rounded-[50%]"
         ></div>
         <div
           id="timeline-slider-indicator"

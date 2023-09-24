@@ -24,7 +24,7 @@ module.exports = {
     },
     {
       mainTitle: 'DFB-Pokalsieg 1992',
-      mainSubtitle: '23. Mai 2002',
+      mainSubtitle: '23. Mai 1992',
       mainText:
         'Auf den Tag genau 38 Jahre nach dem Gewinn des Meisterschaftstitels 1954 gelang Hannover 96 im Jahr 1992 wieder ein triumphaler Erfolg in der Vereinsgeschichte: Im Berliner Olympiastadion gewann die Mannschaft das DFB-Pokalfinale gegen Borussia Mönchengladbach und sorgte damit für eine Sensation, denn erstmalig gewann mit den Roten ein Zweitligist den Pokal.',
       mainModel: <Model_Wd />,

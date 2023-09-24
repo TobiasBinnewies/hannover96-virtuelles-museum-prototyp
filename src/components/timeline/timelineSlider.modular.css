@@ -1,6 +1,7 @@
 #timeline-slider {
   background: url('https://clipart-library.com/image_gallery2/Football.png');
   background-size: contain;
+  right: calc(100% - 180px);
 }
 
 #timeline-slider-indicator {
