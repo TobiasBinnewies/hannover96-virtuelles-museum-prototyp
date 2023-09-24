@@ -49,36 +49,38 @@ export default function TimelineSlider(props) {
 
   return (
     <div id="timeline" className="fixed">
-      <div
-        id="timeline-slider"
-        className="relative -left-[85%] -top-[25vh] w-[150vh] h-[150vh] bg-contain rounded-[50%]"
-      ></div>
-      <div
-        id="timeline-slider-indicator"
-        className="absolute left-[16%] top-[50vh]"
-      ></div>
-      <div
-        id="timeline-list-container"
-        className="fixed -z-50 top-0 left-0 h-screen w-[18%] flex justify-end items-center"
-      >
-        <ol
-          id="timeline-list"
-          className="relative -z-50 top-[50vh] h-screen w-full flex flex-col justify-between items-end list-none text-2xl"
+      <div id="timeline-container" className="relative">
+        <div
+          id="timeline-slider"
+          className="fixed -left-[1200px] -top-[25vh] w-[150vh] h-[150vh] bg-contain rounded-[50%]"
+        ></div>
+        <div
+          id="timeline-slider-indicator"
+          className="fixed left-[200px] top-[50vh]"
+        ></div>
+        <div
+          id="timeline-list-container"
+          className="fixed -z-50 top-0 left-0 h-screen w-[300px] flex justify-end items-center"
         >
-          {sections.map((section, index) => (
-            <li
-              key={index}
-              className="text-center text-black flex justify-center items-center"
-            >
-              {section.mainSubtitle.slice(-4)}
-            </li>
-          ))}
-        </ol>
+          <ol
+            id="timeline-list"
+            className="relative -z-50 top-[50vh] h-screen w-full flex flex-col justify-between items-end list-none text-2xl"
+          >
+            {sections.map((section, index) => (
+              <li
+                key={index}
+                className="text-center text-black flex justify-center items-center"
+              >
+                {section.mainSubtitle.slice(-4)}
+              </li>
+            ))}
+          </ol>
+        </div>
+        <div
+          id="timeline-footer"
+          className="fixed left-0 bottom-0 w-[200vw] h-[20vh] bg-repeat"
+        ></div>
       </div>
-      <div
-        id="timeline-footer"
-        className="fixed left-0 bottom-0 w-[200vw] h-[20vh] bg-repeat"
-      ></div>
     </div>
   )
 }
