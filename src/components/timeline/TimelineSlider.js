@@ -20,6 +20,15 @@ export default function TimelineSlider(props) {
       const timelineSlider = document.getElementById('timeline-slider')
       setTransform(timelineSlider, 'rotate', `${scrollPercentage * 3.6}deg`)
 
+      const timelineSliderMobile = document.getElementById(
+        'timeline-slider-mobile',
+      )
+      setTransform(
+        timelineSliderMobile,
+        `translateX(${scrollPercentage}vw) rotate`,
+        `${scrollPercentage * 36}deg`,
+      )
+
       const timelineFooter = document.getElementById('timeline-footer')
       setTransform(timelineFooter, 'translateX', `-${scrollPercentage * 0.5}%`)
 
@@ -52,15 +61,19 @@ export default function TimelineSlider(props) {
       <div id="timeline-container" className="relative">
         <div
           id="timeline-slider"
-          className="fixed -top-[25vh] w-[150vh] h-[150vh] bg-contain rounded-[50%]"
+          className="hidden xl:block fixed -top-[25vh] w-[150vh] h-[150vh] bg-contain rounded-[50%]"
+        ></div>
+        <div
+          id="timeline-slider-mobile"
+          className="xl:hidden fixed left-0 bottom-4 w-[150px] h-[150px]"
         ></div>
         <div
           id="timeline-slider-indicator"
-          className="fixed left-[200px] top-[50vh]"
+          className="hidden xl:block fixed left-[200px] top-[50vh]"
         ></div>
         <div
           id="timeline-list-container"
-          className="fixed -z-50 top-0 left-0 h-screen w-[300px] flex justify-end items-center"
+          className="hidden fixed -z-50 top-0 left-0 h-screen w-[300px] xl:flex justify-end items-center"
         >
           <ol
             id="timeline-list"
@@ -78,7 +91,7 @@ export default function TimelineSlider(props) {
         </div>
         <div
           id="timeline-footer"
-          className="fixed left-0 bottom-0 w-[200vw] h-[20vh] bg-repeat"
+          className="fixed left-0 bottom-0 w-[200vw] h-[60vh] xl:h-[70vh] bg-repeat"
         ></div>
       </div>
     </div>

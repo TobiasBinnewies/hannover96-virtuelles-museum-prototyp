@@ -4,6 +4,11 @@
   right: calc(100% - 180px);
 }
 
+#timeline-slider-mobile {
+  background: url('https://images-na.ssl-images-amazon.com/images/I/71PjAjKu64L._AC_SX679_.jpg');
+  background-size: contain;
+}
+
 #timeline-slider-indicator {
   border-left: 12px solid red;
   border-top: 10px solid transparent;
@@ -32,6 +37,6 @@
 }
 
 #timeline-footer {
-  background: url('https://purepng.com/public/uploads/large/purepng.com-grassgrasstype-of-plantgrasslandgrass-lawn-1411527053446ekjji.png');
+  background: url('https://clipart-library.com/images_k/grass-clipart-transparent/grass-clipart-transparent-4.png');
   background-repeat: repeat;
 }
