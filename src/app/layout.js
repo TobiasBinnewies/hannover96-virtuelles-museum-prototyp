@@ -1,8 +1,8 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Alfa_Slab_One } from 'next/font/google'
 import Navbar from '@components/navbar/Navbar'
 
-const inter = Inter({ subsets: ['latin'] })
+const font = Alfa_Slab_One({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Create Next App',
@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={font.className}>
         <Navbar />
         {children}
       </body>
