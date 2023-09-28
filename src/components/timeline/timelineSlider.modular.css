@@ -40,3 +40,8 @@
   background: url('https://clipart-library.com/images_k/grass-clipart-transparent/grass-clipart-transparent-4.png');
   background-repeat: repeat;
 }
+
+.highlighted {
+  color: #10b981;
+  font-weight: bold;
+}

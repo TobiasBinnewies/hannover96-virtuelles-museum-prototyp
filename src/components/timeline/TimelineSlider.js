@@ -7,35 +7,36 @@ export default function TimelineSlider(props) {
   const { sections } = props
 
   useEffect(() => {
-    window.addEventListener('scroll', () => {
-      const screenHeight = window.innerHeight
+    const screenHeight = window.innerHeight
+    const timelineSlider = document.getElementById('timeline-slider')
+    const timelineSliderMobile = document.getElementById(
+      'timeline-slider-mobile',
+    )
+    const timelineFooter = document.getElementById('timeline-footer')
+    const timelineList = document.getElementById('timeline-list')
+    const timelineListElements = timelineList.querySelectorAll('li')
+
+    function setTransform(element, property, value) {
+      element.style.transform = `${property}(${value})`
+    }
+
+    function handleScroll() {
       const scrollY = window.scrollY
       const scrollPercentage =
         (scrollY / (document.body.scrollHeight - screenHeight)) * 100
+      const scrollPercentage36 = scrollPercentage * 3.6
+      const scrollPercentage300 = scrollPercentage * 300
 
-      const setTransform = (element, property, value) => {
-        element.style.transform = `${property}(${value})`
-      }
-
-      const timelineSlider = document.getElementById('timeline-slider')
-      setTransform(timelineSlider, 'rotate', `${scrollPercentage * 3.6}deg`)
-
-      const timelineSliderMobile = document.getElementById(
-        'timeline-slider-mobile',
-      )
+      setTransform(timelineSlider, 'rotate', `${scrollPercentage36}deg`)
       setTransform(
         timelineSliderMobile,
         `translateX(${scrollPercentage}vw) rotate`,
-        `${scrollPercentage * 36}deg`,
+        `${scrollPercentage36}deg`,
       )
-
-      const timelineFooter = document.getElementById('timeline-footer')
       setTransform(timelineFooter, 'translateX', `-${scrollPercentage * 0.5}%`)
 
-      const timelineList = document.getElementById('timeline-list')
-      setTransform(timelineList, 'translateY', `-${scrollPercentage}%`)
+      timelineList.style.transform = `translateY(-${scrollPercentage}%)`
 
-      const timelineListElements = timelineList.querySelectorAll('li')
       timelineListElements.forEach((listElement) => {
         const verticalPosition = Math.min(
           Math.abs(
@@ -47,13 +48,15 @@ export default function TimelineSlider(props) {
           ((Math.pow(10, 3 * verticalPosition) - 1) /
             (Math.pow(10, 3 * 0.5) - 1)) *
           300
+
         setTransform(listElement, 'translateX', `-${offset}%`)
 
         const roundedPosition = Math.round(verticalPosition * 10)
-        listElement.style.color = roundedPosition === 0 ? '#10B981' : '#000000'
-        listElement.style.fontWeight = roundedPosition === 0 ? 'bold' : 'normal'
+        listElement.classList.toggle('highlighted', roundedPosition === 0)
       })
-    })
+    }
+
+    window.addEventListener('scroll', handleScroll)
   })
 
   return (
