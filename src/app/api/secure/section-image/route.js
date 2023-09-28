@@ -1,10 +1,22 @@
 import apiHandler from '@backend/api/api-helper'
-import { writeFile } from 'fs/promises'
 import { NextResponse } from 'next/server'
+import { v2 as cloudinary } from 'cloudinary'
 import path from 'path'
+import parser from 'datauri/parser'
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDANARY_API_SECRET,
+})
 
 export async function POST(req) {
   return apiHandler(handler)(req)
+}
+
+const formatBufferTo64 = async (file) => {
+  const buffer = await file.arrayBuffer()
+  return (new parser()).format(path.extname(file.name).toString(), buffer)
 }
 
 async function handler(req) {
@@ -18,16 +30,15 @@ async function handler(req) {
     return NextResponse.json({ success: false })
   }
 
-  // console.log("cdw", path.join(process.cwd(), 'public', file.name));
+  const buffer = await formatBufferTo64(file)
 
-  const bytes = await file.arrayBuffer()
-  const buffer = Buffer.from(bytes)
+  cloudinary.uploader.upload(
+    buffer.content,
+    { public_id: file.name, tags: 'section-image', folder: 'section-image' },
+    function (error, result) {
+      console.log(result, error)
+    },
+  )
 
-  // With the file data in the buffer, you can do whatever you want with it.
-  // For this, we'll just write it to the filesystem in a new location
-  const pathname = path.join(process.cwd(), 'public', file.name)
-  await writeFile(pathname, buffer)
-  console.log(`open ${pathname} to see the uploaded file`)
-
-  return NextResponse.json({ success: true, path: pathname })
+  return NextResponse.json({ success: true })
 }
