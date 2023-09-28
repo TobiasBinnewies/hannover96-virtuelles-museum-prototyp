@@ -3,6 +3,7 @@ import { NextResponse } from 'next/server'
 import { v2 as cloudinary } from 'cloudinary'
 import path from 'path'
 import parser from 'datauri/parser'
+import { insertDB } from '@/services/backend/db'
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -16,25 +17,41 @@ export async function POST(req) {
 
 const formatBufferTo64 = async (file) => {
   const buffer = await file.arrayBuffer()
-  return (new parser()).format(path.extname(file.name).toString(), buffer)
+  return new parser().format(path.extname(file.name).toString(), buffer)
 }
 
 async function handler(req) {
-  // const { userId } = req.auth
-  // const { name, section, image } = await req.json()
+  const { userId } = req.auth
 
   const data = await req.formData()
   const file = data.get('file')
+  const title = data.get('title')
+  const section = data.get('section')
 
-  if (!file) {
-    return NextResponse.json({ success: false })
+  if (!file || !title || !section || !userId) {
+    throw 'Missing required fields'
+  }
+
+  if (file.size > 1000000) {
+    // 1MB
+    throw 'File too large'
   }
 
   const buffer = await formatBufferTo64(file)
 
+  const { insertedId } = await insertDB('section-image', {
+    title,
+    section,
+    userId,
+  })
+
   cloudinary.uploader.upload(
     buffer.content,
-    { public_id: file.name, tags: 'section-image', folder: 'section-image' },
+    {
+      public_id: insertedId.toString(),
+      tags: 'section-image',
+      folder: 'section-image',
+    },
     function (error, result) {
       console.log(result, error)
     },

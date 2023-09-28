@@ -15,7 +15,7 @@ export async function useSession({ redirect: r } = { redirect: true }) {
 }
 
 export function getTokenFromUser(user) {
-  const { id, username, email } = user
+  const { _id, username, email } = user
 
   // const profilePicture = {
   //   path: image,
@@ -30,11 +30,10 @@ export function getTokenFromUser(user) {
 
   const token = jwt.sign(
     {
-      id,
+      userId: _id,
       username,
       email,
       // profilePicture,
-      // colors,
       expireDate,
     },
     process.env.JWT_SECRET,
