@@ -3,80 +3,97 @@
 import styles from './timelineSlider.modular.css'
 import { useEffect } from 'react'
 
-export default function TimelineSlider() {
+export default function TimelineSlider(props) {
+  const { sections } = props
+
   useEffect(() => {
     window.addEventListener('scroll', () => {
       const screenHeight = window.innerHeight
-      const adjustedScrollHeight = document.body.scrollHeight - screenHeight
       const scrollY = window.scrollY
+      const scrollPercentage =
+        (scrollY / (document.body.scrollHeight - screenHeight)) * 100
+
+      const setTransform = (element, property, value) => {
+        element.style.transform = `${property}(${value})`
+      }
 
       const timelineSlider = document.getElementById('timeline-slider')
-      const rotationDegrees = (scrollY / adjustedScrollHeight) * 360
-      timelineSlider.style.transform = `rotate(${rotationDegrees}deg)`
+      setTransform(timelineSlider, 'rotate', `${scrollPercentage * 3.6}deg`)
 
-      const offset = (scrollY / adjustedScrollHeight) * 50
+      const timelineSliderMobile = document.getElementById(
+        'timeline-slider-mobile',
+      )
+      setTransform(
+        timelineSliderMobile,
+        `translateX(${scrollPercentage}vw) rotate`,
+        `${scrollPercentage * 36}deg`,
+      )
 
       const timelineFooter = document.getElementById('timeline-footer')
-      timelineFooter.style.transform = `translateX(-${offset}%)`
+      setTransform(timelineFooter, 'translateX', `-${scrollPercentage * 0.5}%`)
 
-      const timelineListContainer = document.getElementById(
-        'timeline-list-container',
-      )
-      timelineListContainer.style.transform = `translateY(+${offset * 2}%)`
+      const timelineList = document.getElementById('timeline-list')
+      setTransform(timelineList, 'translateY', `-${scrollPercentage}%`)
 
-      timelineListContainer.style.setProperty(
-        '--before-height',
-        `${100 - 2 * offset}%`,
-      )
+      const timelineListElements = timelineList.querySelectorAll('li')
+      timelineListElements.forEach((listElement) => {
+        const verticalPosition = Math.min(
+          Math.abs(
+            listElement.getBoundingClientRect().top / screenHeight - 0.5,
+          ),
+          0.5,
+        )
+        const offset =
+          ((Math.pow(10, 3 * verticalPosition) - 1) /
+            (Math.pow(10, 3 * 0.5) - 1)) *
+          300
+        setTransform(listElement, 'translateX', `-${offset}%`)
 
-      timelineListContainer.style.setProperty(
-        '--after-height',
-        `${2 * offset}%`,
-      )
+        const roundedPosition = Math.round(verticalPosition * 10)
+        listElement.style.color = roundedPosition === 0 ? '#10B981' : '#000000'
+        listElement.style.fontWeight = roundedPosition === 0 ? 'bold' : 'normal'
+      })
     })
   })
 
   return (
     <div id="timeline" className="fixed">
-      <div
-        id="timeline-slider"
-        // style={{
-        //   background:
-        //     'conic-gradient(red 0% 25%,blue 25% 50%,green 50% 75%,yellow 75% 100%);',
-        //   //'url(https://clipart-library.com/image_gallery2/Football.png);',
-        // }}
-        className="relative z-10 -left-[85%] -top-[25vh] w-[150vh] h-[150vh] bg-contain rounded-[50%]" // bg-[image:var(--image-url)]
-      ></div>
-      <div id="timeline-slider-indicator"></div>
-      <div
-        id="timeline-list-container"
-        className="fixed -top-[50vh] left-[13%] h-screen flex justify-center items-center"
-      >
-        <ol
-          id="timeline-list"
-          className="list-none h-[80vh] flex flex-col justify-around text-2xl"
+      <div id="timeline-container" className="relative">
+        <div
+          id="timeline-slider"
+          className="hidden xl:block fixed -top-[25vh] w-[150vh] h-[150vh] bg-contain rounded-[50%]"
+        ></div>
+        <div
+          id="timeline-slider-mobile"
+          className="xl:hidden fixed left-0 bottom-4 w-[150px] h-[150px]"
+        ></div>
+        <div
+          id="timeline-slider-indicator"
+          className="hidden xl:block fixed left-[200px] top-[50vh]"
+        ></div>
+        <div
+          id="timeline-list-container"
+          className="hidden fixed -z-50 top-0 left-0 h-screen w-[300px] xl:flex justify-end items-center"
         >
-          <li className="flex-1 text-center">1900</li>
-          <li className="flex-1 text-center">1910</li>
-          <li className="flex-1 text-center">1920</li>
-          <li className="flex-1 text-center">1930</li>
-          <li className="flex-1 text-center">1940</li>
-          <li className="flex-1 text-center">1950</li>
-          <li className="flex-1 text-center">1960</li>
-          <li className="flex-1 text-center">1970</li>
-          <li className="flex-1 text-center">1980</li>
-          <li className="flex-1 text-center">1990</li>
-        </ol>
+          <ol
+            id="timeline-list"
+            className="relative -z-50 top-[50vh] h-screen w-full flex flex-col justify-between items-end list-none text-2xl"
+          >
+            {sections.map((section, index) => (
+              <li
+                key={index}
+                className="text-center text-black flex justify-center items-center"
+              >
+                {section.mainSubtitle.slice(-4)}
+              </li>
+            ))}
+          </ol>
+        </div>
+        <div
+          id="timeline-footer"
+          className="fixed left-0 bottom-0 w-[200vw] h-[550px] xl:h-[600px] bg-repeat"
+        ></div>
       </div>
-      <div
-        id="timeline-footer"
-        // style={{
-        //   background:
-        //     'repeating-linear-gradient(to right,ForestGreen 0%,LawnGreen 10%,LawnGreen 20%,ForestGreen 30%);',
-        //   //'url(https://purepng.com/public/uploads/large/purepng.com-grassgrasstype-of-plantgrasslandgrass-lawn-1411527053446ekjji.png);',
-        // }}
-        className="fixed left-0 bottom-0 z-20 width-[200vw] h-[20vh] bg-repeat"
-      ></div>
     </div>
   )
 }

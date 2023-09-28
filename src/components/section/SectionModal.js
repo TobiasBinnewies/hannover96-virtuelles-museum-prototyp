@@ -8,7 +8,7 @@ export default function SectionModal(props) {
   const customStyles = {
     overlay: {
       backgroundColor: 'rgba(0, 0, 0, 0.6)',
-      zIndex: '1000'
+      zIndex: '1000',
     },
     content: {
       top: '50%',
@@ -18,24 +18,43 @@ export default function SectionModal(props) {
       width: '50%',
       margin: 'auto',
       marginRight: '-50%',
-      transform: 'translate(-50%, -50%)'
-    }
+      transform: 'translate(-50%, -50%)',
+    },
   }
-  const section = props.obj;
+  const section = props.obj
 
   return (
     <div className={'text-center z-10'}>
-      <button onClick={() => setIsOpen(true)} className={'text-2xl text-emerald-500 font-normal'}>{content.modalButtonRead}</button>
+      <button
+        onClick={() => setIsOpen(true)}
+        className={'text-2xl text-emerald-500 font-normal'}
+      >
+        {content.modalButtonRead}
+      </button>
 
-      <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)} style={customStyles}>
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={() => setIsOpen(false)}
+        style={customStyles}
+      >
         <div className={'flex justify-end'}>
-          <button onClick={() => setIsOpen(false) } className={'text-2xl text-emerald-500 font-normal'}>{content.modalButtonClose}</button>
+          <button
+            onClick={() => setIsOpen(false)}
+            className={'text-2xl text-emerald-500 font-normal'}
+          >
+            {content.modalButtonClose}
+          </button>
         </div>
-          <ModalTitle title={section.modalTitle}/>
-          <h1 className={'text-black font-sans font-normal'}>{section.modalText}</h1>
-          <SectionImage image={section.modalImg} alt={section.modalAlt} subtitle={section.modalSubtitle}/>
+        <ModalTitle title={section.modalTitle} />
+        <h1 className={'text-black font-sans font-normal'}>
+          {section.modalText}
+        </h1>
+        <SectionImage
+          image={section.modalImg}
+          alt={section.modalAlt}
+          subtitle={section.modalSubtitle}
+        />
       </Modal>
-
     </div>
   )
 }

@@ -5,11 +5,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Navbar() {
-  const {session, logout} = useSession({ redirect: false })
+  const { session, logout } = useSession({ redirect: false })
   return (
     <main>
       <header>
-        <div className="relative bg-white">
+        <div className="absolute z-[60] left-0 top-0 w-screen bg-white">
           <div
             className="bg-black h-8"
             style={{ width: '100%', height: '64px' }}
@@ -43,7 +43,10 @@ export default function Navbar() {
                       <div className="text-black font-semibold text-sm">
                         {session.username}
                       </div>
-                      <button className="bg-cyan-600 text-white py-1 px-2 rounded mt-1" onClick={logout}>
+                      <button
+                        className="bg-cyan-600 text-white py-1 px-2 rounded mt-1"
+                        onClick={logout}
+                      >
                         Logout
                       </button>
                     </div>
@@ -57,9 +60,7 @@ export default function Navbar() {
                   <div className="flex items-center">
                     <div className="flex flex-col">
                       <div className="text-black font-semibold text-sm">
-                        <Link href="/signin">
-                          Login
-                        </Link>
+                        <Link href="/signin">Login</Link>
                       </div>
                     </div>
                   </div>
