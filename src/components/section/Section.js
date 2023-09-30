@@ -10,12 +10,12 @@ export default function Section(props) {
   return (
     <div className={'bg-amber-50 h-screen flex justify-center'}>
       <div className={'w-[50%] m-auto z-30'}>
-        <SectionSubtitle text={section.mainSubtitle} />
-        <SectionTitle text={section.mainTitle} />
-        <SectionText text={section.mainText} />
+        <SectionSubtitle text={section.date} />
+        <SectionTitle text={section.title} />
+        <SectionText text={section.description || section.content} />
         <SectionModal obj={section} />
       </div>
-      {props.model}
+      {props.model ? <props.model /> : null}
     </div>
   )
 }

@@ -84,7 +84,7 @@ export default function TimelineSlider(props) {
                 key={index}
                 className="text-center text-black flex justify-center items-center"
               >
-                {section.mainSubtitle.slice(-4)}
+                {section.date.slice(-4)}
               </li>
             ))}
           </ol>

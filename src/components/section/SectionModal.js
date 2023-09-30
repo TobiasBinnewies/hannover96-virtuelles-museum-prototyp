@@ -45,15 +45,15 @@ export default function SectionModal(props) {
             {content.modalButtonClose}
           </button>
         </div>
-        <ModalTitle title={section.modalTitle} />
+        <ModalTitle title={section.title} />
         <h1 className={'text-black font-sans font-normal'}>
-          {section.modalText}
+          {section.content}
         </h1>
-        <SectionImage
-          image={section.modalImg}
-          alt={section.modalAlt}
-          subtitle={section.modalSubtitle}
-        />
+        {section.images.map((image) => <SectionImage
+          image={image}
+          // alt={section.modalAlt}
+          subtitle={section.date}
+        />)}
       </Modal>
     </div>
   )
