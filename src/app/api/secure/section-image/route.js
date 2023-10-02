@@ -21,6 +21,17 @@ const formatBufferTo64 = async (file) => {
 }
 
 async function handler(req) {
+  if (!process.env.SECTION_IMAGE_FOLDER) {
+    throw new Error(
+      'Invalid/Missing environment variable: "SECTION_IMAGE_FOLDER"',
+    )
+  }
+  if (!process.env.ALLOWED_IMAGE_TYPES) {
+    throw new Error(
+      'Invalid/Missing environment variable: "ALLOWED_IMAGE_TYPES"',
+    )
+  }
+
   const { userId } = req.auth
 
   const data = await req.formData()
@@ -32,30 +43,36 @@ async function handler(req) {
     throw 'Missing required fields'
   }
 
+  if (!process.env.ALLOWED_IMAGE_TYPES.split(',').includes(file.type)) {
+    throw 'File type not allowed'
+  }
+
   if (file.size > 1000000) {
-    // 1MB
+    // > 1MB
     throw 'File too large'
   }
 
   const buffer = await formatBufferTo64(file)
+  const date = new Date()
 
-  const { insertedId } = await insertDB('section-image', {
+  const { insertedId } = await insertDB(process.env.SECTION_IMAGE_FOLDER, {
     title,
     section,
     userId,
+    createdAt: date,
   })
 
-  cloudinary.uploader.upload(
-    buffer.content,
-    {
-      public_id: insertedId.toString(),
-      tags: 'section-image',
-      folder: 'section-image',
-    },
-    function (error, result) {
-      console.log(result, error)
-    },
-  )
+  // cloudinary.uploader.upload(
+  //   buffer.content,
+  //   {
+  //     public_id: insertedId.toString(),
+  //     tags: process.env.SECTION_IMAGE_FOLDER,
+  //     folder: process.env.SECTION_IMAGE_FOLDER,
+  //   },
+  //   function (error, result) {
+  //     console.log(result, error)
+  //   },
+  // )
 
   return NextResponse.json({ success: true })
 }
