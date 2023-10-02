@@ -49,7 +49,8 @@ export default function SectionModal(props) {
         <h1 className={'text-black font-sans font-normal'}>
           {section.content}
         </h1>
-        {section.images.map((image) => <SectionImage
+        {section.images.map((image, idx) => <SectionImage
+          key={idx}
           image={image}
           // alt={section.modalAlt}
           subtitle={section.date}
