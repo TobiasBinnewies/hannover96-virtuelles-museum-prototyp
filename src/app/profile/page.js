@@ -2,7 +2,7 @@
 
 import { useSession } from '@frontend/session'
 import UploadSectionImage from '@/components/images/UploadSectionImage'
-import { CldImage } from 'next-cloudinary'
+import SectionImageList from '@/components/images/SectionImageList'
 
 export default function Profile() {
   const session = useSession({ redirect: true })
@@ -16,13 +16,7 @@ export default function Profile() {
       <br />
       <br />
       <UploadSectionImage section={1} />
-      <CldImage
-        width="960"
-        height="600"
-        src="section-image/Test02"
-        sizes="100vw"
-        alt="Description of my image"
-      />
+      <SectionImageList section={1} />
     </div>
   )
 }
