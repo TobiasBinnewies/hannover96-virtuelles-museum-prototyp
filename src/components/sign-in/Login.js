@@ -73,7 +73,7 @@ export default function Login() {
               <div>
                 <label for="email" class="block text-sm font-medium leading-6 text-black-900">Email Adresse</label>
                 <div class="mt-2">
-                  <input id="email" name="email" type="email" autocomplete="email" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-3"/>
+                  <input id="email" name="email" type="email" autocomplete="email" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6 px-3"/>
                 </div>
               </div>
               <div>
@@ -84,27 +84,32 @@ export default function Login() {
                     </div>
                 </div>
                 <div class="mt-2">
-                  <input id="password" name="password" type="password" autocomplete="current-password" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-3"/>
+                  <input id="password" name="password" type="password" autocomplete="current-password" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6 px-3"/>
                 </div>
               </div>
             </div>
-            
-            <div
+
+            <div className={`${styles.footer} ${styles.textcenter}`}>
+              <div
                 className={styles.alertMessage}
                 style={{
                   height: alertMessage ? 'auto' : '0px',
                   opacity: alertMessage ? '100%' : '0%',
                   margin: alertMessage ? '10px 0' : '0',
                 }}
-            >
-                {alertMessage}
+              >
+                  {alertMessage}
               </div>
               <button className={styles.submit} onClick={submit}>
                 Login
               </button>
             </div>
-          </div>
+            <div className={styles.register}>
+              <a style={{color: '#009D3A'}} class='text-sm'>Keinen Zugang? Jetzt registrieren!</a>
+            </div>
+          </div>        
         </div>
+      </div>
     </>
   )
 }
