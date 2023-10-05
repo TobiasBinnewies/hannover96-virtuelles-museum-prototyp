@@ -57,3 +57,88 @@
   width: 100vw;
   margin: 0;
 }
+
+.row {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.card {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  margin: 25px 0;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+  border-radius: 6px;
+  color: rgba(0,0,0, 0.87);
+  background: #fff;
+}
+
+.card [data-background-color] {
+  margin: -20px 15px 0;
+  border-radius: 3px;
+  padding: 15px;;
+  position: relative;
+  background-color: #999999;
+}
+
+.cardlogin {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+  border-radius: 6px;
+  padding-bottom: 20px;
+  transform: translate3d(0, 0, 0);
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.cardcontent {
+  padding: 20px 10px 0px 10px;
+}
+
+.cardheader {
+  margin: -40px 15px 0;
+  padding: 15px;
+  z-index: 3;
+  border-radius: 3px;
+  background: linear-gradient(60deg, #009D3A, #3f8000);
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(63, 128, 0, 0.4);
+}
+
+.card [data-background-color="orange"] {
+  background: linear-gradient(60deg, #009D3A, #3f8000);
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(63, 128, 0, 0.4);
+}
+
+.cardtitle {
+  color: #FFFFFF;
+}
+
+.textcenter {
+  text-align: center;
+}
+
+.inputGroupAddon {
+    position: absolute;
+    border: 0;
+    background: transparent;
+    padding: 6px 15px 0px;
+    display: table-cell;
+}
+
+.inputGroup {
+  display: table;
+  border-collapse: separate;
+}
+
+.inputGroup.formControl {
+  display: table;
+}
+
+.inputfield {
+  padding: 5px 20px 5px 10px
+}
