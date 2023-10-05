@@ -9,8 +9,8 @@ export default function SectionList() {
   })
 
   return (
-    <div>
-      {sections}
+    <div className='y-mandatory-scroll-snapping'>
+        {sections}
     </div>
   )
 }

@@ -10,7 +10,7 @@ function NewModel() {
 function Model_Wd() {
 
   return (
-        <div className={'absolute right-0 top-[10vh] w-[20%] h-screen bg-opacity-0  z-20'}>
+        <div className={'relative right-0 w-[20%] h-screen bg-opacity-0 z-20'}>
           <Canvas camera={{ fov: 20, zoom: 0.15, position:[2, 0, 0]}}>
             <ambientLight intensity={1.25} />
             <Suspense fallback={null}>
