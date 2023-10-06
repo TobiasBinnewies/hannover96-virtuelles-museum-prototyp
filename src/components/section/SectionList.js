@@ -1,16 +1,14 @@
 import content from '../utils/section.content'
 import Section from '@/components/section/Section'
 
-
 export default function SectionList() {
-
   const sections = content.sections.map((item, index) => {
-    return <Section key={index} obj={item} model={item.mainModel}/>
+    return <Section key={index} obj={item} model={item.mainModel} />
   })
 
   return (
-    <div className='y-mandatory-scroll-snapping'>
-        {sections}
+    <div id="section-list" className="y-mandatory-scroll-snapping">
+      {sections}
     </div>
   )
 }

@@ -1,5 +1,6 @@
 'use client'
 
+import { list } from 'postcss'
 import styles from './timelineSlider.modular.css'
 import { useEffect } from 'react'
 
@@ -8,6 +9,7 @@ export default function TimelineSlider(props) {
 
   useEffect(() => {
     const screenHeight = window.innerHeight
+    const sectionList = document.getElementById('section-list')
     const timelineSlider = document.getElementById('timeline-slider')
     const timelineSliderMobile = document.getElementById(
       'timeline-slider-mobile',
@@ -21,9 +23,8 @@ export default function TimelineSlider(props) {
     }
 
     function handleScroll() {
-      const scrollY = window.scrollY
-      const scrollPercentage =
-        (scrollY / (document.body.scrollHeight - screenHeight)) * 100
+      const scrollY = sectionList.scrollHeight - sectionList.clientHeight
+      const scrollPercentage = (sectionList.scrollTop / scrollY) * 100
       const scrollPercentage36 = scrollPercentage * 3.6
       const scrollPercentage300 = scrollPercentage * 300
 
@@ -35,28 +36,40 @@ export default function TimelineSlider(props) {
       )
       setTransform(timelineFooter, 'translateX', `-${scrollPercentage * 0.5}%`)
 
-      timelineList.style.transform = `translateY(-${scrollPercentage}%)`
+      const currentIndex =
+        sectionList.scrollTop /
+        (sectionList.scrollHeight / timelineListElements.length)
 
-      timelineListElements.forEach((listElement) => {
+      timelineListElements.forEach((listElement, index) => {
+        const listElementTextOffset = (listElement.offsetHeight / 2 - 3) * -1
+        const offsetY = Math.min(Math.max(index - currentIndex, -5), 5) * 10
+
         const verticalPosition = Math.min(
           Math.abs(
             listElement.getBoundingClientRect().top / screenHeight - 0.5,
           ),
           0.5,
         )
+
         const offset =
           ((Math.pow(10, 3 * verticalPosition) - 1) /
             (Math.pow(10, 3 * 0.5) - 1)) *
           300
 
-        setTransform(listElement, 'translateX', `-${offset}%`)
+        setTransform(
+          listElement,
+          `translateY(${offsetY}vh) translateY(${listElementTextOffset}px) translateX`,
+          `-${offset}%`,
+        )
 
-        const roundedPosition = Math.round(verticalPosition * 10)
-        listElement.classList.toggle('highlighted', roundedPosition === 0)
+        listElement.classList.toggle(
+          'highlighted',
+          Math.round(currentIndex) === index,
+        )
       })
     }
 
-    window.addEventListener('scroll', handleScroll)
+    sectionList.addEventListener('scroll', handleScroll)
   })
 
   return (
@@ -80,12 +93,12 @@ export default function TimelineSlider(props) {
         >
           <ol
             id="timeline-list"
-            className="relative -z-50 top-[50vh] h-screen w-full flex flex-col justify-between items-end list-none text-2xl"
+            className="relative -z-50 h-screen w-full flex flex-col justify-between items-end list-none text-2xl"
           >
             {sections.map((section, index) => (
               <li
                 key={index}
-                className="text-center text-black flex justify-center items-center"
+                className="fixed -z-50 top-[50vh] text-center text-black flex justify-center items-center"
               >
                 {section.mainSubtitle.slice(-4)}
               </li>

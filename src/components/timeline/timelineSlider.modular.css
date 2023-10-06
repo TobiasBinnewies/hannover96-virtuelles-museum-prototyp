@@ -13,6 +13,7 @@
   border-left: 12px solid red;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
+  transform: translateY(-6px);
 }
 
 #timeline-list-container::before {
@@ -22,7 +23,7 @@
   z-index: 10;
   content: '';
   width: 100%;
-  height: 45%;
+  height: 50%;
   background-image: linear-gradient(to bottom, #fffbeb, transparent);
 }
 
@@ -32,7 +33,7 @@
   left: 0;
   content: '';
   width: 100%;
-  height: 45%;
+  height: 50%;
   background-image: linear-gradient(to top, #fffbeb, transparent);
 }
 
