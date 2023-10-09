@@ -15,7 +15,7 @@ export default function Section(props) {
         <SectionText text={section.description || section.content} />
         <SectionModal obj={section} />
       </div>
-      {props.model ? <props.model /> : null}
+      {props.model}
     </div>
   )
 }
