@@ -1,4 +1,4 @@
-import { Stats, OrbitControls, Circle } from '@react-three/drei'
+import { Stats, OrbitControls, Circle, useGLTF } from '@react-three/drei'
 import { Canvas, useLoader } from '@react-three/fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
@@ -15,6 +15,8 @@ function Computer() {
       children-0-castShadow
     />
   )
+
+  useGLTF.preload('/computer.glb');
 }
 
 export default function Model_Computer() {

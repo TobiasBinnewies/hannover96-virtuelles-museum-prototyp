@@ -1,4 +1,4 @@
-import { Stats, OrbitControls, Circle, Loader } from '@react-three/drei'
+import { Stats, OrbitControls, Circle, Loader, useGLTF } from '@react-three/drei'
 import { Canvas, useLoader } from '@react-three/fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
@@ -15,6 +15,7 @@ function Testobjekt() {
       children-0-castShadow
     />
   )
+  useGLTF.preload('/Testobjekt.glb');
 }
 export default function Model_Testobjekt() {
 
