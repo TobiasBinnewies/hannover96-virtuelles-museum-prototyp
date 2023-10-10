@@ -44,7 +44,7 @@ module.exports = {
       description: null,
       content:
         'Wiederaufnahme von internationalen Kontakten nach dem ersten Weltkrieg, Testspiele in Schweden und Hannover gegen IFK Malmö.',
-      model: null,
+      model: models.Model_Ball,
       images: [],
     },
 
