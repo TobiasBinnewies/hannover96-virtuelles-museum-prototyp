@@ -108,7 +108,7 @@ export default function TimelineSlider(props) {
                 key={index}
                 className="pointer-events-auto fixed -z-50 top-[50vh] text-center text-black flex justify-center items-center"
               >
-                {section.mainSubtitle.slice(-4)}
+                {section.date.slice(-4)}
               </li>
             ))}
           </ol>

@@ -1,8 +1,9 @@
 import { getUserAuth } from '@backend/auth'
 import jwt from 'jsonwebtoken'
-import { redirect } from 'next/navigation'
+// import { redirect } from 'next/navigation'
 
 export async function useSession({ redirect: r } = { redirect: true }) {
+  throw new Error('useSession is not implemented on the server')
   try {
     return await getUserAuth()
   } catch (err) {
