@@ -46,3 +46,7 @@
   color: #10b981;
   font-weight: bold;
 }
+
+.enable-scrolling {
+  pointer-events: none;
+}
