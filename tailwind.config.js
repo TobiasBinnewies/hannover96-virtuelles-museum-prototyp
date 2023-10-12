@@ -15,8 +15,8 @@ module.exports = {
         'h96-black': '#000000',
 
         /* Background Colors */
-        'primary-b': '#FFFBEB',
-        'secondary-b': '#FAE5AC',
+        'primary-bg': '#FFFBEB',
+        'secondary-bg': '#FAE5AC',
 
         /* Text Colors */
         'primary-text': '#2D2D2D',

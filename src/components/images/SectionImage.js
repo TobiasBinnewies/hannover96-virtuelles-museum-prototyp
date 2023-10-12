@@ -19,7 +19,7 @@ export default function SectionImage({ image }) {
   return (
     <div className="p-3">
       <div
-        className="border p-5 rounded-2xl bg-white"
+        className="border p-5 rounded-2xl bg-primary-bg"
         style={{ width: '30vw' }}
       >
         <div className="text-center">
