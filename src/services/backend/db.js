@@ -8,6 +8,14 @@ export async function findDB(collection, query) {
   return find(collection, query, false)
 }
 
+export async function aggregateDB(collection, query) {
+  const client = await getClient()
+  const db = client.db()
+  const result = await db.collection(collection).aggregate(query).toArray()
+  await client.close()
+  return result
+}
+
 export async function insertDB(collection, data) {
   const client = await getClient()
   const db = client.db()
@@ -36,9 +44,8 @@ async function getClient() {
 async function find(collection, query, one) {
   const client = await getClient()
   const db = client.db()
-  const result = await db
-    .collection(collection)
-    [one ? 'findOne' : 'find'](query)
+  let result = await db.collection(collection)[one ? 'findOne' : 'find'](query)
+  if (!one) result = await result.toArray()
   await client.close()
   return result
 }
