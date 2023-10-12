@@ -14,7 +14,9 @@ async function handler(req) {
   }
   const section = req.nextUrl.searchParams.get('section')
   const data = await aggregateDB(process.env.SECTION_IMAGE_FOLDER, [
-    { $match: { section } },
+    section === 'all'
+      ? { $match: { _id: { $exists: true } } }
+      : { $match: { section } },
     {
       $lookup: {
         from: 'user',

@@ -52,6 +52,8 @@ async function handler(req) {
     throw 'File too large'
   }
 
+  const width = file.width
+
   const buffer = await formatBufferTo64(file)
   const date = new Date()
 
