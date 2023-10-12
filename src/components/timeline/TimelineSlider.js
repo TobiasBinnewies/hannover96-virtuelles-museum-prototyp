@@ -81,27 +81,27 @@ export default function TimelineSlider(props) {
   })
 
   return (
-    <div id="timeline" className="fixed">
+    <div id="timeline" className="fixed enable-scrolling">
       <div id="timeline-container" className="relative">
         <div
           id="timeline-slider"
-          className="enable-scrolling hidden xl:block fixed -top-[25vh] w-[150vh] h-[150vh] bg-contain rounded-[50%]"
+          className="hidden xl:block fixed -top-[25vh] w-[150vh] h-[150vh] bg-contain rounded-[50%]"
         ></div>
         <div
           id="timeline-slider-mobile"
-          className="enable-scrolling xl:hidden fixed left-0 bottom-4 w-[150px] h-[150px]"
+          className="xl:hidden fixed left-0 bottom-4 w-[150px] h-[150px]"
         ></div>
         <div
           id="timeline-slider-indicator"
-          className="enable-scrolling hidden xl:block fixed left-[200px] top-[50vh]"
+          className="hidden xl:block fixed left-[200px] top-[50vh]"
         ></div>
         <div
           id="timeline-list-container"
-          className="enable-scrolling hidden fixed -z-50 top-0 left-0 h-screen w-[300px] xl:flex justify-end items-center"
+          className="hidden fixed -z-50 top-0 left-0 h-screen w-[300px] xl:flex justify-end items-center"
         >
           <ol
             id="timeline-list"
-            className="enable-scrolling relative -z-50 h-screen w-full flex flex-col justify-between items-end list-none text-2xl"
+            className="relative -z-50 h-screen w-full flex flex-col justify-between items-end list-none text-2xl"
           >
             {sections.map((section, index) => (
               <li
@@ -115,7 +115,7 @@ export default function TimelineSlider(props) {
         </div>
         <div
           id="timeline-footer"
-          className="enable-scrolling fixed left-0 bottom-0 w-[200vw] h-[550px] xl:h-[600px] bg-repeat"
+          className="fixed left-0 bottom-0 w-[200vw] h-[550px] xl:h-[600px] bg-repeat"
         ></div>
       </div>
     </div>
