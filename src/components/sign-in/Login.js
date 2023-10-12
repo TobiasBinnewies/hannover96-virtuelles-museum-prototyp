@@ -105,7 +105,7 @@ export default function Login() {
               </button>
             </div>
             <div className={styles.register}>
-              <a style={{color: '#009D3A'}} class='text-sm'>Keinen Zugang? Jetzt registrieren!</a>
+              <a style={{color: '#009D3A', cursor: 'pointer'}} class='text-sm'>Keinen Zugang? Jetzt registrieren!</a>
             </div>
           </div>        
         </div>

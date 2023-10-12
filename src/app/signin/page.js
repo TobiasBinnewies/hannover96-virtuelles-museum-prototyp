@@ -16,14 +16,6 @@ export default function LoginPage(/*{ session }*/) {
   return (
     <form className={styles.form}>
       {isLogin ? <Login /> : <SignUp />}
-      <button
-        className={styles.changeView}
-        onClick={(e) => (
-          e.preventDefault(), setIsLogin((prevState) => !prevState)
-        )}
-      >
-        {isLogin ? 'Create new account' : 'Already have an account?'}
-      </button>
     </form>
   )
 }
