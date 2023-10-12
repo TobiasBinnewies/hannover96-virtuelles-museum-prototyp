@@ -12,14 +12,20 @@
 
 .submit {
   color: white;
-  width: 20rem;
-  height: 2rem;
+  width: 7rem;
+  height: 3rem;
   border: none;
-  border-radius: 0.25rem;
-  background-color: var(--action-color);
+  border-radius: 30px;
+  background-color: #009D3A;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
+  transition-duration: 0.4s;
+  
+}
+
+.submit:hover {
+  box-shadow: 0 8px 10px 0px rgba(0, 157, 58, 0.14),0 17px 50px 0 rgba(0, 157, 58, 0.14);
 }
 
 .changeView {
@@ -56,4 +62,100 @@
   min-height: 500px;
   width: 100vw;
   margin: 0;
+}
+
+.row {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.card {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  margin: 25px 0;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+  border-radius: 6px;
+  color: rgba(0,0,0, 0.87);
+  background: #fff;
+}
+
+.card [data-background-color] {
+  margin: -20px 15px 0;
+  border-radius: 3px;
+  padding: 15px;;
+  position: relative;
+  background-color: #999999;
+}
+
+.cardlogin {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+  border-radius: 6px;
+  padding-bottom: 20px;
+  transform: translate3d(0, 0, 0);
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 85px;
+}
+
+.cardcontent {
+  padding: 18px 25px 10px 25px;
+}
+
+.cardheader {
+  margin: -40px 15px 0;
+  padding: 15px;
+  z-index: 3;
+  border-radius: 3px;
+  background: linear-gradient(60deg, #009D3A, #3f8000);
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(63, 128, 0, 0.4);
+}
+
+.card [data-background-color="orange"] {
+  background: linear-gradient(60deg, #009D3A, #3f8000);
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(63, 128, 0, 0.4);
+}
+
+.cardtitle {
+  color: #FFFFFF;
+}
+
+.textcenter {
+  text-align: center;
+}
+
+.inputGroupAddon {
+    position: absolute;
+    border: 0;
+    background: transparent;
+    padding: 6px 15px 0px;
+    display: table-cell;
+}
+
+.inputGroup {
+  display: table;
+  border-collapse: separate;
+}
+
+.inputGroup.formControl {
+  display: table;
+}
+
+.inputfield {
+  padding: 5px 20px 5px 10px
+}
+
+.footer {
+  background-color: white;
+  padding: 60px 0 40px 0;
+  border-top: 6px solid #093;
+}
+
+.register {
+  text-align: center;
 }

@@ -62,43 +62,54 @@ export default function Login() {
 
   return (
     <>
-      <h1 className={styles.h1}>Login</h1>
-      <CheckedInput
-        id="username"
-        type="text"
-        placeholder="Your username or email adress"
-        prop={username}
-        label="Username or Email"
-        inputHandler={(e) =>
-          setUsername((prev) => ({ ...prev, value: e.target.value }))
-        }
-        validateInput={validateUsernameInput}
-      />
-      <CheckedInput
-        id="password"
-        type="password"
-        placeholder=""
-        prop={password}
-        setProp={setPassword}
-        label="Password"
-        inputHandler={(e) =>
-          setPassword((prev) => ({ ...prev, value: e.target.value }))
-        }
-        validateInput={validatePasswordInput}
-      />
-      <div
-        className={styles.alertMessage}
-        style={{
-          height: alertMessage ? 'auto' : '0px',
-          opacity: alertMessage ? '100%' : '0%',
-          margin: alertMessage ? '10px 0' : '0',
-        }}
-      >
-        {alertMessage}
+      <h1 className={styles.h1}>Kein Login</h1>
+      <div className={styles.container}>
+        <div className={styles.row}>
+          <div className={`${styles.cardlogin} ${styles.card}`}>
+            <div className={`${styles.cardheader} ${styles.textcenter}`} data-backround-color="orange">
+              <h4 className={styles.cardtitle}>Login</h4>
+            </div>
+            <div className={styles.cardcontent}>
+              <div>
+                <label for="email" class="block text-sm font-medium leading-6 text-black-900">Email Adresse</label>
+                <div class="mt-2">
+                  <input id="email" name="email" type="email" autocomplete="email" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6 px-3"/>
+                </div>
+              </div>
+              <div>
+                <div class="flex items-center justify-between pt-4">
+                  <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Passwort</label>
+                    <div class="text-sm">
+                      <a href="#" class="font-semibold text-black-600 hover:text-black-500">Passwort vergessen?</a>
+                    </div>
+                </div>
+                <div class="mt-2">
+                  <input id="password" name="password" type="password" autocomplete="current-password" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6 px-3"/>
+                </div>
+              </div>
+            </div>
+
+            <div className={`${styles.footer} ${styles.textcenter}`}>
+              <div
+                className={styles.alertMessage}
+                style={{
+                  height: alertMessage ? 'auto' : '0px',
+                  opacity: alertMessage ? '100%' : '0%',
+                  margin: alertMessage ? '10px 0' : '0',
+                }}
+              >
+                  {alertMessage}
+              </div>
+              <button className={styles.submit} onClick={submit}>
+                Login
+              </button>
+            </div>
+            <div className={styles.register}>
+              <a style={{color: '#009D3A'}} class='text-sm'>Keinen Zugang? Jetzt registrieren!</a>
+            </div>
+          </div>        
+        </div>
       </div>
-      <button className={styles.submit} onClick={submit}>
-        Login
-      </button>
     </>
   )
 }
