@@ -8,14 +8,14 @@ export default function Section(props) {
   const section = props.obj
 
   return (
-    <div className={'bg-amber-50 h-screen flex justify-center'}>
+    <div className={'bg-[#f8f7f7] h-screen flex justify-center'}>
       <div className={'w-[50%] m-auto z-30'}>
         <SectionSubtitle text={section.date} />
         <SectionTitle text={section.title} />
         <SectionText text={section.description || section.content} />
         <SectionModal obj={section} />
       </div>
-      {props.model ? <props.model /> : null}
+      {props.model}
     </div>
   )
 }

@@ -1,7 +1,5 @@
-import demo_one_img from '../images/H96.jpeg'
-import demo_two_img from '../images/aufstieg_2002.jpg'
-import Model_Wd from '@components/models/Model_Wd'
-import Model_Computer from '@components/models/Model_Computer'
+
+import models from '@components/models/models'
 
 module.exports = {
   // general
@@ -16,7 +14,7 @@ module.exports = {
         'Hannover 96 wurde 1896 als „Hannoversche Fußball-Club von 1896 (HFC)“ gegründet, begann jedoch erst 1899 mit Fußball und wurde 1901 ein reiner Fußballverein.',
       content:
         'Fast 80.000 Zuschauer sind am 23. Mai 1954 ins Hamburger Volksparkstadion gekommen. Hannover 96 und der 1. FC Kaiserslautern stehen sich im Endspiel um die deutsche Fußball-Meisterschaft gegenüber. Die Norddeutschen sind gegen die Elf um Nationalmannschaftskapitän Fritz Walter krasser Außenseiter. Nach 90 Minuten steht es jedoch 5:1 für Hannover. Auch mehr als 50 Jahre später gilt der Erfolg als eine der größten Überraschungen in der deutschen Fußball-Geschichte.',
-      model: null,
+      model: models.Model_Vase,
       images: [],
     },
 
@@ -26,7 +24,7 @@ module.exports = {
       description: null,
       content:
         'Es entstand der Hannoversche Sportverein von 1896, in dem der Hannoversche FC von 1896 sich mit dem Verein BV Hannovera 1898 fusionierte.',
-      model: null,
+      model: models.Model_Computer,
       images: [],
     },
 
@@ -36,7 +34,7 @@ module.exports = {
       description: null,
       content:
         'Ein Highlight - das Spiel gegen Tottenham Hotspurs mit über 10.000 Zuschauern an der Radrennbahn.',
-      model: null,
+      model: models.Model_Wd,
       images: [],
     },
 
@@ -46,7 +44,7 @@ module.exports = {
       description: null,
       content:
         'Wiederaufnahme von internationalen Kontakten nach dem ersten Weltkrieg, Testspiele in Schweden und Hannover gegen IFK Malmö.',
-      model: null,
+      model: models.Model_Ball,
       images: [],
     },
 
