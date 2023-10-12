@@ -9,7 +9,7 @@ export default function Home() {
   useExternalScripts("https://ar.scanblue.cloud/assets/scanblue.3.js");
 
   return (
-    <div className={'bg-amber-200 h-screen'}>
+    <div className={'bg-amber-200 h-screen'} style={{overflow: 'hidden'}}>
       <TimelineSlider sections={content.sections} />
       <SectionList />
     </div>
