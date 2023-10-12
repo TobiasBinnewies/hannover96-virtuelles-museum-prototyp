@@ -40,7 +40,7 @@ export default function Navbar() {
                     <div className="w-12 h-12 bg-gray-300 rounded-full mr-2"></div>{' '}
                     {/* Platzhalter für Profilbild */}
                     <div className="flex flex-col">
-                      <div className="text-black font-semibold text-sm">
+                      <div className="text-primary-text font-semibold text-sm">
                         {session.username}
                       </div>
                       <button
@@ -59,7 +59,7 @@ export default function Navbar() {
                 <div className="bg-white rounded-lg p-4 mt-[-150px]">
                   <div className="flex items-center">
                     <div className="flex flex-col">
-                      <div className="text-black font-semibold text-sm">
+                      <div className="text-primary-text font-semibold text-sm">
                         <Link href="/signin">Login</Link>
                       </div>
                     </div>

@@ -10,10 +10,11 @@ export default function SectionImage(props) {
           height={500}
           alt={props.alt}
           className={'shadow-2xl'}
-
         />
       </div>
-      <p className={'text-black font-normal font-sans'}>{props.subtitle}</p>
+      <p className={'text-primary-text font-normal font-sans'}>
+        {props.subtitle}
+      </p>
     </div>
   )
 }

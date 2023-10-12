@@ -23,7 +23,7 @@ export default function SectionImage({ image }) {
         style={{ width: '30vw' }}
       >
         <div className="text-center">
-          <p className="text-emerald-500 text-2xl font-sans font-bold">
+          <p className="text-highlight-text text-2xl font-sans font-bold">
             {image.title}
           </p>
         </div>
@@ -58,7 +58,7 @@ export default function SectionImage({ image }) {
           )}
         </div>
         <div className="text-right">
-          <p className="text-black text-base font-sans font-normal">
+          <p className="text-primary-text text-base font-sans font-normal">
             Author: {image.username}
           </p>
         </div>
