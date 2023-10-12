@@ -26,7 +26,6 @@ export default function TimelineSlider(props) {
       const scrollY = sectionList.scrollHeight - sectionList.clientHeight
       const scrollPercentage = (sectionList.scrollTop / scrollY) * 100
       const scrollPercentage36 = scrollPercentage * 3.6
-      const scrollPercentage300 = scrollPercentage * 300
 
       setTransform(timelineSlider, 'rotate', `${scrollPercentage36}deg`)
       setTransform(
@@ -70,6 +69,7 @@ export default function TimelineSlider(props) {
     }
 
     sectionList.addEventListener('scroll', handleScroll)
+    handleScroll()
 
     const scrollableDivs = document.querySelectorAll('.enable-scrolling')
 
