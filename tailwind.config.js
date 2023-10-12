@@ -33,9 +33,6 @@ module.exports = {
         'cta-bg': '#009E3D',
       },
     },
-    fontFamily: {
-      sans: ['Alfa Slab One', 'sans-serif'],
-    },
   },
   plugins: [],
 }

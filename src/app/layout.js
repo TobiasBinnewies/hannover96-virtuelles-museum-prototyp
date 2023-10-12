@@ -1,8 +1,8 @@
 import './globals.css'
-import { Alfa_Slab_One } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import Navbar from '@components/navbar/Navbar'
 
-const font = Alfa_Slab_One({ subsets: ['latin'] })
+const font = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Create Next App',
