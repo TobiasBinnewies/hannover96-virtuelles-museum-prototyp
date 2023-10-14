@@ -1,8 +1,9 @@
 import { getUserAuth } from '@backend/auth'
 import jwt from 'jsonwebtoken'
-import { redirect } from 'next/navigation'
+// import { redirect } from 'next/navigation'
 
 export async function useSession({ redirect: r } = { redirect: true }) {
+  throw new Error('useSession is not implemented on the server')
   try {
     return await getUserAuth()
   } catch (err) {
@@ -15,7 +16,7 @@ export async function useSession({ redirect: r } = { redirect: true }) {
 }
 
 export function getTokenFromUser(user) {
-  const { id, username, email } = user
+  const { _id, username, email } = user
 
   // const profilePicture = {
   //   path: image,
@@ -30,11 +31,10 @@ export function getTokenFromUser(user) {
 
   const token = jwt.sign(
     {
-      id,
+      userId: _id,
       username,
       email,
       // profilePicture,
-      // colors,
       expireDate,
     },
     process.env.JWT_SECRET,

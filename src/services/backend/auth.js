@@ -2,6 +2,7 @@ import { hash, compare, genSalt } from 'bcrypt'
 import { findOneDB } from '@backend/db'
 import jwt from 'jsonwebtoken'
 import { cookies } from 'next/headers'
+import { ObjectId } from 'mongodb'
 
 export async function hashPassword(password) {
   const salt = await genSalt(12)
@@ -51,7 +52,8 @@ export async function getUserAuth() {
   const cookie = cookies()
   try {
     const token = cookie.get('session-token').value
-    return jwt.verify(token, process.env.JWT_SECRET)
+    const session = jwt.verify(token, process.env.JWT_SECRET)
+    return {...session, userId: new ObjectId(session.userId)}
   } catch (err) {
     throw { name: 'UnauthorizedError' }
   }

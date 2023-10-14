@@ -1,10 +1,22 @@
 'use client'
 
 import { useSession } from '@frontend/session'
-// import { useSession } from '@backend/session'
+import UploadSectionImage from '@/components/images/UploadSectionImage'
+import SectionImageList from '@/components/images/SectionImageList'
 
 export default function Profile() {
   const session = useSession({ redirect: true })
   // console.log('session', session)
-  return <div>profile</div>
+  return (
+    <div>
+      profile
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <UploadSectionImage section={1} />
+      <SectionImageList section={1} />
+    </div>
+  )
 }

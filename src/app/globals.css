@@ -24,6 +24,9 @@
   }
 }
 
+
+ 
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -49,4 +52,21 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+html {
+  /* overflow: hidden; */
+  height: 100vh;
+}
+
+.childElement {
+  height: 100vh;
+  scroll-snap-align: center;
+}
+
+.y-mandatory-scroll-snapping {
+  margin: 0;
+  overflow: scroll;
+  height: 100vh;
+  scroll-snap-type: y mandatory;
 }
