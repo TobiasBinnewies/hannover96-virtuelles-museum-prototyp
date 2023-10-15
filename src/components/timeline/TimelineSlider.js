@@ -43,6 +43,12 @@ export default function TimelineSlider(props) {
         const listElementTextOffset = (listElement.offsetHeight / 2 - 3) * -1
         const offsetY = Math.min(Math.max(index - currentIndex, -5), 5) * 10
 
+        setTransform(
+          listElement,
+          `translateY(${offsetY}vh) translateY`,
+          `${listElementTextOffset}px`,
+        )
+
         const verticalPosition = Math.min(
           Math.abs(
             listElement.getBoundingClientRect().top / screenHeight - 0.5,
