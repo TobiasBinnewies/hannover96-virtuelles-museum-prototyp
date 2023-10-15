@@ -8,13 +8,13 @@ export default function Section(props) {
   const section = props.obj
 
   return (
-    <div className={'bg-amber-50 h-screen flex justify-center childElement'}>
-        <div className={'w-[50%] z-30 mt-auto mb-auto ml-[20vw]'} >
-            <SectionSubtitle text={section.mainSubtitle} />
-            <SectionTitle text={section.mainTitle} />
-            <SectionText text={section.mainText} />
-            <SectionModal obj={section} />
-        </div>
+    <div className={'bg-primary-bg h-screen flex justify-center childElement'}>
+      <div className={'w-[50%] z-30 mt-auto mb-auto ml-[20vw]'}>
+        <SectionSubtitle text={section.date} />
+        <SectionTitle text={section.title} />
+        <SectionText text={section.description || section.content} />
+        <SectionModal obj={section} />
+      </div>
       {props.model}
     </div>
   )
