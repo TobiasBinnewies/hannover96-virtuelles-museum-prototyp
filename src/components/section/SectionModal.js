@@ -27,7 +27,7 @@ export default function SectionModal(props) {
     <div className={'text-center z-10'}>
       <button
         onClick={() => setIsOpen(true)}
-        className={'text-2xl text-emerald-500 font-normal'}
+        className={'text-2xl text-highlight-text font-normal'}
       >
         {content.modalButtonRead}
       </button>
@@ -40,21 +40,23 @@ export default function SectionModal(props) {
         <div className={'flex justify-end'}>
           <button
             onClick={() => setIsOpen(false)}
-            className={'text-2xl text-emerald-500 font-normal'}
+            className={'text-2xl text-highlight-text font-normal'}
           >
             {content.modalButtonClose}
           </button>
         </div>
         <ModalTitle title={section.title} />
-        <h1 className={'text-black font-sans font-normal'}>
+        <h1 className={'text-primary-text font-sans font-normal'}>
           {section.content}
         </h1>
-        {section.images.map((image, idx) => <SectionImage
-          key={idx}
-          image={image}
-          // alt={section.modalAlt}
-          subtitle={section.date}
-        />)}
+        {section.images.map((image, idx) => (
+          <SectionImage
+            key={idx}
+            image={image}
+            // alt={section.modalAlt}
+            subtitle={section.date}
+          />
+        ))}
       </Modal>
     </div>
   )
