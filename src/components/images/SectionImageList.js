@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import SectionImage from './SectionImage'
 
-export default function SectionImageList({ section }) {
+export default function SectionImageList({ section, width }) {
   const [images, setImages] = useState([])
   useEffect(() => {
     fetch(`/api/section-images?section=${section}`)
@@ -13,8 +13,14 @@ export default function SectionImageList({ section }) {
       })
   }, [section])
 
-    return (
-      <div className="grid gap-1 grid-cols-2 justify-items-center">
+  return (
+    <div className='flex justify-center'>
+      <div
+        className={`grid gap-1 grid-cols-${
+          images.length < 2 ? '1' : '2'
+        } justify-items-center`}
+        style={{ width: width }}
+      >
         {images.map((image) => (
           // <div key={image._id}>
           // <CldImage
@@ -28,8 +34,13 @@ export default function SectionImageList({ section }) {
           // <p>{image.username}</p>
           // <p>{image.createdAt}</p>
           // </div>
-          <SectionImage key={image._id} image={image} />
+          <SectionImage
+            key={image._id}
+            image={image}
+            style={{ with: `calc(${width} / 2)` }}
+          />
         ))}
       </div>
-    )
+    </div>
+  )
 }

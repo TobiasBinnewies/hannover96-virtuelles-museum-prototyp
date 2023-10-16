@@ -55,10 +55,11 @@ export default function UploadSectionImage({ section }) {
       <input
         type="file"
         name="file"
+        style={{ color: 'blue' }}
         onChange={(e) => setFile(e.target.files?.[0])}
       />
       <br />
-      <input type="submit" value="Upload" />
+      <input type="submit" value="Upload" style={{ color: 'blue' }} />
     </form>
   )
 }

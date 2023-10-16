@@ -1,8 +1,8 @@
-export default function SectionTitle(props) {
+export default function SectionTitle({title, size = '6xl'}) {
   return (
     <div className={'text-center'}>
-      <h1 className={'text-heading-text text-6xl font-sans font-bold'}>
-        {props.text}
+      <h1 className={`text-heading-text text-${size} font-sans font-bold pb-3`}>
+        {title}
       </h1>
     </div>
   )

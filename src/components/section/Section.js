@@ -5,19 +5,17 @@ import SectionText from '@/components/utils/SectionText'
 import SectionModal from '@/components/section/SectionModal'
 import AR_Modal from '@components/section/AR_Modal'
 
-export default function Section(props) {
-  const section = props.obj
-
+export default function Section({obj: section, session, model, arlink}) {
   return (
     <div className={'bg-primary-bg h-screen flex justify-center childElement'}>
       <div className={'w-[50%] z-30 mt-auto mb-auto ml-[20vw]'}>
         <SectionSubtitle text={section.date} />
-        <SectionTitle text={section.title} />
+        <SectionTitle title={section.title} />
         <SectionText text={section.description || section.content} />
-        <SectionModal obj={section} />
-        {props.arlink != null ? <AR_Modal arlink={props.arlink}/> : <div/>}
+        <SectionModal session={session} obj={section} />
+        {arlink != null ? <AR_Modal arlink={arlink}/> : <div/>}
       </div>
-      {props.model}
+      {model}
     </div>
   )
 }

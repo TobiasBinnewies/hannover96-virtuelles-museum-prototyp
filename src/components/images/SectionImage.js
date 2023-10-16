@@ -17,10 +17,10 @@ export default function SectionImage({ image }) {
     })
   }, [url])
   return (
-    <div className="p-3">
+    <div className="p-3" style={{width: '100%'}}>
       <div
         className="border p-5 rounded-2xl bg-primary-bg"
-        style={{ width: '30vw' }}
+        // style={{ width: '100%' }}
       >
         <div className="text-center">
           <p className="text-highlight-text text-2xl font-sans font-bold">

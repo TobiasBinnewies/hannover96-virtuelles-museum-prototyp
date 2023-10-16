@@ -25,17 +25,17 @@ export default function Login() {
 
   const submit = async (e) => {
     e.preventDefault()
-    setAlertMessage(null)
-    if (!username.isValid || username.value.trim() === '') {
-      setUsername((prev) => ({ ...prev, isValid: false, notSet: false }))
-    }
-    if (!password.isValid || password.value.trim() === '') {
-      setPassword((prev) => ({ ...prev, isValid: false, notSet: false }))
-    }
-    if (!username.isValid || !password.isValid) {
-      setAlertMessage('Please enter valid username and password')
-      return
-    }
+    // setAlertMessage(null)
+    // if (!username.isValid || username.value.trim() === '') {
+    //   setUsername((prev) => ({ ...prev, isValid: false, notSet: false }))
+    // }
+    // if (!password.isValid || password.value.trim() === '') {
+    //   setPassword((prev) => ({ ...prev, isValid: false, notSet: false }))
+    // }
+    // if (!username.isValid || !password.isValid) {
+    //   setAlertMessage('Please enter valid username and password')
+    //   return
+    // }
 
     try {
       await login(username.value, password.value, router)
@@ -87,6 +87,7 @@ export default function Login() {
                     type="email"
                     autocomplete="email"
                     required
+                    onChange={(e) => setUsername({ value: e.target.value })}
                     class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6 px-3"
                   />
                 </div>
@@ -115,6 +116,7 @@ export default function Login() {
                     type="password"
                     autocomplete="current-password"
                     required
+                    onChange={(e) => setPassword({ value: e.target.value })}
                     class="block w-full rounded-md border-0 py-1.5 text-primary-text shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-secondary-text focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6 px-3"
                   />
                 </div>
