@@ -8,7 +8,10 @@ export default function Section(props) {
   const section = props.obj
 
   return (
-    <div className={'bg-amber-50 h-screen flex justify-center childElement'}>
+    <div
+      id={section.date.slice(-4)}
+      className={'bg-amber-50 h-screen flex justify-center childElement'}
+    >
       <div className={'w-[50%] z-30 mt-auto mb-auto ml-[20vw]'}>
         <SectionSubtitle text={section.date} />
         <SectionTitle text={section.title} />

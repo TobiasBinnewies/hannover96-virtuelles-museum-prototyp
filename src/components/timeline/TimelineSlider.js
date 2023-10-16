@@ -3,6 +3,7 @@
 import { list } from 'postcss'
 import styles from './timelineSlider.modular.css'
 import { useEffect } from 'react'
+import Link from 'next/link'
 
 export default function TimelineSlider(props) {
   const { sections } = props
@@ -87,23 +88,23 @@ export default function TimelineSlider(props) {
   })
 
   return (
-    <div id="timeline" className="fixed enable-scrolling">
+    <div id="timeline" className="fixed">
       <div id="timeline-container" className="relative">
         <div
           id="timeline-slider"
-          className="hidden xl:block fixed -top-[25vh] w-[150vh] h-[150vh] bg-contain rounded-[50%]"
+          className="enable-scrolling hidden xl:block fixed -top-[25vh] w-[150vh] h-[150vh] bg-contain rounded-[50%]"
         ></div>
         <div
           id="timeline-slider-mobile"
-          className="xl:hidden fixed left-0 bottom-4 w-[150px] h-[150px]"
+          className="enable-scrolling xl:hidden fixed left-0 bottom-4 w-[150px] h-[150px]"
         ></div>
         <div
           id="timeline-slider-indicator"
-          className="hidden xl:block fixed left-[200px] top-[50vh]"
+          className="enable-scrolling hidden xl:block fixed left-[200px] top-[50vh]"
         ></div>
         <div
           id="timeline-list-container"
-          className="hidden fixed -z-50 top-0 left-0 h-screen w-[300px] xl:flex justify-end items-center"
+          className="enable-scrolling hidden fixed -z-50 top-0 left-0 h-screen w-[300px] xl:flex justify-end items-center"
         >
           <ol
             id="timeline-list"
@@ -114,14 +115,20 @@ export default function TimelineSlider(props) {
                 key={index}
                 className="pointer-events-auto fixed -z-50 top-[50vh] text-center text-black flex justify-center items-center"
               >
-                {section.date.slice(-4)}
+                <Link
+                  href={'#' + section.date.slice(-4)}
+                  className="relative inline-block group"
+                >
+                  <span class="absolute w-0 -bottom-1 h-0.5 bg-emerald-500 group-hover:w-full transition-all duration-200"></span>
+                  {section.date.slice(-4)}
+                </Link>
               </li>
             ))}
           </ol>
         </div>
         <div
           id="timeline-footer"
-          className="fixed left-0 bottom-0 w-[200vw] h-[550px] xl:h-[600px] bg-repeat"
+          className="enable-scrolling fixed left-0 bottom-0 w-[200vw] h-[550px] xl:h-[600px] bg-repeat"
         ></div>
       </div>
     </div>
