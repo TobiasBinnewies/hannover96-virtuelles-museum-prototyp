@@ -22,18 +22,6 @@ export default function SectionImageList({ section, width }) {
         style={{ width: width }}
       >
         {images.map((image) => (
-          // <div key={image._id}>
-          // <CldImage
-          //     width="960"
-          //     height="600"
-          //     src={image.path}
-          //     sizes="100vw"
-          //     alt="Description of my image"
-          // />
-          // <p>{image.title}</p>
-          // <p>{image.username}</p>
-          // <p>{image.createdAt}</p>
-          // </div>
           <SectionImage
             key={image._id}
             image={image}

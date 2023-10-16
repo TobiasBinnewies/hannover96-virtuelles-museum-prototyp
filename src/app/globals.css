@@ -24,9 +24,6 @@
   }
 }
 
-
- 
-
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -69,4 +66,32 @@ html {
   overflow: scroll;
   height: 100vh;
   scroll-snap-type: y mandatory;
+}
+
+.light-effect {
+  --mouse-x: -999px;
+  --mouse-y: -999px;
+  /* color: blue; */
+  background: radial-gradient(
+    300px circle at var(--mouse-x) var(--mouse-y),
+    rgba(0, 224, 79, 1) 0%,
+    rgba(0, 158, 61, 1) 50%,
+    rgba(0, 158, 61, 1) 100%
+  );
+  /* background: -webkit-linear-gradient(#eee, #333); */
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: 3;
+}
+
+.light-effect-background {
+  --mouse-x: -999px;
+  --mouse-y: -999px;
+  /* color: blue; */
+  background: radial-gradient(
+    300px circle at var(--mouse-x) var(--mouse-y),
+    rgba(0, 224, 79, 1) 0%,
+    rgba(0, 158, 61, 1) 50%,
+    rgba(0, 158, 61, 1) 100%
+  );
 }

@@ -63,7 +63,7 @@ export default function TimelineSlider(props) {
         )
 
         listElement.classList.toggle(
-          'highlighted',
+          'light-effect',
           Math.round(currentIndex) === index,
         )
       })
@@ -78,7 +78,7 @@ export default function TimelineSlider(props) {
         event.stopPropagation()
       })
     })
-  })
+  }, [])
 
   return (
     <div id="timeline" className="fixed">

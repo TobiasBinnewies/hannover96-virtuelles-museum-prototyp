@@ -24,6 +24,8 @@ const customStyles = {
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
     maxHeight: '80vh',
+    border: '2px solid #000',
+    borderRadius: '10px',
   },
 }
 
@@ -92,8 +94,11 @@ export default function SectionModal({obj: section, session}) {
     <div className={'text-center z-10'}>
       <button
         onClick={() => setIsOpen(true)}
-        className={'text-2xl text-highlight-text font-normal'}
+        className={
+          'text-2xl text-highlight-text font-normal light-effect group relative'
+        }
       >
+        <span class="absolute w-0 -bottom-1 h-0.5 light-effect-background group-hover:w-full transition-all duration-200"></span>
         <u>{content.modalButtonRead}</u>
       </button>
       {modal}
