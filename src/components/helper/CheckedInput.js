@@ -11,7 +11,10 @@ export default function CheckedInput({
 }) {
   return (
     <>
-      <label htmlFor={id} className={styles.label}>
+      <label
+        htmlFor={id}
+        className="text-heading-text text-xl font-sans font-bold pb-3"
+      >
         {label}
       </label>
       <div className={styles.inputfield}>

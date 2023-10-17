@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Modal from 'react-modal'
 import content from '../utils/section.content'
 import ModalTitle from '@/components/utils/ModalTitle'
+import SectionTitle from '../utils/SectionTitle'
 export default function AR_Modal(props) {
   const [isOpen, setIsOpen] = useState(false)
   const customStyles = {
@@ -33,8 +34,11 @@ export default function AR_Modal(props) {
     <div className={'text-center z-10 mt-[10%]'}>
       <button
         onClick={() => setIsOpen(true)}
-        className={'text-2xl text-emerald-500 font-normal'}
+        className={
+          'text-2xl text-emerald-500 font-normal light-effect light-effect-color group relative'
+        }
       >
+        <span className="absolute w-0 -bottom-1 h-0.5 light-effect light-effect-background group-hover:w-full transition-all duration-200"></span>
         {'In 3D ansehen'}
       </button>
 
@@ -51,7 +55,7 @@ export default function AR_Modal(props) {
             {content.modalButtonClose}
           </button>
         </div>
-        <ModalTitle title={'In 3D ansehen'} />
+        <SectionTitle title={'In 3D ansehen'} />
         <h1 className={'text-black font-sans font-normal'}>
           <iframe style={myStyle} src={props.arlink}></iframe>
         </h1>

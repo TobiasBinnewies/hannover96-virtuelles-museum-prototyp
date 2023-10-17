@@ -11,6 +11,7 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+  
   return (
     <html lang="en">
       
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
                     { title: 'Images' , destination:"/section-images", icon: 'gallery-send-svgrepo-com.svg'}, 
                     { title: 'Matterport' , destination:"Link", icon: 'monitor-camera-svgrepo-com.svg'}
                   ]}
+          style={{position: 'sticky'}}
         />
         {children}
       </body>

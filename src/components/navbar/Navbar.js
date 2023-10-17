@@ -1,14 +1,16 @@
 'use client'
 
 import { useSession } from '@/services/frontend/session'
+import { useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { LoaderUtils } from 'three'
 
 export default function Navbar({ buttons }) {
   const { session, logout } = useSession({ redirect: false });
 
   return (
-    <main>
+    <main id="navbar">
       <header>
         
           <div className="absolute z-[60] left-0 top-0 w-screen bg-white">

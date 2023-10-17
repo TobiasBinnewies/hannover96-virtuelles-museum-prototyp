@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import CheckedInput from '@/components/helper/CheckedInput'
+import SectionTitle from '@/components/utils/SectionTitle'
 
 export default function UploadSectionImage({ section }) {
   const [file, setFile] = useState()
@@ -39,11 +40,11 @@ export default function UploadSectionImage({ section }) {
 
   return (
     <form onSubmit={onSubmit}>
-      <p>Bildtitle</p>
+      <SectionTitle title={`Bildupload für ${section}`} size='3xl' />
       <CheckedInput
         id="imagetitle"
         type="text"
-        placeholder="Bildtitel"
+        placeholder={`Trikot Season 2021/22`}
         prop={title}
         label="Bildtitel"
         inputHandler={(e) =>
@@ -55,10 +56,11 @@ export default function UploadSectionImage({ section }) {
       <input
         type="file"
         name="file"
+        style={{ color: 'blue' }}
         onChange={(e) => setFile(e.target.files?.[0])}
       />
       <br />
-      <input type="submit" value="Upload" />
+      <input type="submit" value="Upload" style={{ color: 'blue' }} />
     </form>
   )
 }

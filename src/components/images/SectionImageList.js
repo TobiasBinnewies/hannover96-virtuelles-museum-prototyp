@@ -2,34 +2,46 @@
 
 import { useEffect, useState } from 'react'
 import SectionImage from './SectionImage'
+import { getFetch } from '@/services/frontend/fetch'
+import { use } from 'react'
+import content from '../utils/section.content'
 
-export default function SectionImageList({ section }) {
-  const [images, setImages] = useState([])
-  useEffect(() => {
-    fetch(`/api/section-images?section=${section}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setImages(data)
-      })
-  }, [section])
+// Fetching images for all sections
+const imagesFetch = { all: getFetch('/api/section-images?section=all') }
+content.sections.forEach((section) => {
+  imagesFetch[section.date] = 
+  (async () => {
+    const response = await fetch(
+      `/api/section-images?section=${section.date}`,
+      { next: { revalidate: 10*60 } },
+    )
+    const data = await response.json()
+    return data
+  })();
+  // getFetch(
+  //   `/api/section-images?section=${section.date}`,
+  // )
+})
 
-    return (
-      <div className="grid gap-1 grid-cols-2 justify-items-center">
+export default function SectionImageList({ section, width }) {
+  const images = use(imagesFetch[section])
+
+  return (
+    <div className="flex justify-center">
+      <div
+        className={`grid gap-1 grid-cols-${
+          images.length < 2 ? '1' : '2'
+        } justify-items-center`}
+        style={{ width: width }}
+      >
         {images.map((image) => (
-          // <div key={image._id}>
-          // <CldImage
-          //     width="960"
-          //     height="600"
-          //     src={image.path}
-          //     sizes="100vw"
-          //     alt="Description of my image"
-          // />
-          // <p>{image.title}</p>
-          // <p>{image.username}</p>
-          // <p>{image.createdAt}</p>
-          // </div>
-          <SectionImage key={image._id} image={image} />
+          <SectionImage
+            key={image._id}
+            image={image}
+            style={{ with: `calc(${width} / 2)` }}
+          />
         ))}
       </div>
-    )
+    </div>
+  )
 }

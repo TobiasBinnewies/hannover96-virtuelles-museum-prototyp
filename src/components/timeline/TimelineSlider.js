@@ -69,7 +69,11 @@ export default function TimelineSlider(props) {
         )
 
         listElement.classList.toggle(
-          'highlighted',
+          'light-effect',
+          Math.round(currentIndex) === index,
+        )
+        listElement.classList.toggle(
+          'light-effect-color',
           Math.round(currentIndex) === index,
         )
       })

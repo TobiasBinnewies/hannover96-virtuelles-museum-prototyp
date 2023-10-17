@@ -25,17 +25,17 @@ export default function Login() {
 
   const submit = async (e) => {
     e.preventDefault()
-    setAlertMessage(null)
-    if (!username.isValid || username.value.trim() === '') {
-      setUsername((prev) => ({ ...prev, isValid: false, notSet: false }))
-    }
-    if (!password.isValid || password.value.trim() === '') {
-      setPassword((prev) => ({ ...prev, isValid: false, notSet: false }))
-    }
-    if (!username.isValid || !password.isValid) {
-      setAlertMessage('Please enter valid username and password')
-      return
-    }
+    // setAlertMessage(null)
+    // if (!username.isValid || username.value.trim() === '') {
+    //   setUsername((prev) => ({ ...prev, isValid: false, notSet: false }))
+    // }
+    // if (!password.isValid || password.value.trim() === '') {
+    //   setPassword((prev) => ({ ...prev, isValid: false, notSet: false }))
+    // }
+    // if (!username.isValid || !password.isValid) {
+    //   setAlertMessage('Please enter valid username and password')
+    //   return
+    // }
 
     try {
       await login(username.value, password.value, router)
@@ -115,7 +115,7 @@ export default function Login() {
               </button>
             </div>
             <div className={styles.register}>
-              <a style={{ color: '#009D3A' }} class="text-sm">
+              <a style={{ color: '#009D3A' }} className="text-sm">
                 Keinen Zugang? Jetzt registrieren!
               </a>
             </div>
