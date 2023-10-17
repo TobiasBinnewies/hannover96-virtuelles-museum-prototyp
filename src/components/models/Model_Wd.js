@@ -21,7 +21,7 @@ function Wd() {
 export default function Model_Wd() {
 
   return (
-    <div className={'absolute right-0 w-[20%] h-screen bg-opacity-0  z-20'}>
+    <div className={'relative right-0 w-[20%] h-screen bg-opacity-0  z-20'}>
       <Canvas camera={{ position: [-0.5, 1, 2] }} shadows>
         {/* AmbientLight und Spotlight notwendig, damit bei allen Objekten die Farben zu sehen sind. Ggf. je Objekt anpassen */}
         <ambientLight intensity={1} />
