@@ -6,7 +6,7 @@ import { useEffect } from 'react'
 
 const fetchSession = async () => {
   const response = await fetch(
-    process.env.NEXT_PUBLIC_VERCEL_URL + '/api/secure/session',
+    process.env.NEXT_PUBLIC_URL + '/api/secure/session',
     {
       next: { revalidate: 0 },
     },

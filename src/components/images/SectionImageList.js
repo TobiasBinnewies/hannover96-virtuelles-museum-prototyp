@@ -8,14 +8,15 @@ import content from '../utils/section.content'
 // Fetching images for all sections
 const imagesFetch = {
   all: getFetch(
-    process.env.NEXT_PUBLIC_VERCEL_URL + '/api/section-images?section=all',
+    process.env.NEXT_PUBLIC_URL + 'test/api/section-images?section=all',
   ),
 }
 content.sections.forEach((section) => {
+  console.log(process.env.NEXT_PUBLIC_URL)
   imagesFetch[section.date] = 
   (async () => {
     const response = await fetch(
-      process.env.NEXT_PUBLIC_VERCEL_URL +
+      process.env.NEXT_PUBLIC_URL +
         `/api/section-images?section=${section.date}`,
       { next: { revalidate: 10 * 60 } },
     )
