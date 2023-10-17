@@ -1,11 +1,11 @@
 #timeline-slider {
-  background: url('https://clipart-library.com/image_gallery2/Football.png');
+  background: url('/ball.png');
   background-size: contain;
   right: calc(100% - 180px);
 }
 
 #timeline-slider-mobile {
-  background: url('https://images-na.ssl-images-amazon.com/images/I/71PjAjKu64L._AC_SX679_.jpg');
+  background: url('/mobile_ball.jpg');
   background-size: contain;
 }
 
@@ -38,7 +38,7 @@
 }
 
 #timeline-footer {
-  background: url('https://clipart-library.com/images_k/grass-clipart-transparent/grass-clipart-transparent-4.png');
+  background: url('/grass.png');
   background-repeat: repeat;
 }
 
