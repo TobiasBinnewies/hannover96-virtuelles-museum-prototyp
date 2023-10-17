@@ -84,17 +84,18 @@ export default function TimelineSlider(props) {
 
     const scrollableDivs = document.querySelectorAll('.enable-scrolling')
 
+    const handleWheel = (event) => {
+      event.stopPropagation()
+    }
     scrollableDivs.forEach((scrollableDiv) => {
-      scrollableDiv.addEventListener('wheel', function (event) {
-        event.stopPropagation()
-      })
+      scrollableDiv.addEventListener('wheel', handleWheel)
     })
 
     return () => {
-      sectionList.removeEventListener('scroll')
+      sectionList.removeEventListener('scroll', handleScroll)
 
       scrollableDivs.forEach((scrollableDiv) => {
-        scrollableDiv.removeEventListener('wheel')
+        scrollableDiv.removeEventListener('wheel', handleWheel)
       })
     }
   }, [])
