@@ -9,7 +9,6 @@ export default function TimelineSlider(props) {
   const { sections } = props
 
   useEffect(() => {
-    const screenHeight = window.innerHeight
     const sectionList = document.getElementById('section-list')
     const timelineSlider = document.getElementById('timeline-slider')
     const timelineSliderMobile = document.getElementById(
@@ -24,6 +23,7 @@ export default function TimelineSlider(props) {
     }
 
     function handleScroll() {
+      const screenHeight = window.innerHeight
       const scrollY = sectionList.scrollHeight - sectionList.clientHeight
       const scrollPercentage = (sectionList.scrollTop / scrollY) * 100
       const scrollPercentage36 = scrollPercentage * 3.6
