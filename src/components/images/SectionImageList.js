@@ -1,19 +1,23 @@
 'use client'
 
-import { useEffect, useState } from 'react'
 import SectionImage from './SectionImage'
 import { getFetch } from '@/services/frontend/fetch'
 import { use } from 'react'
 import content from '../utils/section.content'
 
 // Fetching images for all sections
-const imagesFetch = { all: getFetch('/api/section-images?section=all') }
+const imagesFetch = {
+  all: getFetch(
+    process.env.NEXT_PUBLIC_VERCEL_URL + '/api/section-images?section=all',
+  ),
+}
 content.sections.forEach((section) => {
   imagesFetch[section.date] = 
   (async () => {
     const response = await fetch(
-      `/api/section-images?section=${section.date}`,
-      { next: { revalidate: 10*60 } },
+      process.env.NEXT_PUBLIC_VERCEL_URL +
+        `/api/section-images?section=${section.date}`,
+      { next: { revalidate: 10 * 60 } },
     )
     const data = await response.json()
     return data

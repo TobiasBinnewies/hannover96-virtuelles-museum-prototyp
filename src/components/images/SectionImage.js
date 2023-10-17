@@ -1,6 +1,6 @@
 import { CldImage, getCldImageUrl } from 'next-cloudinary'
 import Image from 'next/image'
-import demo_one_img from './H96.jpeg'
+// import demo_one_img from './H96.jpeg'
 import { useEffect, useState } from 'react'
 
 export default function SectionImage({ image }) {

@@ -142,7 +142,7 @@ export default function TimelineSlider(props) {
               >
                 <Link href={'#' + section.date.slice(-4)}>
                   <div id="styles" className="relative inline-block group">
-                    <span class="absolute w-0 -bottom-1 h-0.5 bg-black group-hover:w-full transition-all duration-200"></span>
+                    <span className="absolute w-0 -bottom-1 h-0.5 bg-black group-hover:w-full transition-all duration-200"></span>
                     {section.date.slice(-4)}
                   </div>
                 </Link>

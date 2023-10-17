@@ -3,12 +3,14 @@ import { use } from 'react'
 import { useCookies } from 'react-cookie'
 import { useState } from 'react'
 import { useEffect } from 'react'
-import next from 'next'
 
 const fetchSession = async () => {
-  const response = await fetch('/api/secure/session', {
-    next: { revalidate: 0 },
-  })
+  const response = await fetch(
+    process.env.NEXT_PUBLIC_VERCEL_URL + '/api/secure/session',
+    {
+      next: { revalidate: 0 },
+    },
+  )
   const data = await response.json()
   return data
 }
