@@ -1,6 +1,7 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import Navbar from '@components/navbar/Navbar'
+import Image from 'next/image'
 
 const font = Inter({ subsets: ['latin'] })
 
@@ -12,8 +13,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      
       <body className={font.className}>
-        <Navbar />
+        <Navbar
+          buttons={[{ title: 'Timeline', destination:"/profile",  icon: 'reel-svgrepo-com.svg'}, 
+                    { title: 'Images' , destination:"/section-images", icon: 'gallery-send-svgrepo-com.svg'}, 
+                    { title: 'Matterport' , destination:"Link", icon: 'monitor-camera-svgrepo-com.svg'}
+                  ]}
+        />
         {children}
       </body>
     </html>
