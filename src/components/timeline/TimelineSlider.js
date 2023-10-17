@@ -68,12 +68,24 @@ export default function TimelineSlider(props) {
           `-${offset}%`,
         )
 
-        listElement.classList.toggle(
+        listElement.children[0].children[0].classList.toggle(
+          'highlighted',
+          Math.round(currentIndex) === index,
+        )
+        listElement.children[0].children[0].classList.toggle(
           'light-effect',
           Math.round(currentIndex) === index,
         )
-        listElement.classList.toggle(
+        listElement.children[0].children[0].classList.toggle(
           'light-effect-color',
+          Math.round(currentIndex) === index,
+        )
+        listElement.children[0].children[0].children[0].classList.toggle(
+          'light-effect',
+          Math.round(currentIndex) === index,
+        )
+        listElement.children[0].children[0].children[0].classList.toggle(
+          'light-effect-background',
           Math.round(currentIndex) === index,
         )
       })
@@ -128,12 +140,11 @@ export default function TimelineSlider(props) {
                 key={index}
                 className="pointer-events-auto fixed -z-50 top-[50vh] text-center text-primary-text flex justify-center items-center"
               >
-                <Link
-                  href={'#' + section.date.slice(-4)}
-                  className="relative inline-block group"
-                >
-                  <span class="absolute w-0 -bottom-1 h-0.5 bg-h96-green group-hover:w-full transition-all duration-200"></span>
-                  {section.date.slice(-4)}
+                <Link href={'#' + section.date.slice(-4)}>
+                  <div id="styles" className="relative inline-block group">
+                    <span class="absolute w-0 -bottom-1 h-0.5 bg-black group-hover:w-full transition-all duration-200"></span>
+                    {section.date.slice(-4)}
+                  </div>
                 </Link>
               </li>
             ))}
