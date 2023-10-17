@@ -1,38 +1,37 @@
 import { useRouter } from 'next/navigation'
-import { useState, useEffect } from 'react'
+import { use } from 'react'
 import { useCookies } from 'react-cookie'
+import { useState } from 'react'
+import { useEffect } from 'react'
+import next from 'next'
+
+const fetchSession = async () => {
+  const response = await fetch('/api/secure/session', {
+    next: { revalidate: 0 },
+  })
+  const data = await response.json()
+  return data
+}
+
+const getSession = fetchSession()
 
 export function useSession({ redirect } = { redirect: true }) {
   const [cookies, setCookie, removeCookie] = useCookies(['session-token'])
-  const [session, setSession] = useState(undefined)
   const router = useRouter()
+  const data = use(getSession)
+  const [session, setSession] = useState(data.session)
   useEffect(() => {
-    fetch('/api/secure/session')
-      .then((res) => {
-        if (res.status === 401) {
-          if (redirect) {
-            router.push('/signin')
-          }
-          return { message: 'Unauthorized' }
-        }
-        if (res.status !== 200) {
-          return { message: 'Unauthorized' }
-        }
-        return res.json()
-      })
-      .then((data) => {
-        if (data.message === 'Unauthorized') {
-          setSession(undefined)
-          return
-        }
-        setSession(data.session)
-      })
-  }, [cookies])
+    fetchSession().then((data) => {
+      setSession(data.session)
+    })
+  }, [cookies['session-token']])
   return {
-    session,
+    session: session,
     logout: () => {
       removeCookie('session-token')
+      // setSession(undefined)
       router.push('/signin')
+      router.refresh()
     },
   }
 }

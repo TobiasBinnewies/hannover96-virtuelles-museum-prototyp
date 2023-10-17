@@ -4,37 +4,40 @@ import { useSession } from '@/services/frontend/session'
 import { useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { LoaderUtils } from 'three'
+
+const setMouseXY = (e, card) => {
+  const rect = card.getBoundingClientRect(),
+    x = e.clientX - rect.left,
+    y = e.clientY - rect.top
+
+  card.style.setProperty('--mouse-x', x + 'px')
+  card.style.setProperty('--mouse-y', y + 'px')
+}
+const onMouseMove = (e) => {
+  for (const card of document.getElementsByClassName('light-effect')) {
+    setMouseXY(e, card)
+  }
+}
 
 export default function Navbar() {
   const { session, logout } = useSession({ redirect: false })
 
   useEffect(() => {
-    document.getElementById('navbar').onmousemove = (e) => {
+    const navbar = document.getElementById('navbar')
+    navbar.addEventListener('mousemove', (e) => {
       onMouseMove(e)
-    }
-    const setMouseXY = (e, card) => {
-      const rect = card.getBoundingClientRect(),
-        x = e.clientX - rect.left,
-        y = e.clientY - rect.top
-
-      card.style.setProperty('--mouse-x', x + 'px')
-      card.style.setProperty('--mouse-y', y + 'px')
-    }
-    const onMouseMove = (e) => {
-      for (const card of document.getElementsByClassName(
-        'light-effect-background',
-      )) {
-        setMouseXY(e, card)
-      }
-    }
+    })
     return () => {
-      document.getElementById('navbar').onmousemove = null
+      navbar.removeEventListener('mousemove', (e) => {
+        onMouseMove(e)
+      })
     }
   }, [])
   return (
-    <main id='navbar'>
+    <main id="navbar">
       <header>
-        <div className="absolute z-[60] left-0 top-0 w-screen light-effect-background">
+        <div className="absolute z-[60] left-0 top-0 w-screen light-effect light-effect-background-lg">
           <div
             className="bg-black h-8"
             style={{ width: '100%', height: '64px' }}

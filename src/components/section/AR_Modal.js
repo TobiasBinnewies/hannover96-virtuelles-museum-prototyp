@@ -35,10 +35,10 @@ export default function AR_Modal(props) {
       <button
         onClick={() => setIsOpen(true)}
         className={
-          'text-2xl text-emerald-500 font-normal light-effect group relative'
+          'text-2xl text-emerald-500 font-normal light-effect light-effect-color group relative'
         }
       >
-        <span class="absolute w-0 -bottom-1 h-0.5 light-effect-background group-hover:w-full transition-all duration-200"></span>
+        <span className="absolute w-0 -bottom-1 h-0.5 light-effect light-effect-background group-hover:w-full transition-all duration-200"></span>
         {'In 3D ansehen'}
       </button>
 

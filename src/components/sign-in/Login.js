@@ -76,11 +76,11 @@ export default function Login() {
               <div>
                 <label
                   for="email"
-                  class="block text-sm font-medium leading-6 text-primary-text"
+                  className="block text-sm font-medium leading-6 text-primary-text"
                 >
                   Email Adresse
                 </label>
-                <div class="mt-2">
+                <div className="mt-2">
                   <input
                     id="email"
                     name="email"
@@ -88,28 +88,28 @@ export default function Login() {
                     autocomplete="email"
                     required
                     onChange={(e) => setUsername({ value: e.target.value })}
-                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6 px-3"
+                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6 px-3"
                   />
                 </div>
               </div>
               <div>
-                <div class="flex items-center justify-between pt-4">
+                <div className="flex items-center justify-between pt-4">
                   <label
                     for="password"
-                    class="block text-sm font-medium leading-6 text-primary-text"
+                    className="block text-sm font-medium leading-6 text-primary-text"
                   >
                     Passwort
                   </label>
-                  <div class="text-sm">
+                  <div className="text-sm">
                     <a
                       href="#"
-                      class="font-semibold text-highlight-text hover:text-heading-text"
+                      className="font-semibold text-highlight-text hover:text-heading-text"
                     >
                       Passwort vergessen?
                     </a>
                   </div>
                 </div>
-                <div class="mt-2">
+                <div className="mt-2">
                   <input
                     id="password"
                     name="password"
@@ -117,7 +117,7 @@ export default function Login() {
                     autocomplete="current-password"
                     required
                     onChange={(e) => setPassword({ value: e.target.value })}
-                    class="block w-full rounded-md border-0 py-1.5 text-primary-text shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-secondary-text focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6 px-3"
+                    className="block w-full rounded-md border-0 py-1.5 text-primary-text shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-secondary-text focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6 px-3"
                   />
                 </div>
               </div>
@@ -139,7 +139,7 @@ export default function Login() {
               </button>
             </div>
             <div className={styles.register}>
-              <a style={{ color: '#009D3A' }} class="text-sm">
+              <a style={{ color: '#009D3A' }} className="text-sm">
                 Keinen Zugang? Jetzt registrieren!
               </a>
             </div>

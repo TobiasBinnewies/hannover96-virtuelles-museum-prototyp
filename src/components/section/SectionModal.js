@@ -8,6 +8,7 @@ import styles from './SectionModel.module.css'
 import SectionImageList from '../images/SectionImageList'
 import UploadSectionImage from '../images/UploadSectionImage'
 import { useSession } from '@/services/frontend/session'
+import { useRouter } from 'next/navigation'
 
 const customStyles = {
   overlay: {
@@ -24,8 +25,11 @@ const customStyles = {
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
     maxHeight: '80vh',
-    border: '2px solid #000',
-    borderRadius: '10px',
+    // border: '2px solid #000',
+    border: 'none',
+    borderRadius: '1.5em',
+    padding: '1rem',
+    paddingTop: '0',
   },
 }
 
@@ -47,7 +51,8 @@ const buttonDivStyle = {
   height: '100%',
 }
 
-export default function SectionModal({obj: section, session}) {
+export default function SectionModal({ obj: section, session }) {
+  const router = useRouter()
   const [isOpen, setIsOpen] = useState(false)
   const [isUploadOpen, setIdUploadOpen] = useState(false)
 
@@ -57,11 +62,29 @@ export default function SectionModal({obj: section, session}) {
       onRequestClose={() => setIsOpen(false)}
       style={customStyles}
     >
-      <div className={'flex justify-between'}>
-        {session ? getButton(() => setIdUploadOpen(true), 'upload_button') : <div/>}
-        {getButton(() => setIsOpen(false), 'close_button')}
+      {/* <div className=""> */}
+      <div
+        className="sticky top-0 bg-white pt-[1rem] pb-[1rem]"
+        style={{ zIndex: '999' }}
+      >
+        <div
+          className={'flex justify-between align-bottom'}
+          style={{ alignItems: 'self-end' }}
+        >
+          {getButton(
+            () => setIdUploadOpen(true),
+            'Upload Image',
+            'blue',
+            'upload_button',
+            !session,
+            () => router.push('/signin'),
+          )}
+          <SectionTitle title={section.title} size="3xl" className="pb-3" />
+          {getButton(() => setIsOpen(false), 'Close', 'red', 'close_button')}
+        </div>
       </div>
-      <SectionTitle title={section.title} size="3xl" />
+      {/* </div> */}
+
       <h1 className={'text-primary-text font-sans font-normal'}>
         {section.content}
       </h1>
@@ -73,7 +96,11 @@ export default function SectionModal({obj: section, session}) {
           subtitle={section.date}
         />
       ))}
-      <SectionImageList section={section.date} width='100%' />
+      <SectionImageList
+        section={section.date}
+        width="100%"
+        style={{ zIndex: '-5' }}
+      />
     </Modal>
   )
 
@@ -81,10 +108,18 @@ export default function SectionModal({obj: section, session}) {
     <Modal
       isOpen={isUploadOpen}
       onRequestClose={() => setIdUploadOpen(false)}
-      style={{...customStyles, content: {...customStyles.content, width: '30%'}}}
+      style={{
+        ...customStyles,
+        content: { ...customStyles.content, width: '30%' },
+      }}
     >
-      <div className={'flex justify-end'}>
-        {getButton(() => setIdUploadOpen(false), 'close_button')}
+      <div className={'flex justify-end fix'}>
+        {getButton(
+          () => setIdUploadOpen(false),
+          'Close',
+          'red',
+          'close_button',
+        )}
       </div>
       <UploadSectionImage section={section.date} />
     </Modal>
@@ -95,10 +130,10 @@ export default function SectionModal({obj: section, session}) {
       <button
         onClick={() => setIsOpen(true)}
         className={
-          'text-2xl text-highlight-text font-normal light-effect group relative'
+          'text-2xl text-highlight-text font-normal light-effect light-effect-color group relative'
         }
       >
-        <span class="absolute w-0 -bottom-1 h-0.5 light-effect-background group-hover:w-full transition-all duration-200"></span>
+        <span className="absolute w-0 -bottom-1 h-0.5 light-effect light-effect-background group-hover:w-full transition-all duration-200"></span>
         <u>{content.modalButtonRead}</u>
       </button>
       {modal}
@@ -107,10 +142,29 @@ export default function SectionModal({obj: section, session}) {
   )
 }
 
-function getButton(handler, style) {
+function getButton(
+  handler,
+  text,
+  color,
+  style,
+  disabled = false,
+  disabledHandler,
+) {
   return (
-    <button onClick={handler} className={styles[style]}>
-      <div></div>
+    <button
+      className={`flex rounded-lg p-1`}
+      style={{
+        alignItems: 'center',
+        opacity: disabled ? 0.5 : 1,
+        backgroundColor: color,
+      }}
+      onClick={disabled ? disabledHandler : handler}
+      disabled={disabled && !disabledHandler}
+    >
+      <div className={styles[style]} style={{ backgroundColor: color }}>
+        <div style={{ backgroundColor: 'white' }}></div>
+      </div>
+      <p className="text-white font-sans font-normal">{text}</p>
     </button>
   )
 }

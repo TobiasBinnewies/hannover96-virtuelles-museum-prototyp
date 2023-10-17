@@ -15,8 +15,8 @@ export default function Profile() {
       <br />
       <br />
       <br />
-      <UploadSectionImage section={1} />
-      <SectionImageList section={1} />
+      {/* <UploadSectionImage section={'all'} /> */}
+      <SectionImageList section={'all'} />
     </div>
   )
 }

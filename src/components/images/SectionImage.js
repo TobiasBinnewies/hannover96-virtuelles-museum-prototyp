@@ -54,6 +54,7 @@ export default function SectionImage({ image }) {
                 objectFit: 'contain',
               }}
               layout="fill"
+              sizes='100vw'
             />
           )}
         </div>

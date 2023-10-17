@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 
 export default function useExternalScripts({ url }){
+  if (!url) return;
   useEffect(() => {
     const head = document.querySelector("head");
     const script = document.createElement("script");

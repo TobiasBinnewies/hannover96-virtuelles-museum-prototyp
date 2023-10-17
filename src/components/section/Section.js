@@ -12,7 +12,7 @@ export default function Section({obj: section, session, model, arlink}) {
     <div className={'h-screen flex justify-center childElement'}>
       <div className={'w-[50%] z-30 mt-auto mb-auto ml-[20vw]'}>
         <SectionSubtitle text={section.date} />
-        <SectionTitle title={section.title} />
+        <SectionTitle title={section.title} className="pb-3" />
         <SectionText text={section.description || section.content} />
         <SectionModal session={session} obj={section} />
         {arlink != null ? <AR_Modal arlink={arlink} /> : <div />}
