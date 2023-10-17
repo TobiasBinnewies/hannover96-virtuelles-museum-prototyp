@@ -85,7 +85,15 @@ export default function TimelineSlider(props) {
         event.stopPropagation()
       })
     })
-  })
+
+    return () => {
+      sectionList.removeEventListener('scroll')
+
+      scrollableDivs.forEach((scrollableDiv) => {
+        scrollableDiv.removeEventListener('wheel')
+      })
+    }
+  }, [])
 
   return (
     <div id="timeline" className="fixed">
