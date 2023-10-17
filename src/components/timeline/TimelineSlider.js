@@ -3,12 +3,12 @@
 import { list } from 'postcss'
 import styles from './timelineSlider.modular.css'
 import { useEffect } from 'react'
+import Link from 'next/link'
 
 export default function TimelineSlider(props) {
   const { sections } = props
 
   useEffect(() => {
-    const screenHeight = window.innerHeight
     const sectionList = document.getElementById('section-list')
     const timelineSlider = document.getElementById('timeline-slider')
     const timelineSliderMobile = document.getElementById(
@@ -23,10 +23,10 @@ export default function TimelineSlider(props) {
     }
 
     function handleScroll() {
+      const screenHeight = window.innerHeight
       const scrollY = sectionList.scrollHeight - sectionList.clientHeight
       const scrollPercentage = (sectionList.scrollTop / scrollY) * 100
       const scrollPercentage36 = scrollPercentage * 3.6
-      const scrollPercentage300 = scrollPercentage * 300
 
       setTransform(timelineSlider, 'rotate', `${scrollPercentage36}deg`)
       setTransform(
@@ -43,6 +43,12 @@ export default function TimelineSlider(props) {
       timelineListElements.forEach((listElement, index) => {
         const listElementTextOffset = (listElement.offsetHeight / 2 - 3) * -1
         const offsetY = Math.min(Math.max(index - currentIndex, -5), 5) * 10
+
+        setTransform(
+          listElement,
+          `translateY(${offsetY}vh) translateY`,
+          `${listElementTextOffset}px`,
+        )
 
         const verticalPosition = Math.min(
           Math.abs(
@@ -70,6 +76,7 @@ export default function TimelineSlider(props) {
     }
 
     sectionList.addEventListener('scroll', handleScroll)
+    handleScroll()
 
     const scrollableDivs = document.querySelectorAll('.enable-scrolling')
 
@@ -78,7 +85,15 @@ export default function TimelineSlider(props) {
         event.stopPropagation()
       })
     })
-  })
+
+    return () => {
+      sectionList.removeEventListener('scroll')
+
+      scrollableDivs.forEach((scrollableDiv) => {
+        scrollableDiv.removeEventListener('wheel')
+      })
+    }
+  }, [])
 
   return (
     <div id="timeline" className="fixed">
@@ -101,14 +116,20 @@ export default function TimelineSlider(props) {
         >
           <ol
             id="timeline-list"
-            className="enable-scrolling relative -z-50 h-screen w-full flex flex-col justify-between items-end list-none text-2xl"
+            className="relative -z-50 h-screen w-full flex flex-col justify-between items-end list-none text-2xl"
           >
             {sections.map((section, index) => (
               <li
                 key={index}
                 className="pointer-events-auto fixed -z-50 top-[50vh] text-center text-primary-text flex justify-center items-center"
               >
-                {section.date.slice(-4)}
+                <Link
+                  href={'#' + section.date.slice(-4)}
+                  className="relative inline-block group"
+                >
+                  <span class="absolute w-0 -bottom-1 h-0.5 bg-h96-green group-hover:w-full transition-all duration-200"></span>
+                  {section.date.slice(-4)}
+                </Link>
               </li>
             ))}
           </ol>
