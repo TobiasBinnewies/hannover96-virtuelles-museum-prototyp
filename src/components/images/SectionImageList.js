@@ -34,15 +34,16 @@ import { getImages } from '@/services/backend/section-images'
 //   // )
 // })
 
-export default function SectionImageList({ section, width, images }) {
-
+export default function SectionImageList({ section, width, images: imagesAll }) {
+  const images = imagesAll.filter((image) => section === 'all' ? true : image.section === section)
   return (
     <div className="flex justify-center">
       <div
-        className={`grid gap-1 grid-cols-${
-          images.length < 2 ? '1' : '2'
-        } justify-items-center`}
-        style={{ width: width }}
+        className={`grid gap-1 justify-items-center`}
+        style={{
+          width: width,
+          gridTemplateColumns: `repeat(${images.length < 2 ? '1' : '2'}, minmax(0, 1fr))`,
+        }}
       >
         {images.map((image) => (
           <SectionImage
