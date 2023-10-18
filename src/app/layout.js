@@ -28,7 +28,7 @@ export default async function RootLayout(props) {
           buttons={[
             {
               title: 'Timeline',
-              destination: '/profile',
+              destination: '/',
               icon: 'reel-svgrepo-com.svg',
             },
             {
@@ -38,7 +38,7 @@ export default async function RootLayout(props) {
             },
             {
               title: 'Matterport',
-              destination: 'Link',
+              destination: 'https://my.mpskin.com/de/tour/rh179agyah',
               icon: 'monitor-camera-svgrepo-com.svg',
             },
           ]}
