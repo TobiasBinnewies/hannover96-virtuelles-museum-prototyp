@@ -30,20 +30,20 @@ export default function Navbar({ buttons, session }) {
             <div className="flex items-center justify-start mt-[-50px]">
               {buttons.map((button, index) => (
                 <div key={index} className="flex items-center ml-4">
-                  <div className="bg-white rounded-lg p-4">
-                    <div className="flex items-center">
-                      <div className="flex flex-col">
-                        <div className="text-primary-text font-semibold text-sm flex items-center">
-                          <Link href={button.destination}>
+                  <Link href={button.destination}>
+                    <div className="bg-white rounded-lg p-4">
+                      <div className="flex items-center">
+                        <div className="flex flex-col">
+                          <div className="text-primary-text font-semibold text-sm flex items-center">
                             <div className="flex items-center">
                               <Image src={button.icon} width={20} height={20} />
                               <div className="ml-2">{button.title}</div>
                             </div>
-                          </Link>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 </div>
               ))}
             </div>
