@@ -51,7 +51,7 @@ const buttonDivStyle = {
   height: '100%',
 }
 
-export default function SectionModal({ obj: section, session }) {
+export default function SectionModal({ obj: section, session, images }) {
   const router = useRouter()
   const [isOpen, setIsOpen] = useState(false)
   const [isUploadOpen, setIdUploadOpen] = useState(false)
@@ -100,6 +100,7 @@ export default function SectionModal({ obj: section, session }) {
         section={section.date}
         width="100%"
         style={{ zIndex: '-5' }}
+        images={images}
       />
     </Modal>
   )

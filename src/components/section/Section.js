@@ -7,7 +7,7 @@ import AR_Modal from '@components/section/AR_Modal'
 // import Image from '@/components/section/Image'
 import Image from 'next/image'
 
-export default function Section({obj: section, session, model, arlink}) {
+export default function Section({obj: section, session, model, arlink, images}) {
   return (
     <div
       id={section.date.slice(-4)}
@@ -17,7 +17,7 @@ export default function Section({obj: section, session, model, arlink}) {
         <SectionSubtitle text={section.date} />
         <SectionTitle title={section.title} padding='6px' />
         <SectionText text={section.description || section.content} />
-        <SectionModal session={session} obj={section} />
+        <SectionModal session={session} obj={section} images={images} />
         {arlink != null ? <AR_Modal arlink={arlink} /> : <div />}
       </div>
       {model}

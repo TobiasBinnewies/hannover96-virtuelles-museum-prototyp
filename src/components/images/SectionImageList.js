@@ -1,35 +1,40 @@
 'use client'
 
 import SectionImage from './SectionImage'
-import { getFetch } from '@/services/frontend/fetch'
+// import { getFetch } from '@/services/frontend/fetch'
 import { use } from 'react'
 import content from '../utils/section.content'
+import { getImages } from '@/services/backend/section-images'
+// import { getImages } from '@/services/backend/section-images'
 
 // Fetching images for all sections
-const imagesFetch = {
-  all: getFetch(
-    process.env.NEXT_PUBLIC_URL + 'api/section-images?section=all',
-  ),
-}
-content.sections.forEach((section) => {
-  console.log(process.env.NEXT_PUBLIC_URL)
-  imagesFetch[section.date] = 
-  (async () => {
-    const response = await fetch(
-      process.env.NEXT_PUBLIC_URL +
-        `/api/section-images?section=${section.date}`,
-      { next: { revalidate: 10 * 60 } },
-    )
-    const data = await response.json()
-    return data
-  })();
+// const imagesFetch = getImages('all')
+//   all: 
+  
   // getFetch(
-  //   `/api/section-images?section=${section.date}`,
+  //   // process.env.NEXT_PUBLIC_URL + 
+  //   'api/section-images?section=all',
   // )
-})
 
-export default function SectionImageList({ section, width }) {
-  const images = use(imagesFetch[section])
+// content.sections.forEach((section) => {
+//   // console.log(process.env.NEXT_PUBLIC_URL)
+//   imagesFetch[section.date] = 
+//   getImages(section.date)
+//   // (async () => {
+//   //   const response = await fetch(
+//   //     process.env.NEXT_PUBLIC_URL +
+//   //       `/api/section-images?section=${section.date}`,
+//   //     { next: { revalidate: 10 * 60 } },
+//   //   )
+//   //   const data = await response.json()
+//   //   return data
+//   // })();
+//   // getFetch(
+//   //   `/api/section-images?section=${section.date}`,
+//   // )
+// })
+
+export default function SectionImageList({ section, width, images }) {
 
   return (
     <div className="flex justify-center">

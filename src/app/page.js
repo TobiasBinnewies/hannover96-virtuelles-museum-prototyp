@@ -20,7 +20,8 @@ const onMouseMove = (e) => {
   }
 }
 
-export default function Home() {
+export default function Home({params}) {
+  const {session, images} = params
   useExternalScripts('https://ar.scanblue.cloud/assets/scanblue.3.js')
 
   useEffect(() => {
@@ -41,7 +42,7 @@ export default function Home() {
       style={{ overflow: 'hidden' }}
     >
       <TimelineSlider sections={content.sections} />
-      <SectionList />
+      <SectionList images={images} session={session}/>
     </div>
   )
 }

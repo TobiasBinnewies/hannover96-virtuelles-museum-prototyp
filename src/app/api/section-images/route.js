@@ -1,6 +1,7 @@
 import apiHandler from '@/services/backend/api/api-helper'
 import { NextResponse } from 'next/server'
-import { aggregateDB } from '@/services/backend/db'
+import { getImages } from '@/services/backend/section-images'
+// import { aggregateDB } from '@/services/backend/db' 
 
 export async function GET(req) {
   return apiHandler(handler)(req)
@@ -13,33 +14,34 @@ async function handler(req) {
     )
   }
   const section = req.nextUrl.searchParams.get('section')
-  const data = await aggregateDB(process.env.SECTION_IMAGE_FOLDER, [
-    section === 'all'
-      ? { $match: { _id: { $exists: true } } }
-      : { $match: { section } },
-    {
-      $lookup: {
-        from: 'user',
-        localField: 'userId',
-        foreignField: '_id',
-        as: 'user',
-      },
-    },
-    { $unwind: '$user' },
-    {
-      $project: {
-        createdAt: 1,
-        title: 1,
-        section: 1,
-        username: '$user.username',
-      },
-    },
-  ])
-  const result = data.map((item) => {
-    return {
-      ...item,
-      path: `${process.env.SECTION_IMAGE_FOLDER}/${item._id}`,
-    }
-  })
+  const result = await getImages(section)
+  // const data = await aggregateDB(process.env.SECTION_IMAGE_FOLDER, [
+  //   section === 'all'
+  //     ? { $match: { _id: { $exists: true } } }
+  //     : { $match: { section } },
+  //   {
+  //     $lookup: {
+  //       from: 'user',
+  //       localField: 'userId',
+  //       foreignField: '_id',
+  //       as: 'user',
+  //     },
+  //   },
+  //   { $unwind: '$user' },
+  //   {
+  //     $project: {
+  //       createdAt: 1,
+  //       title: 1,
+  //       section: 1,
+  //       username: '$user.username',
+  //     },
+  //   },
+  // ])
+  // const result = data.map((item) => {
+  //   return {
+  //     ...item,
+  //     path: `${process.env.SECTION_IMAGE_FOLDER}/${item._id}`,
+  //   }
+  // })
   return NextResponse.json(result)
 }

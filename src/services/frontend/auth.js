@@ -34,4 +34,5 @@ export async function login(username, password, router) {
         throw dataLogin.message
     }
     router.push('/profile')
+    router.refresh()
 }
