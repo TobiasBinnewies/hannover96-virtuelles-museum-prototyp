@@ -25,7 +25,7 @@ module.exports = {
       description: null,
       content:
         'Es entstand der Hannoversche Sportverein von 1896, in dem der Hannoversche FC von 1896 sich mit dem Verein BV Hannovera 1898 fusionierte.',
-      model: models.Model_Computer,
+      model: models.Model_Phone,
       arlink: null,
       images: [],
     },

@@ -6,8 +6,15 @@ import SectionModal from '@/components/section/SectionModal'
 import AR_Modal from '@components/section/AR_Modal'
 // import Image from '@/components/section/Image'
 import Image from 'next/image'
+import { Suspense } from 'react'
 
-export default function Section({obj: section, session, model, arlink, images}) {
+export default function Section({
+  obj: section,
+  session,
+  model,
+  arlink,
+  images,
+}) {
   return (
     <div
       id={section.date.slice(-4)}
@@ -15,12 +22,16 @@ export default function Section({obj: section, session, model, arlink, images}) 
     >
       <div className={'w-[50%] z-30 mt-auto mb-auto ml-[20vw]'}>
         <SectionSubtitle text={section.date} />
-        <SectionTitle title={section.title} padding='6px' />
+        <SectionTitle title={section.title} padding="6px" />
         <SectionText text={section.description || section.content} />
-        <SectionModal session={session} obj={section} images={images} />
-        {arlink != null ? <AR_Modal arlink={arlink} /> : <div />}
+        <Suspense fallback={<p>Loading Modal...</p>}>
+          <SectionModal session={session} obj={section} images={images} />
+        </Suspense>
+        <Suspense fallback={<p>Loading ARModel...</p>}>
+          {arlink != null ? <AR_Modal arlink={arlink} /> : <div />}
+        </Suspense>
       </div>
-      {model}
+      <Suspense fallback={<p>Loading ARModel...</p>}>{model}</Suspense>
     </div>
   )
 }
