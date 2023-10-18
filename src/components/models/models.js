@@ -5,10 +5,12 @@ import Model_Ball from '@components/models/Model_Ball'
 import Model_Vase from '@components/models/Model_Vase'
 import Model_Empty from '@components/models/Model_Empty'
 import Model_Phone from './Model_Phone'
+import Model_Phone_Cloudinary from './Model_Phone_Cloudinary'
 
 const models = {
   Model_Wd: <Model_Wd/>,
   Model_Phone: <Model_Phone/>,
+  Model_Phone_Cloudinary: <Model_Phone_Cloudinary/>,
   // Model_Computer: <Model_Computer/>,
   // Model_Testobjekt: <Model_Testobjekt/>,
   Model_Ball: <Model_Ball/>,

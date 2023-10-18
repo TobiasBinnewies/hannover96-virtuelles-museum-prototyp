@@ -58,7 +58,7 @@ module.exports = {
       description: null,
       content:
         'Nach dem Ersten fragte der Generalfeldmarschall Paul von Hindenburg in einem Brief das Amt als Ehrenpräsident, welches er letztlich auch eerhalten hat.',
-      model: null,
+      model: models.Model_Phone_Cloudinary,
       arlink: null,
       images: [],
     },
