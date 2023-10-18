@@ -17,9 +17,9 @@ export default function SectionImage({ image }) {
     })
   }, [url])
   return (
-    <div className="p-3" style={{width: '100%'}}>
+    <div className="p-3" style={{ width: '100%' }}>
       <div
-        className="border p-5 rounded-2xl bg-primary-bg"
+        className="border p-5 rounded-2xl bg-primary-bg h-[100%] flex flex-col justify-between"
         // style={{ width: '100%' }}
       >
         <div className="text-center">
@@ -27,36 +27,40 @@ export default function SectionImage({ image }) {
             {image.title}
           </p>
         </div>
-        <div className="relative h-96">
-          {show ? (
-            <CldImage
-              className="rounded-xl w-full h-full"
-              title="title"
-              width="900"
-              height="500"
-              src={image.path}
-              alt="Description of my image"
-              blurDataURL="/H96_Header_Logo.png"
-              placeholder="blur"
-              fit
-            />
-          ) : (
-            // <Image width="900" height="200" fit src={url} />
-            <Image
-              // width="1000"
-              // height="200"
-              src="/H96_Header_Logo.png"
-              blurDataURL="/H96_Header_Logo.png"
-              placeholder="blur"
-              alt=""
-              //   fill="responsive"
-              style={{
-                objectFit: 'contain',
-              }}
-              layout="fill"
-              sizes='100vw'
-            />
-          )}
+        <div className="relative">
+          <div className="flex justify-center items-center h-[100%]">
+            {show ? (
+              <CldImage
+                className="rounded-xl w-full h-full"
+                title={image.title}
+                width="900"
+                height="500"
+                src={image.path}
+                alt="description of image"
+                blurDataURL="/H96_Header_Logo.png"
+                placeholder="blur"
+                fit
+              />
+            ) : (
+              // <Image width="900" height="200" fit src={url} />
+              <Image
+                // width="1000"
+                // height="200"
+                src="/H96_Header_Logo.png"
+                blurDataURL="/H96_Header_Logo.png"
+                placeholder="blur"
+                alt=""
+                //   fill="responsive"
+                style={{
+                  objectFit: 'contain',
+                }}
+                // layout="fill"
+                // sizes="100vh"
+                height={200}
+                width={200}
+              />
+            )}
+          </div>
         </div>
         <div className="text-right">
           <p className="text-primary-text text-base font-sans font-normal">
