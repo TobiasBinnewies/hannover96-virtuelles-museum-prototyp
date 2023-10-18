@@ -64,17 +64,17 @@ async function handler(req) {
     createdAt: date,
   })
 
-  // cloudinary.uploader.upload(
-  //   buffer.content,
-  //   {
-  //     public_id: insertedId.toString(),
-  //     tags: process.env.SECTION_IMAGE_FOLDER,
-  //     folder: process.env.SECTION_IMAGE_FOLDER,
-  //   },
-  //   function (error, result) {
-  //     console.log(result, error)
-  //   },
-  // )
+  cloudinary.uploader.upload(
+    buffer.content,
+    {
+      public_id: insertedId.toString(),
+      tags: process.env.SECTION_IMAGE_FOLDER,
+      folder: process.env.SECTION_IMAGE_FOLDER,
+    },
+    function (error, result) {
+      console.log(result, error)
+    },
+  )
 
   return NextResponse.json({ success: true })
 }
