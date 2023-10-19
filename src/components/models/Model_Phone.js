@@ -2,10 +2,10 @@ import { Stats, OrbitControls, Circle, useGLTF } from '@react-three/drei'
 import { Canvas, useLoader } from '@react-three/fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
-function Computer() {
+function Phone() {
   const gltf = useLoader(
     GLTFLoader,
-    '/computer.glb',
+    '/iphone.glb',
   )
 
   return (
@@ -19,10 +19,10 @@ function Computer() {
     />
   )
 
-  useGLTF.preload('/computer.glb');
+  useGLTF.preload('/iphone.glb');
 }
 
-export default function Model_Computer() {
+export default function Model_Phone() {
 
   return (
     <div className={'relative right-0 w-[20%] h-screen bg-opacity-0  z-20'}>
@@ -30,7 +30,7 @@ export default function Model_Computer() {
         {/* AmbientLight und Spotlight notwendig, damit bei allen Objekten die Farben zu sehen sind. Ggf. je Objekt anpassen */}
         <ambientLight intensity={1} />
         <spotLight intensity={1} angle={0.1} penumbra={1} position={[10, 15, 10]} castShadow />
-        <Computer/>
+        <Phone/>
         {/* Mit der Min- und Max-Distance kann der Zoom an das Objekt eingestellt werden. Kleine Werte verringern die Distanz / Erhöhen den Zoom */}
         <OrbitControls target={[0, 1, 0]} minDistance={2} maxDistance={2} enableZoom={false} />
         {/* Einkommentieren, um die Achsen anzuzeigen: <axesHelper args={[5]} />*/}

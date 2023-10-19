@@ -5,6 +5,7 @@ import TimelineSlider from '@/components/timeline/TimelineSlider'
 import SectionList from '@/components/section/SectionList'
 import useExternalScripts from '@components/utils/useExternalScripts'
 import { useEffect } from 'react'
+import { Suspense } from 'react'
 
 const setMouseXY = (e, card) => {
   const rect = card.getBoundingClientRect()
@@ -20,8 +21,8 @@ const onMouseMove = (e) => {
   }
 }
 
-export default function Home({params}) {
-  const {session, images} = params
+export default function Home({ params }) {
+  const { session, images } = params
   useExternalScripts('https://ar.scanblue.cloud/assets/scanblue.3.js')
 
   useEffect(() => {
@@ -42,7 +43,9 @@ export default function Home({params}) {
       style={{ overflow: 'hidden' }}
     >
       <TimelineSlider sections={content.sections} />
-      <SectionList images={images} session={session}/>
+      <Suspense fallback={<h1>Loading Sections...</h1>}>
+        <SectionList images={images} session={session} />
+      </Suspense>
     </div>
   )
 }

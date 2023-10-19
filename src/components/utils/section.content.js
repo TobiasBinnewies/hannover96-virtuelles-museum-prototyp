@@ -25,7 +25,7 @@ module.exports = {
       description: null,
       content:
         'Es entstand der Hannoversche Sportverein von 1896, in dem der Hannoversche FC von 1896 sich mit dem Verein BV Hannovera 1898 fusionierte.',
-      model: models.Model_Computer,
+      model: models.Model_Phone,
       arlink: null,
       images: [],
     },
@@ -58,7 +58,7 @@ module.exports = {
       description: null,
       content:
         'Nach dem Ersten fragte der Generalfeldmarschall Paul von Hindenburg in einem Brief das Amt als Ehrenpräsident, welches er letztlich auch eerhalten hat.',
-      model: null,
+      model: models.Model_Phone_Cloudinary,
       arlink: null,
       images: [],
     },

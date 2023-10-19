@@ -35,7 +35,7 @@ import { getImages } from '@/services/backend/section-images'
 // })
 
 export default function SectionImageList({ section, width, images: imagesAll }) {
-  const images = imagesAll.filter((image) => section === 'all' ? true : image.section === section)
+  const images = (imagesAll || []).filter((image) => section === 'all' ? true : image.section === section)
   return (
     <div className="flex justify-center">
       <div
