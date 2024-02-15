@@ -21,7 +21,7 @@ export default async function RootLayout(props) {
   props.params.session = session
 
   return (
-    <html lang="en">
+    <html lang="de">
       <body className={font.className}>
         <Navbar
           session={session}
