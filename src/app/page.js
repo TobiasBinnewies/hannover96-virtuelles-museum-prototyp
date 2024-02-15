@@ -43,9 +43,7 @@ export default function Home({ params }) {
       style={{ overflow: 'hidden' }}
     >
       <TimelineSlider sections={content.sections} />
-      <Suspense fallback={<h1>Loading Sections...</h1>}>
-        <SectionList images={images} session={session} />
-      </Suspense>
+      <SectionList images={images} session={session} />
     </div>
   )
 }

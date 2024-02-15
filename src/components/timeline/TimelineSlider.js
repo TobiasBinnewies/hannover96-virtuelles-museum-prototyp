@@ -129,7 +129,7 @@ export default function TimelineSlider(props) {
         ></div>
         <div
           id="timeline-list-container"
-          className="enable-scrolling hidden fixed -z-50 top-0 left-0 h-screen w-[300px] xl:flex justify-end items-center"
+          className="enable-scrolling hidden fixed -z-50 top-0 left-0 h-screen w-[300px] xl:flex justify-end items-center overflow-hidden"
         >
           <ol
             id="timeline-list"
