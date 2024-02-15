@@ -2,7 +2,8 @@ import '@google/model-viewer';
 import { useEffect, useState } from 'react'
 
 export default function Model_Google_Drei() {
-  const [style, setStyle] = useState({})
+  const [style, setStyle] = useState({height: "30vh",
+    width: "30vw", margin: "auto"})
 
   const mediaQuery = window.matchMedia("(min-width: 640px)")
 

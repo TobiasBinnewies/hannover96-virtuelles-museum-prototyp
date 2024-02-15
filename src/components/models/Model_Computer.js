@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 
 export default function Model_Computer() {
-  const [style, setStyle] = useState({})
+  const [style, setStyle] = useState({height: "30vh",
+    width: "80vw", margin: "auto"})
 
   const mediaQuery = window.matchMedia("(min-width: 640px)")
 

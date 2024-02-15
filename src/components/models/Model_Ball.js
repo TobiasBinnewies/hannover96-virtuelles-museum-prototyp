@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 
 export default function Model_Ball() {
-  const [style, setStyle] = useState({})
+  const [style, setStyle] = useState({height: "20vh",
+    width: "40vw", margin: "auto"})
 
   const mediaQuery = window.matchMedia("(min-width: 640px)")
 
