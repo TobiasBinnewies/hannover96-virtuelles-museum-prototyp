@@ -4,11 +4,6 @@
   right: calc(100% - 180px);
 }
 
-#timeline-slider-mobile {
-  background: url('/mobile_ball.jpg');
-  background-size: contain;
-}
-
 #timeline-slider-indicator {
   border-left: 12px solid red;
   border-top: 10px solid transparent;
