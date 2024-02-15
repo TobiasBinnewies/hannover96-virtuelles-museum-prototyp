@@ -28,7 +28,7 @@ export default async function RootLayout(props) {
           buttons={[
             {
               title: 'Timeline',
-              destination: '/',
+              destination: '/timeline',
               icon: 'reel-svgrepo-com.svg',
             },
             {
