@@ -385,7 +385,7 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.48.0.tgz#642633964e217905436033a2bd08bf322849b7fb"
   integrity sha512-ZSjtmelB7IJfWD2Fvb7+Z+ChTIKWq6kjda95fLcQKNS5aheVHn4IkfgRQE3sIIzTcSLwLcLZUD9UBt+V7+h+Pw==
 
-"@google/model-viewer@^3.4.0":
+"@google/model-viewer@^3.2.1":
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/@google/model-viewer/-/model-viewer-3.4.0.tgz#dd3fd098b85ae5953a93f8eeef0e62434a0e7cc0"
   integrity sha512-ZGZktE+uy7CiNOSrFdR1bTZDe9nfel2h8gWiRY6D5Eit77RAzIRYnPlkdQBoLSo8nnYS0faL/Z1tKP7nntvoGg==
