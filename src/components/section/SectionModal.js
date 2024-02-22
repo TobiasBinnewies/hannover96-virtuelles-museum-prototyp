@@ -127,14 +127,14 @@ export default function SectionModal({ obj: section, session, images }) {
       <h1 className={'text-primary-text font-sans font-normal text-justify'}>
         {section.content}
       </h1>
-      {/*{section.images.map((image, idx) => (
+      {section.images.map((image, idx) => (
         <SectionImage
           key={idx}
           image={image}
           // alt={section.modalAlt}
           subtitle={section.date}
-        />‚
-      ))}*/}
+        />
+      ))}
       <SectionImageList
         section={section.date}
         width="100%"
