@@ -17,6 +17,7 @@ module.exports = {
         /* Background Colors */
         'primary-bg': '#FFFBEB',
         'secondary-bg': '#FAE5AC',
+        'homepage-bg': '#3f3f3f',
 
         /* Text Colors */
         'primary-text': '#2D2D2D',

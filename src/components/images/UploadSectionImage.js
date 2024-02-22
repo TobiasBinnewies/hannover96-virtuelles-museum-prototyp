@@ -7,6 +7,7 @@ import SectionTitle from '@/components/utils/SectionTitle'
 export default function UploadSectionImage({ section }) {
   const [file, setFile] = useState()
   const [title, setTitle] = useState({ value: '', isValid: true, notSet: true })
+  const [enabled, setEnabled] = useState(true)
 
   const onSubmit = async (e) => {
     e.preventDefault()
@@ -32,15 +33,19 @@ export default function UploadSectionImage({ section }) {
       // Handle errors here
       console.error(e)
     }
+    setEnabled(false)
   }
 
   const validateImageTitleInput = () => {
+    if (title.value.trim() === '') {
+      setTitle((prev) => ({ ...prev, isValid: false, notSet: false }))
+      return
+    }
     setTitle((prev) => ({ ...prev, isValid: true, notSet: false }))
   }
 
   return (
     <form onSubmit={onSubmit}>
-      <SectionTitle title={`Bildupload für ${section}`} size='3xl' />
       <CheckedInput
         id="imagetitle"
         type="text"
@@ -60,7 +65,14 @@ export default function UploadSectionImage({ section }) {
         onChange={(e) => setFile(e.target.files?.[0])}
       />
       <br />
-      <input type="submit" value="Upload" style={{ color: 'blue' }} />
+      <br />
+      <input
+        className="p-1 bg-[blue] rounded-lg text-white"
+        type="submit"
+        value="Upload"
+        disabled={!enabled}
+        style={{opacity: enabled ? 1 : 0.5}}
+      />
     </form>
   )
 }

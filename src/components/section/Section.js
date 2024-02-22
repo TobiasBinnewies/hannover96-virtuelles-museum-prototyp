@@ -6,21 +6,36 @@ import SectionModal from '@/components/section/SectionModal'
 import AR_Modal from '@components/section/AR_Modal'
 // import Image from '@/components/section/Image'
 import Image from 'next/image'
+import { Suspense } from 'react'
 
-export default function Section({obj: section, session, model, arlink, images}) {
+export default function Section({
+  obj: section,
+  session,
+  model,
+  arlink,
+  images,
+}) {
   return (
     <div
       id={section.date.slice(-4)}
-      className={'bg-primary-bg h-screen flex justify-center childElement'}
+      className={'bg-primary-bg h-screen sm:flex items-center childElement'}
     >
-      <div className={'w-[50%] z-30 mt-auto mb-auto ml-[20vw]'}>
+      <div className={'w-[70%] sm:w-[70%] sm:left-64 relative sm:flex top-36 sm:top-24 z-30 ml-auto mr-auto'}>
+        <div>
         <SectionSubtitle text={section.date} />
-        <SectionTitle title={section.title} padding='6px' />
+        <SectionTitle title={section.title} padding="6px" />
         <SectionText text={section.description || section.content} />
-        <SectionModal session={session} obj={section} images={images} />
-        {arlink != null ? <AR_Modal arlink={arlink} /> : <div />}
+        <Suspense fallback={<p>Loading Modal...</p>}>
+          <SectionModal session={session} obj={section} images={images} />
+        </Suspense>
+        <Suspense fallback={<p>Loading ARModel...</p>}>
+          {arlink != null ? <AR_Modal arlink={arlink} /> : <div />}
+        </Suspense>
+        </div>
+        <div className={"sm:flex right-0 sm:items-center"}>
+          <Suspense fallback={<p>Loading ARModel...</p>}>{model}</Suspense>
+        </div>
       </div>
-      {model}
     </div>
   )
 }

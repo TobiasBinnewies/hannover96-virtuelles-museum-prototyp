@@ -111,18 +111,38 @@ export default function SectionModal({ obj: section, session, images }) {
       onRequestClose={() => setIdUploadOpen(false)}
       style={{
         ...customStyles,
-        content: { ...customStyles.content, width: '30%' },
+        content: { ...customStyles.content, width: '40%' },
       }}
     >
-      <div className={'flex justify-end fix'}>
+      <div
+        className="sticky top-0 bg-white pt-[1rem] pb-[1rem]"
+        style={{ zIndex: '999' }}
+      >
+        <div
+          className={'flex justify-between align-bottom'}
+          style={{ alignItems: 'self-end' }}
+        >
+          <div></div>
+          <SectionTitle title={`Bildupload für ${section.date}`} size="3xl" />
+          {getButton(
+            () => setIdUploadOpen(false),
+            'Close',
+            'red',
+            'close_button',
+          )}
+        </div>
+      </div>
+      {/* <div className={'flex justify-end fix'}>
         {getButton(
           () => setIdUploadOpen(false),
           'Close',
           'red',
           'close_button',
         )}
+      </div> */}
+      <div className='flex justify-center'>
+        <UploadSectionImage section={section.date} />
       </div>
-      <UploadSectionImage section={section.date} />
     </Modal>
   )
 

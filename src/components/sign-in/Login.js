@@ -74,9 +74,9 @@ export default function Login() {
             </div>
             <div className={styles.cardcontent}>
               <div>
-                <label htmlFor="email" Name="block text-sm font-medium leading-6 text-black-900">Email Adresse</label>
-                <div Name="mt-2">
-                  <input id="email" name="email" type="email" autoComplete="email" required  Name="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6 px-3"
+                <label htmlFor="email" className="block text-sm font-medium leading-6 text-black-900">Email Adresse</label>
+                <div className="mt-2">
+                  <input id="email" name="email" type="email" autoComplete="email" required  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6 px-3"
                     value={username.value}
                     onChange={(e) => setUsername({ value: e.target.value, isValid: true, notSet: false })}
                     onBlur={validateUsernameInput}>
@@ -84,14 +84,14 @@ export default function Login() {
                 </div>
               </div>
               <div>
-                <div Name="flex items-center justify-between pt-4">
-                  <label htmlFor="password" Name="block text-sm font-medium leading-6 text-gray-900">Passwort</label>
-                    <div Name="text-sm">
-                      <a href="#" Name="font-semibold text-black-600 hover:text-black-500">Passwort vergessen?</a>
+                <div className="flex items-center justify-between pt-4">
+                  <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">Passwort</label>
+                    <div className="text-sm">
+                      <a href="#" className="font-semibold text-black-600 hover:text-black-500">Passwort vergessen?</a>
                     </div>
                 </div>
-                <div Name="mt-2">
-                  <input id="password" name="password" type="password" autoComplete="current-password" required Name="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6 px-3"
+                <div className="mt-2">
+                  <input id="password" name="password" type="password" autoComplete="current-password" required className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6 px-3"
                     value={password.value}
                     onChange={(e) => setPassword({ value: e.target.value, isValid: true, notSet: false })}
                     onBlur={validatePasswordInput}>

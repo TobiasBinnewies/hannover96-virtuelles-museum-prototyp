@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-export default function Model_Testobjekt() {
+export default function Model_Phone() {
   const [style, setStyle] = useState({})
 
   const mediaQuery = window.matchMedia("(min-width: 640px)")
@@ -18,7 +18,7 @@ export default function Model_Testobjekt() {
   return (
     <model-viewer className={'relative h-screen'}
                   alt="xxx"
-                  src='/Testobjekt.glb' ar shadow-intensity='1' camera-controls
+                  src='/iphone.glb' ar shadow-intensity='1' camera-controls
                   touch-action='pan-y' disable-zoom style={style}></model-viewer>
   )
 }

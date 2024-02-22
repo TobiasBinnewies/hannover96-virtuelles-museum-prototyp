@@ -14,7 +14,7 @@ module.exports = {
         'Hannover 96 wurde 1896 als „Hannoversche Fußball-Club von 1896 (HFC)“ gegründet, begann jedoch erst 1899 mit Fußball und wurde 1901 ein reiner Fußballverein.',
       content:
         'Fast 80.000 Zuschauer sind am 23. Mai 1954 ins Hamburger Volksparkstadion gekommen. Hannover 96 und der 1. FC Kaiserslautern stehen sich im Endspiel um die deutsche Fußball-Meisterschaft gegenüber. Die Norddeutschen sind gegen die Elf um Nationalmannschaftskapitän Fritz Walter krasser Außenseiter. Nach 90 Minuten steht es jedoch 5:1 für Hannover. Auch mehr als 50 Jahre später gilt der Erfolg als eine der größten Überraschungen in der deutschen Fußball-Geschichte.',
-      model: models.Model_Vase,
+      model: models.Model_Google,
       arlink: 'https://ar.scanblue.com/av8tDy',
       images: [],
     },
@@ -25,7 +25,7 @@ module.exports = {
       description: null,
       content:
         'Es entstand der Hannoversche Sportverein von 1896, in dem der Hannoversche FC von 1896 sich mit dem Verein BV Hannovera 1898 fusionierte.',
-      model: models.Model_Computer,
+      model: models.Model_Ball,
       arlink: null,
       images: [],
     },
@@ -36,7 +36,7 @@ module.exports = {
       description: null,
       content:
         'Ein Highlight - das Spiel gegen Tottenham Hotspurs mit über 10.000 Zuschauern an der Radrennbahn.',
-      model: models.Model_Wd,
+      model: models.Model_Computer,
       arlink: null,
       images: [],
     },
@@ -47,7 +47,7 @@ module.exports = {
       description: null,
       content:
         'Wiederaufnahme von internationalen Kontakten nach dem ersten Weltkrieg, Testspiele in Schweden und Hannover gegen IFK Malmö.',
-      model: models.Model_Ball,
+      model: models.Model_Google_Zwei,
       arlink: null,
       images: [],
     },
@@ -58,7 +58,7 @@ module.exports = {
       description: null,
       content:
         'Nach dem Ersten fragte der Generalfeldmarschall Paul von Hindenburg in einem Brief das Amt als Ehrenpräsident, welches er letztlich auch eerhalten hat.',
-      model: null,
+      model: models.Model_Google_Drei,
       arlink: null,
       images: [],
     },
