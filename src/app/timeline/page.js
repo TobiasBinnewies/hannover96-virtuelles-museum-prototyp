@@ -24,6 +24,7 @@ const onMouseMove = (e) => {
 export default function Home({ params }) {
   const { session, images } = params
   useExternalScripts('https://ar.scanblue.cloud/assets/scanblue.3.js')
+  useExternalScripts("https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js")
 
   useEffect(() => {
     const page = document.getElementById('page')
