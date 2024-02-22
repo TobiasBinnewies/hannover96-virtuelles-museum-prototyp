@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Modal from 'react-modal'
 import content from '../utils/section.content'
 import ModalTitle from '@/components/utils/ModalTitle'
@@ -56,11 +56,50 @@ export default function SectionModal({ obj: section, session, images }) {
   const [isOpen, setIsOpen] = useState(false)
   const [isUploadOpen, setIdUploadOpen] = useState(false)
 
+  const [style, setStyle] = useState({})
+
+  const mediaQuery = window.matchMedia("(min-width: 640px)")
+
+  const [titleSize, setTitleSize] = useState()
+
+  const mobileStyle = {
+    overlay: {
+      backgroundColor: 'rgba(0, 0, 0, 0.6)',
+      zIndex: '1000',
+    },
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      width: '90%',
+      margin: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+      maxHeight: '80vh',
+      // border: '2px solid #000',
+      border: 'none',
+      borderRadius: '1.5em',
+      padding: '1rem',
+      paddingTop: '0',
+    },
+  }
+
+  useEffect(() => {
+    if(mediaQuery.matches){
+      setStyle(customStyles)
+      setTitleSize("4xl")
+    }else{
+      setStyle(mobileStyle)
+      setTitleSize("2xl")
+    }
+  }, [])
+
   const modal = (
     <Modal
       isOpen={isOpen}
       onRequestClose={() => setIsOpen(false)}
-      style={customStyles}
+      style={style}
     >
       {/* <div className=""> */}
       <div
@@ -73,29 +112,29 @@ export default function SectionModal({ obj: section, session, images }) {
         >
           {getButton(
             () => setIdUploadOpen(true),
-            'Upload Image',
+            'Upload',
             'blue',
             'upload_button',
             !session,
             () => router.push('/signin'),
           )}
-          <SectionTitle title={section.title} size="3xl" className="pb-3" />
+          <SectionTitle title={section.title} size={titleSize} className="pb-3" />
           {getButton(() => setIsOpen(false), 'Close', 'red', 'close_button')}
         </div>
       </div>
       {/* </div> */}
 
-      <h1 className={'text-primary-text font-sans font-normal'}>
+      <h1 className={'text-primary-text font-sans font-normal text-justify'}>
         {section.content}
       </h1>
-      {section.images.map((image, idx) => (
+      {/*{section.images.map((image, idx) => (
         <SectionImage
           key={idx}
           image={image}
           // alt={section.modalAlt}
           subtitle={section.date}
-        />
-      ))}
+        />‚
+      ))}*/}
       <SectionImageList
         section={section.date}
         width="100%"
@@ -185,7 +224,7 @@ function getButton(
       <div className={styles[style]} style={{ backgroundColor: color }}>
         <div style={{ backgroundColor: 'white' }}></div>
       </div>
-      <p className="text-white font-sans font-normal">{text}</p>
+      <p className="text-white font-sans font-normal hidden md:inline">{text}</p>
     </button>
   )
 }
