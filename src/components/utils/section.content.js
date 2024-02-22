@@ -14,7 +14,7 @@ module.exports = {
         'Hannover 96 wurde 1896 als „Hannoversche Fußball-Club von 1896 (HFC)“ gegründet, begann jedoch erst 1899 mit Fußball und wurde 1901 ein reiner Fußballverein.',
       content:
         'Fast 80.000 Zuschauer sind am 23. Mai 1954 ins Hamburger Volksparkstadion gekommen. Hannover 96 und der 1. FC Kaiserslautern stehen sich im Endspiel um die deutsche Fußball-Meisterschaft gegenüber. Die Norddeutschen sind gegen die Elf um Nationalmannschaftskapitän Fritz Walter krasser Außenseiter. Nach 90 Minuten steht es jedoch 5:1 für Hannover. Auch mehr als 50 Jahre später gilt der Erfolg als eine der größten Überraschungen in der deutschen Fußball-Geschichte.',
-      model: models.Model_Google,
+      model: models.Model_Vase,
       arlink: 'https://ar.scanblue.cloud/assets/arqr.html?arData=eyJhcklkIjoic2NhbmJsdWUtVHhRTGNnYyIsInNvdXJjZSI6IiJ9',
       images: [],
     },
@@ -25,7 +25,7 @@ module.exports = {
       description: null,
       content:
         'Es entstand der Hannoversche Sportverein von 1896, in dem der Hannoversche FC von 1896 sich mit dem Verein BV Hannovera 1898 fusionierte.',
-      model: models.Model_Ball,
+      model: models.Model_Google,
       arlink: null,
       images: [],
     },

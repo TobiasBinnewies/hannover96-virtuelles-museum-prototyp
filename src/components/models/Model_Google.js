@@ -6,13 +6,20 @@ export default function Model_Google() {
 
   const mediaQuery = window.matchMedia("(min-width: 640px)")
 
-  const mobileSize = {
+  const desktopSize = {
     height: "30vh",
     width: "30vw",
   }
 
+  const mobileSize = {
+    height: "40vh",
+    width: "40vw",
+  }
+
   useEffect(() => {
     if(mediaQuery.matches){
+      setStyle(desktopSize)
+    }else {
       setStyle(mobileSize)
     }
   }, [])

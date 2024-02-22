@@ -10,10 +10,10 @@ export default function Model_Vase() {
   }
 
   return (
-    <div className={'relative right-0 w-[20%] h-screen bg-opacity-0  z-20'}>
+
       <iframe src="https://vr.scanblue.cloud/yx0v8o0acssv3snb2xgdltelx69zsp1u"
-              style={myStyle} frameBorder="0" allowvr=""
+              className={"relative h-[60%] w-[60%] rounded-2xl border-b-2 md:top-0 md:h-[100%] md:w-[100%]"} frameBorder="0" allowvr=""
               allowFullScreen="" mozallowfullscreen="true" webkitallowfullscreen="true" scrolling="no"></iframe>
-    </div>
+
   )
 }
