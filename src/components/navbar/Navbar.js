@@ -8,7 +8,7 @@ import { useState } from 'react'
 
 export default function Navbar({ buttons, session }) {
   const logout = useLogout()
-  const [mobileMenu, setMobileMenu] = useState("hidden")
+  const [mobileMenu, setMobileMenu] = useState('hidden')
 
   const openBurgerMenu = (value) => {
     setMobileMenu(value)
@@ -22,25 +22,54 @@ export default function Navbar({ buttons, session }) {
             className="bg-black h-8"
             style={{ width: '100%', height: '64px' }}
           >
-            <img onClick={() => openBurgerMenu("block")} src={"/burgerMenu.png"} className={"sm:hidden absolute left-0 top-6 h-[10vh] hover:cursor-pointer"}/>
+            <img
+              onClick={() => openBurgerMenu('block')}
+              src={'/burgerMenu.png'}
+              className={
+                'md:hidden absolute left-0 top-6 h-[10vh] hover:cursor-pointer'
+              }
+            />
           </div>
-          <div className={`${mobileMenu} bg-homepage-bg h-screen w-[70%] absolute top-0 left-0`}>
-            <div className={"bg-gray-300 text-center rounded-2xl"} onClick={() => setMobileMenu("hidden")}>
-              <span className={"text-heading-text w-[100%] mr-auto ml-auto text-xl font-bold"}>Schließen</span>
+          <div
+            className={`${mobileMenu} bg-homepage-bg h-screen w-[70%] absolute top-0 left-0`}
+          >
+            <div
+              className={'bg-gray-300 text-center rounded-2xl'}
+              onClick={() => setMobileMenu('hidden')}
+            >
+              <span
+                className={
+                  'text-heading-text w-[100%] mr-auto ml-auto text-xl font-bold'
+                }
+              >
+                Schließen
+              </span>
             </div>
-            {buttons.map((button, index) =>
-
-              <div key={index} className={"bg-white text-black rounded-2xl text-center p-4 mt-2 ml-auto mr-auto w-[40vw]"}>
+            {buttons.map((button, index) => (
+              <div
+                key={index}
+                className={
+                  'bg-white text-black rounded-2xl text-center p-4 mt-2 ml-auto mr-auto w-[40vw]'
+                }
+              >
                 <Link href={button.destination}>{button.title}</Link>
               </div>
-                )}
+            ))}
             {session ? (
-              <div className={"bg-white text-black rounded-2xl text-center p-4 mt-2 ml-auto mr-auto w-[40vw]"}>
+              <div
+                className={
+                  'bg-white text-black rounded-2xl text-center p-4 mt-2 ml-auto mr-auto w-[40vw]'
+                }
+              >
                 {session.username}
                 <button onClick={logout}>Logout</button>
               </div>
             ) : (
-              <div className={"bg-white text-black rounded-2xl text-center p-4 mt-28 ml-auto mr-auto w-[40vw]"}>
+              <div
+                className={
+                  'bg-white text-black rounded-2xl text-center p-4 mt-28 ml-auto mr-auto w-[40vw]'
+                }
+              >
                 <Link href="/signin">Login</Link>
               </div>
             )}
@@ -130,8 +159,8 @@ export default function Navbar({ buttons, session }) {
                 </div>
               </div>
             )}
-            </div>
           </div>
+        </div>
       </header>
     </main>
   )
