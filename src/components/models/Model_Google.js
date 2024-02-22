@@ -20,7 +20,7 @@ export default function Model_Google() {
   return (
       <model-viewer className={'relative'}
         alt="xxx"
-        src='/Testobjekt.glb' ar ar-modes="webxr scene-viewer quick-look" shadow-intensity='1' camera-controls
+        src='/Testobjekt.glb' ios-src='/Testobjekt.usdz' ar ar-modes="webxr scene-viewer quick-look" shadow-intensity='1' camera-controls
         touch-action='pan-y' disable-zoom
         style={style}
       ></model-viewer>
