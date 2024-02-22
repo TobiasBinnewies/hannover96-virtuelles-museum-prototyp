@@ -18,9 +18,10 @@ export default function Section({
   return (
     <div
       id={section.date.slice(-4)}
-      className={'bg-primary-bg h-screen flex justify-center childElement'}
+      className={'bg-primary-bg h-screen sm:flex items-center childElement'}
     >
-      <div className={'w-[50%] z-30 mt-auto mb-auto ml-[20vw]'}>
+      <div className={'w-[70%] sm:w-[70%] sm:left-64 relative sm:flex top-36 sm:top-24 z-30 ml-auto mr-auto'}>
+        <div>
         <SectionSubtitle text={section.date} />
         <SectionTitle title={section.title} padding="6px" />
         <SectionText text={section.description || section.content} />
@@ -30,8 +31,11 @@ export default function Section({
         <Suspense fallback={<p>Loading ARModel...</p>}>
           {arlink != null ? <AR_Modal arlink={arlink} /> : <div />}
         </Suspense>
+        </div>
+        <div className={"sm:flex right-0 sm:items-center"}>
+          <Suspense fallback={<p>Loading ARModel...</p>}>{model}</Suspense>
+        </div>
       </div>
-      <Suspense fallback={<p>Loading ARModel...</p>}>{model}</Suspense>
     </div>
   )
 }

@@ -1,6 +1,6 @@
 'use client'
 
-import { list } from 'postcss'
+import postcss from 'postcss'
 import styles from './timelineSlider.modular.css'
 import { useEffect } from 'react'
 import Link from 'next/link'
@@ -11,9 +11,6 @@ export default function TimelineSlider(props) {
   useEffect(() => {
     const sectionList = document.getElementById('section-list')
     const timelineSlider = document.getElementById('timeline-slider')
-    const timelineSliderMobile = document.getElementById(
-      'timeline-slider-mobile',
-    )
     const timelineFooter = document.getElementById('timeline-footer')
     const timelineList = document.getElementById('timeline-list')
     const timelineListElements = timelineList.querySelectorAll('li')
@@ -29,11 +26,6 @@ export default function TimelineSlider(props) {
       const scrollPercentage36 = scrollPercentage * 3.6
 
       setTransform(timelineSlider, 'rotate', `${scrollPercentage36}deg`)
-      setTransform(
-        timelineSliderMobile,
-        `translateX(${scrollPercentage}vw) rotate`,
-        `${scrollPercentage36}deg`,
-      )
       setTransform(timelineFooter, 'translateX', `-${scrollPercentage * 0.5}%`)
 
       const currentIndex =
@@ -120,16 +112,12 @@ export default function TimelineSlider(props) {
           className="enable-scrolling hidden xl:block fixed -top-[25vh] w-[150vh] h-[150vh] bg-contain rounded-[50%]"
         ></div>
         <div
-          id="timeline-slider-mobile"
-          className="enable-scrolling xl:hidden fixed left-0 bottom-4 w-[150px] h-[150px]"
-        ></div>
-        <div
           id="timeline-slider-indicator"
           className="enable-scrolling hidden xl:block fixed left-[200px] top-[50vh]"
         ></div>
         <div
           id="timeline-list-container"
-          className="enable-scrolling hidden fixed -z-50 top-0 left-0 h-screen w-[300px] xl:flex justify-end items-center overflow-hidden"
+          className="enable-scrolling fixed -z-50 top-0 left-0 h-screen w-[60px] md:w-[90px] xl:w-[300px] xl:flex justify-end items-center"
         >
           <ol
             id="timeline-list"
@@ -141,7 +129,10 @@ export default function TimelineSlider(props) {
                 className="pointer-events-auto fixed -z-50 top-[50vh] text-center text-primary-text flex justify-center items-center"
               >
                 <Link href={'#' + section.date.slice(-4)}>
-                  <div id="styles" className="relative inline-block group">
+                  <div
+                    id="styles"
+                    className="relative inline-block group text-base md:text-xl xl:text-2xl"
+                  >
                     <span className="absolute w-0 -bottom-1 h-0.5 bg-black group-hover:w-full transition-all duration-200"></span>
                     {section.date.slice(-4)}
                   </div>
