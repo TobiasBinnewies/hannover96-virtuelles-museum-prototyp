@@ -1,6 +1,5 @@
 import content from '../utils/section.content'
 import Section from '@/components/section/Section'
-import { useSession } from '@/services/frontend/session'
 import models from '@components/models/models'
 import { Suspense } from 'react'
 

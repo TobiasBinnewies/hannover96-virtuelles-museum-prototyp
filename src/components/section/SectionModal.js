@@ -1,13 +1,11 @@
 import React, { useState } from 'react'
 import Modal from 'react-modal'
 import content from '../utils/section.content'
-import ModalTitle from '@/components/utils/ModalTitle'
 import SectionImage from '@/components/utils/SectionImage'
 import SectionTitle from '../utils/SectionTitle'
 import styles from './SectionModel.module.css'
 import SectionImageList from '../images/SectionImageList'
 import UploadSectionImage from '../images/UploadSectionImage'
-import { useSession } from '@/services/frontend/session'
 import { useRouter } from 'next/navigation'
 
 const customStyles = {

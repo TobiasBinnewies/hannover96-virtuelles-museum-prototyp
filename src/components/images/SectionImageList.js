@@ -2,9 +2,6 @@
 
 import SectionImage from './SectionImage'
 // import { getFetch } from '@/services/frontend/fetch'
-import { use } from 'react'
-import content from '../utils/section.content'
-import { getImages } from '@/services/backend/section-images'
 // import { getImages } from '@/services/backend/section-images'
 
 // Fetching images for all sections

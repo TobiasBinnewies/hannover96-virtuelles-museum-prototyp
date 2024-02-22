@@ -1,7 +1,5 @@
 'use client'
 
-import { list } from 'postcss'
-import styles from './timelineSlider.modular.css'
 import { useEffect } from 'react'
 import Link from 'next/link'
 

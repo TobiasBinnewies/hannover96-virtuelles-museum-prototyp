@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import CheckedInput from '@/components/helper/CheckedInput'
-import SectionTitle from '@/components/utils/SectionTitle'
 
 export default function UploadSectionImage({ section }) {
   const [file, setFile] = useState()

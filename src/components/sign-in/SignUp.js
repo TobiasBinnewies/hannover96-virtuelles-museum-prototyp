@@ -1,11 +1,11 @@
 'use client'
 
 import styles from './SignIn.module.css'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import CheckedBadgeInput from '@components/helper/CheckedBadgeInput'
 import { useRouter } from 'next/navigation'
-import { validateUsername, validateEmail } from '@frontend/validate-input'
-import { signup, login } from '@frontend/auth'
+import { validateEmail, validateUsername } from '@frontend/validate-input'
+import { login, signup } from '@frontend/auth'
 
 export default function SignUp() {
   const router = useRouter()

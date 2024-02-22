@@ -2,7 +2,6 @@
 
 // import { useSession } from '@frontend/session'
 // import UploadSectionImage from '@/components/images/UploadSectionImage'
-import SectionImageList from '@/components/images/SectionImageList'
 
 export default function Profile() {
   // const session = useSession({ redirect: true })

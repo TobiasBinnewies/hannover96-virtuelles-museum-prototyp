@@ -5,7 +5,6 @@ import SectionText from '@/components/utils/SectionText'
 import SectionModal from '@/components/section/SectionModal'
 import AR_Modal from '@components/section/AR_Modal'
 // import Image from '@/components/section/Image'
-import Image from 'next/image'
 import { Suspense } from 'react'
 
 export default function Section({

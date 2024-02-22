@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import Modal from 'react-modal'
 import content from '../utils/section.content'
-import ModalTitle from '@/components/utils/ModalTitle'
 import SectionTitle from '../utils/SectionTitle'
+
 export default function AR_Modal(props) {
   const [isOpen, setIsOpen] = useState(false)
   const customStyles = {

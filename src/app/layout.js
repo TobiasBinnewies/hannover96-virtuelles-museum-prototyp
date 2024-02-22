@@ -1,7 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import Navbar from '@components/navbar/Navbar'
-import Image from 'next/image'
 import { getImages } from '@/services/backend/section-images'
 // import { getUserAuth } from '@/services/backend/auth'
 import { getSession } from '@/services/backend/session'

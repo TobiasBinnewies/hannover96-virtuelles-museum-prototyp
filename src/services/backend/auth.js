@@ -1,4 +1,4 @@
-import { hash, compare, genSalt } from 'bcrypt'
+import { compare, genSalt, hash } from 'bcrypt'
 import { findOneDB } from '@backend/db'
 import jwt from 'jsonwebtoken'
 import { cookies } from 'next/headers'

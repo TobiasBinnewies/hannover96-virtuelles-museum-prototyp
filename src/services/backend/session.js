@@ -1,7 +1,7 @@
 import { getUserAuth } from '@backend/auth'
 import jwt from 'jsonwebtoken'
-import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
+
 // import { redirect } from 'next/navigation'
 
 export async function useSession({ redirect: r } = { redirect: true }) {

@@ -1,7 +1,8 @@
 import apiHandler from '@/services/backend/api/api-helper'
 import { NextResponse } from 'next/server'
 import { getImages } from '@/services/backend/section-images'
-// import { aggregateDB } from '@/services/backend/db' 
+
+// import { aggregateDB } from '@/services/backend/db'
 
 export async function GET(req) {
   return apiHandler(handler)(req)
