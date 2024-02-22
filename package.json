@@ -10,7 +10,7 @@
     "test": "jest --config ./jest.config.js"
   },
   "dependencies": {
-    "@google/model-viewer": "^3.3.0",
+    "@google/model-viewer": "^1.10.0",
     "@react-three/drei": "^9.83.9",
     "@react-three/fiber": "^8.14.1",
     "autoprefixer": "10.4.15",
