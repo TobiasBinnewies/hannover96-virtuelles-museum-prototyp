@@ -43,7 +43,7 @@ export default function Section({
           {arlink != null ? <AR_Modal arlink={arlink} /> : <div />}
         </Suspense>
         </div>
-        <div className={"flex right-0 items-center justify-center md:justify-normal mt-8 md:w-[30%]"}>
+        <div className={"flex right-0 items-center justify-center md:justify-normal h-[25vh] md:w-[30%]"}>
           <Suspense fallback={<p>Loading ARModel...</p>}>{model}</Suspense>
         </div>
       </div>
