@@ -385,13 +385,13 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.48.0.tgz#642633964e217905436033a2bd08bf322849b7fb"
   integrity sha512-ZSjtmelB7IJfWD2Fvb7+Z+ChTIKWq6kjda95fLcQKNS5aheVHn4IkfgRQE3sIIzTcSLwLcLZUD9UBt+V7+h+Pw==
 
-"@google/model-viewer@^1.10.0":
-  version "1.12.1"
-  resolved "https://registry.yarnpkg.com/@google/model-viewer/-/model-viewer-1.12.1.tgz#0abe0166f649199557c291734f4d2c02db65cd75"
-  integrity sha512-GOf/By81rbxSmwWRVxBtlY5b3050msJ+BDWqonPj7M0/I7rNS/vVNjbLxTofbGjZObS3n0ELHj8TZ47UtkZbtg==
+"@google/model-viewer@^3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@google/model-viewer/-/model-viewer-3.4.0.tgz#dd3fd098b85ae5953a93f8eeef0e62434a0e7cc0"
+  integrity sha512-ZGZktE+uy7CiNOSrFdR1bTZDe9nfel2h8gWiRY6D5Eit77RAzIRYnPlkdQBoLSo8nnYS0faL/Z1tKP7nntvoGg==
   dependencies:
-    lit "^2.2.3"
-    three "^0.139.2"
+    "@monogrid/gainmap-js" "^3.0.1"
+    lit "^2.7.2"
 
 "@humanwhocodes/config-array@^0.11.10":
   version "0.11.11"
@@ -690,6 +690,13 @@
   integrity sha512-Xfijy7HvfzzqiOAhAepF4SGN5e9leLkMvg/OPOF97XemjfVCYN/oWa75wnkc6mltMSTwY+XlbhWgUOJmkFspSw==
   dependencies:
     sparse-bitfield "^3.0.3"
+
+"@monogrid/gainmap-js@^3.0.1":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@monogrid/gainmap-js/-/gainmap-js-3.0.3.tgz#14c77b3a8f6db6c5e47a49dd03ac5466aab7bc94"
+  integrity sha512-gku5jyAorfEhyBF804/xDqtex4kfGQNxNtvX62NenIEdNi5Wi94OUKG6A1GmQFBWmZbj5+FjDO2qnUcJhLAl9w==
+  dependencies:
+    promise-worker-transferable "^1.0.4"
 
 "@next/env@13.4.19":
   version "13.4.19"
@@ -3115,6 +3122,11 @@ image-size@1.0.0:
   dependencies:
     queue "6.0.2"
 
+immediate@~3.0.5:
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/immediate/-/immediate-3.0.6.tgz#9db1dbd0faf8de6fbe0f5dd5e56bb606280de69b"
+  integrity sha512-XXOFtyqDjNDAQxVfYxuF7g9Il/IbWmmlQg2MYKOH8ExIT1qg6xc4zyS3HaEEATgs1btfzxq15ciUiY7gjSXRGQ==
+
 import-fresh@^3.2.1:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/import-fresh/-/import-fresh-3.3.0.tgz#37162c25fcb9ebaa2e6e53d5b4d88ce17d9e0c2b"
@@ -3324,6 +3336,11 @@ is-potential-custom-element-name@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/is-potential-custom-element-name/-/is-potential-custom-element-name-1.0.1.tgz#171ed6f19e3ac554394edf78caa05784a45bebb5"
   integrity sha512-bCYeRA2rVibKZd+s2625gGnGF/t7DSqDs4dP7CrLA1m7jKWz6pps0LpYLJN8Q64HtmPKJ1hrN3nzPNKFEKOUiQ==
+
+is-promise@^2.1.0:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/is-promise/-/is-promise-2.2.2.tgz#39ab959ccbf9a774cf079f7b40c7a26f763135f1"
+  integrity sha512-+lP4/6lKUBfQjZ2pdxThZvLUAafmZb8OAxFb8XXtiQmS35INgr85hdOGoEs124ez1FCnZJt6jau/T+alh58QFQ==
 
 is-regex@^1.1.4:
   version "1.1.4"
@@ -4037,6 +4054,13 @@ levn@^0.4.1:
     prelude-ls "^1.2.1"
     type-check "~0.4.0"
 
+lie@^3.0.2:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/lie/-/lie-3.3.0.tgz#dcf82dee545f46074daf200c7c1c5a08e0f40f6a"
+  integrity sha512-UaiMJzeWRlEujzAuw5LokY1L5ecNQYZKfmyZ9L7wDHb/p5etKaxXhohBcrw0EYby+G/NA52vRSN4N39dxHAIwQ==
+  dependencies:
+    immediate "~3.0.5"
+
 lilconfig@^2.0.5, lilconfig@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/lilconfig/-/lilconfig-2.1.0.tgz#78e23ac89ebb7e1bfbf25b18043de756548e7f52"
@@ -4063,7 +4087,7 @@ lit-html@^2.8.0:
   dependencies:
     "@types/trusted-types" "^2.0.2"
 
-lit@^2.2.3:
+lit@^2.7.2:
   version "2.8.0"
   resolved "https://registry.yarnpkg.com/lit/-/lit-2.8.0.tgz#4d838ae03059bf9cafa06e5c61d8acc0081e974e"
   integrity sha512-4Sc3OFX9QHOJaHbmTMk28SYgVxLN3ePDjg7hofEft2zWlehFL3LiAuapWc4U/kYwMYJSh2hTCPZ6/LIC7ii0MA==
@@ -4771,6 +4795,14 @@ pretty-format@^29.7.0:
     "@jest/schemas" "^29.6.3"
     ansi-styles "^5.0.0"
     react-is "^18.0.0"
+
+promise-worker-transferable@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/promise-worker-transferable/-/promise-worker-transferable-1.0.4.tgz#2c72861ba053e5ae42b487b4a83b1ed3ae3786e8"
+  integrity sha512-bN+0ehEnrXfxV2ZQvU2PetO0n4gqBD4ulq3MI1WOPLgr7/Mg9yRQkX5+0v1vagr74ZTsl7XtzlaYDo2EuCeYJw==
+  dependencies:
+    is-promise "^2.1.0"
+    lie "^3.0.2"
 
 prompts@^2.0.1:
   version "2.4.2"
@@ -5503,11 +5535,6 @@ three-stdlib@^2.26.6:
     mmd-parser "^1.0.4"
     potpack "^1.0.1"
     zstddec "^0.0.2"
-
-three@^0.139.2:
-  version "0.139.2"
-  resolved "https://registry.yarnpkg.com/three/-/three-0.139.2.tgz#b110799a15736df673b9293e31653a4ac73648dd"
-  integrity sha512-gV7q7QY8rogu7HLFZR9cWnOQAUedUhu2WXAnpr2kdXZP9YDKsG/0ychwQvWkZN5PlNw9mv5MoCTin6zNTXoONg==
 
 three@^0.156.1:
   version "0.156.1"
