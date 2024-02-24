@@ -12,7 +12,7 @@ export default function Model_Google() {
   }
 
   const mobileSize = {
-    height: "30vh",
+    height: "20vh",
     width: "60vw",
   }
 
