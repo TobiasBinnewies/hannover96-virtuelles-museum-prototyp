@@ -27,7 +27,7 @@ export default function Model_Google_Zwei() {
   return (
     <model-viewer className={'relative mt-20'}
                   alt="xxx"
-                  src='/wd.glb' ios-src='/Testobjekt.usdz' ar ar-modes="webxr scene-viewer quick-look" shadow-intensity='1' camera-controls
+                  src='/wd.glb' ios-src='/wd.usdz' ar ar-modes="webxr scene-viewer quick-look" shadow-intensity='1' camera-controls
                   touch-action='pan-y' disable-zoom
                   style={style}>
       <button slot={"ar-button"} id={"ar-button"} className={"absolute bottom-0 right-0"}><img className={"w-[50%] mr-auto ml-auto bg-white"} src={"./ar_button_icon.png"} alt={"in 3D ansehen"}/> </button>
