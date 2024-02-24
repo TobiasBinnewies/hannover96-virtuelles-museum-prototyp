@@ -29,9 +29,9 @@ export default function Section({
   return (
     <div
       id={section.date.slice(-4)}
-      className={'bg-primary-bg h-screen sm:flex items-center childElement'}
+      className={'bg-primary-bg h-screen md:flex items-center childElement'}
     >
-      <div className={'w-[70%] sm:w-[70%] sm:left-64 relative sm:flex top-36 sm:top-24 z-30 ml-auto mr-auto'}>
+      <div className={'bg-red-300 w-[70%] md:w-[70%] md:left-64 relative md:flex top-36 md:top-24 z-30 ml-auto mr-10 md:mr-auto'}>
         <div>
         <SectionSubtitle text={section.date} />
         <SectionTitle title={section.title} size={titleSize} padding="6px" />

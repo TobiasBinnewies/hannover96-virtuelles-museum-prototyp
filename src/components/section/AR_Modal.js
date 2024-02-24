@@ -67,7 +67,7 @@ export default function AR_Modal(props) {
   }
 
   return (
-    <div className={'text-center z-10 mt-[10%]'}>
+    <div className={'text-center z-10 mt-[5%]'}>
       <button
         onClick={() => {
           if(mediaQuery.matches) {
@@ -80,7 +80,7 @@ export default function AR_Modal(props) {
           'text-2xl text-emerald-500 font-normal light-effect light-effect-color group relative'
         }
       >
-        <span className="absolute w-0 -bottom-1 h-0.5 light-effect light-effect-background group-hover:w-full transition-all duration-200"></span>
+        <span className="absolute w-0 h-0.5 light-effect light-effect-background group-hover:w-full transition-all duration-200"></span>
         {'In 3D ansehen'}
       </button>
 

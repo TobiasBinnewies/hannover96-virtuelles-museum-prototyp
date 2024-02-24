@@ -36,7 +36,7 @@ module.exports = {
       description: null,
       content:
         'Ein Highlight - das Spiel gegen Tottenham Hotspurs mit über 10.000 Zuschauern an der Radrennbahn.',
-      model: models.Model_Computer,
+      model: null,
       arlink: null,
       images: [],
     },
@@ -47,7 +47,7 @@ module.exports = {
       description: null,
       content:
         'Wiederaufnahme von internationalen Kontakten nach dem ersten Weltkrieg, Testspiele in Schweden und Hannover gegen IFK Malmö.',
-      model: models.Model_Google_Zwei,
+      model: null,
       arlink: null,
       images: [],
     },
@@ -58,7 +58,7 @@ module.exports = {
       description: null,
       content:
         'Nach dem Ersten fragte der Generalfeldmarschall Paul von Hindenburg in einem Brief das Amt als Ehrenpräsident, welches er letztlich auch eerhalten hat.',
-      model: models.Model_Google_Drei,
+      model: null,
       arlink: null,
       images: [],
     },

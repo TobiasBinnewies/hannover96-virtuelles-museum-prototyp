@@ -11,7 +11,7 @@ export default async function SectionList({ images, session }) {
       <Section
         session={session}
         obj={item}
-        model={item.model == null ? models.Model_Empty : item.model}
+        model={item.model}
         arlink={item.arlink}
         images={images}
       />
