@@ -77,7 +77,7 @@ export default function AR_Modal(props) {
           }
         }}
         className={
-          'text-2xl text-emerald-500 font-normal light-effect light-effect-color group relative'
+          'text-xl md:text-2xl text-emerald-500 font-normal light-effect light-effect-color group relative'
         }
       >
         <span className="absolute w-0 h-0.5 light-effect light-effect-background group-hover:w-full transition-all duration-200"></span>

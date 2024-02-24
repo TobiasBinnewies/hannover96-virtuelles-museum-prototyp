@@ -36,7 +36,7 @@ module.exports = {
       description: null,
       content:
         'Ein Highlight - das Spiel gegen Tottenham Hotspurs mit über 10.000 Zuschauern an der Radrennbahn.',
-      model: null,
+      model: models.Model_Google_Zwei,
       arlink: null,
       images: [],
     },
@@ -47,7 +47,7 @@ module.exports = {
       description: null,
       content:
         'Wiederaufnahme von internationalen Kontakten nach dem ersten Weltkrieg, Testspiele in Schweden und Hannover gegen IFK Malmö.',
-      model: null,
+      model: models.Model_Google_Drei,
       arlink: null,
       images: [],
     },

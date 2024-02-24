@@ -22,7 +22,7 @@ export default function Section({
     if(mediaQuery.matches) {
       setTitleSize("6xl")
     }else{
-      setTitleSize("4xl")
+      setTitleSize("2xl")
     }
   })
 
@@ -31,7 +31,7 @@ export default function Section({
       id={section.date.slice(-4)}
       className={'bg-primary-bg h-screen md:flex items-center childElement'}
     >
-      <div className={'bg-red-300 w-[70%] md:w-[70%] md:left-64 relative md:flex top-36 md:top-24 z-30 ml-auto mr-10 md:mr-auto'}>
+      <div className={'w-[70%] md:w-[70%] md:left-64 relative md:flex top-36 md:top-24 z-30 ml-auto mr-10 md:mr-auto'}>
         <div>
         <SectionSubtitle text={section.date} />
         <SectionTitle title={section.title} size={titleSize} padding="6px" />
