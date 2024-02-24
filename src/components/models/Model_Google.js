@@ -12,8 +12,8 @@ export default function Model_Google() {
   }
 
   const mobileSize = {
-    height: "40vh",
-    width: "40vw",
+    height: "30vh",
+    width: "60vw",
   }
 
   useEffect(() => {
@@ -25,13 +25,12 @@ export default function Model_Google() {
   }, [])
 
   return (
-      <model-viewer className={'relative'}
-        alt="xxx"
-        src='/Testobjekt.glb' ios-src='/Testobjekt.usdz' ar ar-modes="webxr scene-viewer quick-look" shadow-intensity='1' camera-controls
-        touch-action='pan-y' disable-zoom
-        style={style}>
-        <button slot={"ar-button"} id={"ar-button"} className={"absolute l-[50%] transform-[translateX(-50%)] whitespace-nowrap bottom-14 text-xl ml-auto mr-auto text-center"}>in 3D ansehen</button>
-      </model-viewer>
-
+    <model-viewer className={'relative mt-20'}
+                  alt="xxx"
+                  src='/Testobjekt.glb' ios-src='/Testobjekt.usdz' ar ar-modes="webxr scene-viewer quick-look" shadow-intensity='1' camera-controls
+                  touch-action='pan-y' disable-zoom
+                  style={style}>
+      <button id={"ar-button"} className={"absolute bottom-0 right-0"}><img className={"w-[50%] mr-auto ml-auto bg-white"} src={"./ar_button_icon.png"} alt={"in 3D ansehen"}/> </button>
+    </model-viewer>
   )
 }
