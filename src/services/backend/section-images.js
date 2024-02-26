@@ -1,33 +1,25 @@
 'use server'
-import { aggregateDB } from './db'
+import prisma from '@lib/prisma'
 
 export async function getImages(section) {
-  const data = await aggregateDB(process.env.SECTION_IMAGE_FOLDER, [
-    section === 'all'
-      ? { $match: { _id: { $exists: true } } }
-      : { $match: { section } },
-    {
-      $lookup: {
-        from: 'user',
-        localField: 'userId',
-        foreignField: '_id',
-        as: 'user',
+  const data = await prisma.sectionImage.findMany({
+    ...{
+      include: {
+        author: true,
       },
     },
-    { $unwind: '$user' },
-    {
-      $project: {
-        createdAt: 1,
-        title: 1,
-        section: 1,
-        username: '$user.username',
-      },
-    },
-  ])
+    ...(section == 'all'
+      ? {}
+      : {
+          where: {
+            section,
+          },
+        }),
+  })
   const result = data.map((item) => {
     return {
       ...item,
-      path: `${process.env.SECTION_IMAGE_FOLDER}/${item._id}`,
+      path: `${item.pathPrefix}/${item.id}`,
     }
   })
   return result

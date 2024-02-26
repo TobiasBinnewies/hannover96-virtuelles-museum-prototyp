@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server'
 import { v2 as cloudinary } from 'cloudinary'
 import path from 'path'
 import parser from 'datauri/parser'
-import { insertDB } from '@/services/backend/db'
+import prisma from '@/lib/prisma'
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -57,17 +57,29 @@ async function handler(req) {
   const buffer = await formatBufferTo64(file)
   const date = new Date()
 
-  const { insertedId } = await insertDB(process.env.SECTION_IMAGE_FOLDER, {
-    title,
-    section,
-    userId,
-    createdAt: date,
+  console.log("userID", userId.toString());
+
+  const insertedObject = await prisma.sectionImage.create({
+    data: {
+      pathPrefix: process.env.SECTION_IMAGE_FOLDER,
+      title,
+      section: {
+        connect: {
+          id: parseInt(section),
+        },
+      },
+      author: {
+        connect: {
+          id: userId.toString(),
+        },
+      }
+    },
   })
 
   cloudinary.uploader.upload(
     buffer.content,
     {
-      public_id: insertedId.toString(),
+      public_id: insertedObject.id,
       tags: process.env.SECTION_IMAGE_FOLDER,
       folder: process.env.SECTION_IMAGE_FOLDER,
     },

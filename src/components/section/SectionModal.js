@@ -76,7 +76,7 @@ export default function SectionModal({ obj: section, session, images }) {
             'Upload Image',
             'blue',
             'upload_button',
-            !session,
+            false,
             () => router.push('/signin'),
           )}
           <SectionTitle title={section.title} size="3xl" className="pb-3" />
