@@ -1,8 +1,8 @@
 # Verwenden Sie eine offizielle Node.js-Runtime als Basisimage
-FROM node:20
+FROM node:20 as builder
 
 # Installation Netcat
-RUN apt-get update && apt-get install -y netcat-openbsd
+RUN apt-get update && apt-get install -y netcat-openbsd && apt-get install -y postgresql-client
 
 # Setzen Sie das Arbeitsverzeichnis in Ihrem Docker-Container
 WORKDIR /usr/src/app
@@ -12,6 +12,9 @@ COPY package*.json ./
 
 # Installieren Sie die Abhängigkeiten des Projekts
 RUN npm install
+
+# Kopieren des Prisma-Verzeichnisses in das Arbeitsverzeichnis
+COPY prisma ./prisma
 
 # Installieren Sie den Prisma CLI
 RUN npx prisma generate
