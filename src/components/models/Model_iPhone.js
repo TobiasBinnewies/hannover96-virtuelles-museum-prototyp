@@ -1,7 +1,7 @@
-import '@google/model-viewer';
+import '@google/model-viewer'
 import { useEffect, useState } from 'react'
 
-export default function Model_Google_Drei() {
+export default function Model_iPhone() {
   const [style, setStyle] = useState({})
 
   const mediaQuery = window.matchMedia("(min-width: 640px)")

@@ -1,4 +1,3 @@
-
 import models from '@components/models/models'
 
 module.exports = {
@@ -25,7 +24,7 @@ module.exports = {
       description: null,
       content:
         'Es entstand der Hannoversche Sportverein von 1896, in dem der Hannoversche FC von 1896 sich mit dem Verein BV Hannovera 1898 fusionierte.',
-      model: models.Model_Google,
+      model: models.Model_Testobjekt,
       arlink: null,
       images: [],
     },
@@ -36,7 +35,7 @@ module.exports = {
       description: null,
       content:
         'Ein Highlight - das Spiel gegen Tottenham Hotspurs mit über 10.000 Zuschauern an der Radrennbahn.',
-      model: models.Model_Google_Zwei,
+      model: models.Model_WD,
       arlink: null,
       images: [],
     },
@@ -47,7 +46,7 @@ module.exports = {
       description: null,
       content:
         'Wiederaufnahme von internationalen Kontakten nach dem ersten Weltkrieg, Testspiele in Schweden und Hannover gegen IFK Malmö.',
-      model: models.Model_Google_Drei,
+      model: models.Model_iPhone,
       arlink: null,
       images: [],
     },
