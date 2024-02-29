@@ -1,4 +1,4 @@
-import { findOneDB, insertDB } from '@backend/db'
+import prisma from '@/lib/prisma'
 import { hashPassword } from '@backend/auth'
 import apiHandler from '@backend/api/api-helper'
 import { NextResponse } from 'next/server'
@@ -17,13 +17,10 @@ async function handler(req) {
     )
   }
 
-  // const db = await mongodb()
-  // const userCollection = db.collection('user')
-
-  // const user = await userCollection.findOne({ $or: [{ email }, { username }] })
-
-  const user = await findOneDB('user', {
-    $or: [{ email }, { username }],
+  const user = await prisma.user.findFirst({
+    where: {
+      OR: [{ email }, { username }],
+    },
   })
 
   if (user) {
@@ -35,10 +32,12 @@ async function handler(req) {
 
   const hashedPassword = await hashPassword(password)
 
-  await insertDB('user', {
-    email,
-    password: hashedPassword,
-    username,
+  await prisma.user.create({
+    data: {
+      email,
+      password: hashedPassword,
+      username,
+    },
   })
 
   return NextResponse.json({ message: 'Created user' }, { status: 201 })

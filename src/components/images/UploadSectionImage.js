@@ -9,19 +9,21 @@ export default function UploadSectionImage({ section }) {
   const [title, setTitle] = useState({ value: '', isValid: true, notSet: true })
   const [enabled, setEnabled] = useState(true)
 
+  console.log('section', section)
+
   const onSubmit = async (e) => {
     e.preventDefault()
     if (!file || title.notSet || !title.isValid) {
       console.log('not valid')
       return
     }
-    console.log('valid');
+    console.log('valid')
 
     try {
       const data = new FormData()
       data.append('file', file)
       data.append('title', title.value)
-      data.append('section', section)
+      data.append('section', 1)
 
       const res = await fetch('/api/secure/section-image', {
         method: 'POST',
@@ -71,7 +73,7 @@ export default function UploadSectionImage({ section }) {
         type="submit"
         value="Upload"
         disabled={!enabled}
-        style={{opacity: enabled ? 1 : 0.5}}
+        style={{ opacity: enabled ? 1 : 0.5 }}
       />
     </form>
   )

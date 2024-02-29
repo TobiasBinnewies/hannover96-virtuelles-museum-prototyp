@@ -15,6 +15,8 @@ async function handler(req) {
 
   const user = await verifyUser(username, password)
 
+  console.log('user', user);
+
   const token = getTokenFromUser(user)
 
   cookie.set('session-token', token)

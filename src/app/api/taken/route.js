@@ -1,4 +1,4 @@
-import { findOneDB } from '@/services/backend/db'
+import prisma from '@/lib/prisma'
 import apiHandler from '@backend/api/api-helper'
 import { NextResponse } from 'next/server'
 
@@ -12,8 +12,10 @@ async function handler(req) {
     res.status(422).json({ message: 'Missing email or username' })
   }
 
-  const user = await findOneDB('user', {
-    $or: [{ email }, { username }],
+  const user = await prisma.user.findFirst({
+    where: {
+      OR: [{ email }, { username }],
+    },
   })
 
   console.log('taken', user)

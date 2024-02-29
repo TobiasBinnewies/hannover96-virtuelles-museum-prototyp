@@ -64,7 +64,7 @@ export default function SectionImage({ image }) {
         </div>
         <div className="text-right">
           <p className="text-primary-text text-base font-sans font-normal">
-            Author: {image.username}
+            Author: {image.author.username}
           </p>
         </div>
       </div>

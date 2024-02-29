@@ -39,7 +39,7 @@ export default function Section({
         <Suspense fallback={<p>Loading Modal...</p>}>
           <SectionModal session={session} obj={section} images={images} />
         </Suspense>
-        <Suspense fallback={<p>Loading ARModel...</p>}>
+        {/* <Suspense fallback={<p>Loading ARModel...</p>}>
           {arlink != null ? <AR_Modal arlink={arlink} /> : <div />}
         </Suspense>
         </div>
