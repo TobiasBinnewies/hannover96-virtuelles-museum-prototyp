@@ -7,6 +7,6 @@ done
 
 DATABASE_URL=$DATABASE_URL npx prisma db push
 
-psql $DATABASE_URL -f prisma/init.sql || true
+psql $DATABASE_URL -f db/init.sql || true
 
 npm start
