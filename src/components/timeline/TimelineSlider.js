@@ -143,7 +143,7 @@ export default function TimelineSlider(props) {
         </div>
         <div
           id="timeline-footer"
-          className="enable-scrolling fixed left-0 bottom-0 w-[200vw] h-[550px] xl:h-[600px] bg-repeat"
+          className="hidden md:block enable-scrolling fixed left-0 bottom-0 w-[200vw] h-[550px] xl:h-[600px] bg-repeat"
         ></div>
       </div>
     </div>
