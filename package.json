@@ -14,7 +14,7 @@
     "prisma-studio": "dotenv -e .env.local -- npx prisma studio"
   },
   "dependencies": {
-    "@google/model-viewer": "^3.3.0",
+    "@google/model-viewer": "^3.4.0",
     "@prisma/client": "5.10.2",
     "@react-three/drei": "^9.83.9",
     "@react-three/fiber": "^8.14.1",
