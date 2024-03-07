@@ -24,6 +24,7 @@ const customStyles = {
     margin: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
+    minHeight: '60vh',
     maxHeight: '80vh',
     // border: '2px solid #000',
     border: 'none',

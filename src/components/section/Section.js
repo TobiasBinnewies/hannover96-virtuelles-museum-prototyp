@@ -38,7 +38,7 @@ export default function Section({
     >
       {mediaQueryHeight.matches ? <div
         className={
-          'w-[70%] left-8 lg:left-20 w-[60%] relative tablet:flex z-30 bg-gray-200 rounded-2xl p-2 shadow-2xl h-[50vh]'
+          'left-8 lg:left-20 w-[70%] relative lg:flex z-30 bg-gray-200 rounded-2xl p-2 shadow-2xl h-[50vh] justify-center items-center'
         }
       >
         <div>
@@ -58,7 +58,7 @@ export default function Section({
             'flex right-0 items-center justify-center desktop:justify-normal h-[25vh] desktop:w-[30%]'
           }
         >
-          <Suspense fallback={<p>Loading ARModel...</p>}>{model !== null ? model : models.Model_Placeholder}</Suspense>
+          <Suspense fallback={<p>Loading ARModel...</p>}>{model}</Suspense>
         </div>
       </div>
         :
