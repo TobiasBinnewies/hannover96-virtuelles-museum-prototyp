@@ -11,8 +11,13 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 # Install Dependencies
 yarn add
 # Setup envs
-cp .env.example .env.local
-# Fill .env.local
+cp .env.example .env.local # --> Fill .env.local
+# Generate Prisma Client
+yarn prisma-generate
+# Sync Prisma Client to Database
+yarn prisma-sync
+# Push init.sql
+psql <URL> -f ./db/init.sql
 # Run Development Server
 yarn dev
 ```
