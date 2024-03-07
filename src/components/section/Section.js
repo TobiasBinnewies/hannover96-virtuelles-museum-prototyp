@@ -18,7 +18,7 @@ export default function Section({
 }) {
   const mediaQueryTablet = window.matchMedia('(min-width: 1024px)')
   const mediaQueryDesktop = window.matchMedia('(min-width: 1400px)')
-  const mediaQueryHeight = window.matchMedia('(min-height: 600px)')
+  const mediaQueryHeight = window.matchMedia('(min-height: 450px)')
   const [titleSize, setTitleSize] = useState('4xl')
 
   useEffect(() => {
