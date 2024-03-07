@@ -18,21 +18,21 @@ export async function signup(username, email, password) {
 }
 
 export async function login(username, password, router) {
-    const resLogin = await fetch('/api/login', {
-        method: 'POST',
-        body: JSON.stringify({
-        username,
-        password,
-        }),
-        headers: {
-        'Content-Type': 'application/json',
-        },
-    })
-    
-    const dataLogin = await resLogin.json()
-    if (!resLogin.ok) {
-        throw dataLogin.message
-    }
-    router.push('/profile')
-    router.refresh()
+  const resLogin = await fetch('/api/login', {
+    method: 'POST',
+    body: JSON.stringify({
+      username,
+      password,
+    }),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+
+  const dataLogin = await resLogin.json()
+  if (!resLogin.ok) {
+    throw dataLogin.message
+  }
+  router.push('/timeline')
+  router.refresh()
 }

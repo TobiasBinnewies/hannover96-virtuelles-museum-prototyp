@@ -58,7 +58,7 @@ export default function SectionModal({ obj: section, session, images }) {
 
   const [style, setStyle] = useState({})
 
-  const mediaQuery = window.matchMedia("(min-width: 640px)")
+  const mediaQuery = window.matchMedia('(min-width: 640px)')
 
   const [titleSize, setTitleSize] = useState()
 
@@ -86,12 +86,12 @@ export default function SectionModal({ obj: section, session, images }) {
   }
 
   useEffect(() => {
-    if(mediaQuery.matches){
+    if (mediaQuery.matches) {
       setStyle(customStyles)
-      setTitleSize("4xl")
-    }else{
+      setTitleSize('4xl')
+    } else {
       setStyle(mobileStyle)
-      setTitleSize("2xl")
+      setTitleSize('2xl')
     }
   }, [])
 
@@ -115,10 +115,14 @@ export default function SectionModal({ obj: section, session, images }) {
             'Upload',
             'blue',
             'upload_button',
-            false,
+            session === undefined,
             () => router.push('/signin'),
           )}
-          <SectionTitle title={section.title} size={titleSize} className="pb-3" />
+          <SectionTitle
+            title={section.title}
+            size={titleSize}
+            className="pb-3"
+          />
           {getButton(() => setIsOpen(false), 'Close', 'red', 'close_button')}
         </div>
       </div>
@@ -179,7 +183,7 @@ export default function SectionModal({ obj: section, session, images }) {
           'close_button',
         )}
       </div> */}
-      <div className='flex justify-center'>
+      <div className="flex justify-center">
         <UploadSectionImage section={section.date} />
       </div>
     </Modal>
@@ -224,7 +228,9 @@ function getButton(
       <div className={styles[style]} style={{ backgroundColor: color }}>
         <div style={{ backgroundColor: 'white' }}></div>
       </div>
-      <p className="text-white font-sans font-normal hidden md:inline">{text}</p>
+      <p className="text-white font-sans font-normal hidden md:inline">
+        {text}
+      </p>
     </button>
   )
 }

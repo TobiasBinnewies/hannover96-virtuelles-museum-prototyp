@@ -53,7 +53,6 @@ export default function SignUp({ setIsLogin }) {
 
 
   const submit = async (e) => {
-    console.log('submit');
     e.preventDefault()
 
     validateUsernameInput()
@@ -75,7 +74,6 @@ export default function SignUp({ setIsLogin }) {
       console.log('Please check hints!');
       return
     }
-    console.log('submiting');
     setLoading(true)
 
     try {
