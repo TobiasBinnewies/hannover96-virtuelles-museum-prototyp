@@ -11,9 +11,9 @@ module.exports = {
       date: '12.04.1896',
       description:
         'Hannover 96 wurde 1896 als „Hannoversche Fußball-Club von 1896 (HFC)“ gegründet, begann jedoch erst 1899 mit Fußball und wurde 1901 ein reiner Fußballverein.',
-      model: models.Model_Vase,
+      model: models.Model_Testobjekt,
       arlink: 'https://ar.scanblue.cloud/assets/arqr.html?arData=eyJhcklkIjoic2NhbmJsdWUtVHhRTGNnYyIsInNvdXJjZSI6IiJ9',
-      content: null,
+      content: 'Hannover 96 wurde 1896 als „Hannoversche Fußball-Club von 1896 (HFC)“ gegründet, begann jedoch erst 1899 mit Fußball und wurde 1901 ein reiner Fußballverein.',
       images: [],
     },
     {
@@ -22,7 +22,7 @@ module.exports = {
       description: null,
       content:
         'Es entstand der Hannoversche Sportverein von 1896, in dem der Hannoversche FC von 1896 mit dem Verein BV Hannovera 1898 (Vereinsfarben Blau-weiß) fusionierte. Der HSV von 1896 hat die Vereinsfarben des HFC, schwarz-weiß-grün, übernommen, die Spielkleidung war zunächst schwarz. Später kehrte man zum Rot, in dem bereits der HFC spielte, zurück.',
-      model: models.Model_Testobjekt,
+      model: models.Model_iPhone,
       arlink: null,
       images: [],
     },
@@ -32,7 +32,7 @@ module.exports = {
       description: null,
       content:
         'Ein Highlight - das Spiel gegen Tottenham Hotspurs mit über 10.000 Zuschauern an der Radrennbahn.',
-      model: models.Model_WD,
+      model: models.Model_Vase,
       arlink: null,
       images: [],
     },
@@ -42,7 +42,7 @@ module.exports = {
       description: null,
       content:
         'Wiederaufnahme von internationalen Kontakten nach dem ersten Weltkrieg, Testspiele in Schweden und Hannover gegen IFK Malmö, die fünf Jahre später Gründungsmitglied der professionellen Allsvenskan werden sollten.',
-      model: models.Model_iPhone,
+      model: models.Model_WD,
       arlink: null,
       images: [],
     },

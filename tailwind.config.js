@@ -15,7 +15,7 @@ module.exports = {
         'h96-black': '#000000',
 
         /* Background Colors */
-        'primary-bg': '#FFFBEB',
+        'primary-bg': '#f8f8f8',
         'secondary-bg': '#FAE5AC',
         'homepage-bg': '#3f3f3f',
 
@@ -33,6 +33,9 @@ module.exports = {
         'cta-text': '#FFFFFF',
         'cta-bg': '#009E3D',
       },
+      screens: {
+        tv: "1920px"
+      }
     },
   },
   plugins: [],

@@ -1,7 +1,7 @@
 import '@google/model-viewer'
 import { useEffect, useState } from 'react'
 
-export default function Model_iPhone() {
+export default function Model_Placeholder() {
   const [style, setStyle] = useState({})
 
   const mediaQuery = window.matchMedia("(min-width: 640px)")
@@ -13,7 +13,7 @@ export default function Model_iPhone() {
 
   const mobileSize = {
     height: "20vh",
-    width: "50vw",
+    width: "60vw",
   }
 
   useEffect(() => {
@@ -26,8 +26,9 @@ export default function Model_iPhone() {
 
   return (
     <model-viewer className={'relative mt-20'}
-                  alt="xxx"
-                  src='/iphone.glb' ios-src='/iphone.usdz' ar ar-modes="webxr scene-viewer quick-look" shadow-intensity='1' camera-controls
+                  alt="Zu diesem Beitrag gibt es kein 3D Model. Dies ist ein Platzhalter."
+                  poster={"/placeholder.png"}
+                  src='' ios-src='' ar ar-modes="webxr scene-viewer quick-look" shadow-intensity='1' camera-controls
                   touch-action='pan-y' disable-zoom
                   style={style}>
       <button slot={"ar-button"} id={"ar-button"} className={"absolute bottom-0 right-0"}><img className={"w-[50%] mr-auto ml-auto bg-white"} src={"./ar_button_icon.png"} alt={"in 3D ansehen"}/> </button>

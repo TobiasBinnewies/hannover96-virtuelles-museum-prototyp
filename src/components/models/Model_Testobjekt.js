@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 export default function Model_Testobjekt() {
   const [style, setStyle] = useState({})
 
-  const mediaQuery = window.matchMedia("(min-width: 640px)")
+  const mediaQuery = window.matchMedia("(min-width: 1200px)")
 
   const desktopSize = {
     height: "30vh",
