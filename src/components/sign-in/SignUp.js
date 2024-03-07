@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation'
 import { validateUsername, validateEmail } from '@frontend/validate-input'
 import { signup, login } from '@frontend/auth'
 
-export default function SignUp() {
+export default function SignUp({ setIsLogin }) {
   const router = useRouter()
   const [username, setUsername] = useState({
     value: '',
@@ -38,10 +38,29 @@ export default function SignUp() {
     passwordValue: '',
     badge: null,
   })
+  const [loading, setLoading] = useState(false)
   const [alertMessage, setAlertMessage] = useState(null)
 
-  const submitHandler = async (e) => {
+  const getAlertMessage = () => {
+    return (
+      username.badge ||
+      email.badge ||
+      password.badge ||
+      passwordConfirm.badge ||
+      alertMessage
+    )
+  }
+
+
+  const submit = async (e) => {
+    console.log('submit');
     e.preventDefault()
+
+    validateUsernameInput()
+    validateEmailInput()
+    validatePasswordInput()
+    validatePasswordConfirmInput()
+
     if (
       !username.isValid ||
       !email.isValid ||
@@ -53,8 +72,11 @@ export default function SignUp() {
       setUsername((prev) => ({ ...prev, notSet: false }))
       setEmail((prev) => ({ ...prev, notSet: false }))
       setAlertMessage('Please check hints!')
+      console.log('Please check hints!');
       return
     }
+    console.log('submiting');
+    setLoading(true)
 
     try {
       await signup(username.value, email.value, password.value)
@@ -62,6 +84,7 @@ export default function SignUp() {
     } catch (err) {
       setAlertMessage(err)
     }
+    setLoading(false)
   }
 
   const validateUsernameInput = async () => {
@@ -175,66 +198,186 @@ export default function SignUp() {
 
   return (
     <>
-      <h1 className={styles.h1}>Sign Up</h1>
-      <CheckedBadgeInput
-        id="username"
-        type="text"
-        placeholder="Your Username"
-        prop={username}
-        label="Username"
-        setAlertMessage={setAlertMessage}
-        inputHandler={(e) =>
-          setUsername((prev) => ({ ...prev, value: e.target.value }))
-        }
-        validateInput={validateUsernameInput}
-      />
-      <CheckedBadgeInput
-        id="email"
-        type="email"
-        placeholder="user@example.com"
-        prop={email}
-        label="Your Email"
-        setAlertMessage={setAlertMessage}
-        inputHandler={(e) =>
-          setEmail((prev) => ({ ...prev, value: e.target.value }))
-        }
-        validateInput={validateEmailInput}
-      />
-      <CheckedBadgeInput
-        id="password"
-        type="password"
-        placeholder="Your Password"
-        prop={password}
-        label="Your Password"
-        inputHandler={(e) =>
-          setPassword((prev) => ({ ...prev, value: e.target.value }))
-        }
-        validateInput={validatePasswordInput}
-      />
-      <CheckedBadgeInput
-        id="confirm-password"
-        type="password"
-        placeholder="Confirm Password"
-        prop={passwordConfirm}
-        label="Confirm Password"
-        inputHandler={(e) =>
-          setPasswordConfirm((prev) => ({ ...prev, value: e.target.value }))
-        }
-        validateInput={validatePasswordConfirmInput}
-      />
-      <div
-        className={styles.alertMessage}
-        style={{
-          height: alertMessage ? 'auto' : '0px',
-          opacity: alertMessage ? '100%' : '0%',
-          margin: alertMessage ? '10px 0' : '0',
-        }}
-      >
-        {alertMessage}
+      <h1 className={styles.h1}>Kein Login</h1>
+      <div className={styles.container}>
+        <div className={styles.row}>
+          <div className={`${styles.cardlogin} ${styles.card}`}>
+            <div
+              className={`${styles.cardheader} ${styles.textcenter}`}
+              data-backround-color="orange"
+            >
+              <h4 className={styles.cardtitle}>Registrierung</h4>
+            </div>
+            <div className={styles.cardcontent}>
+              <div>
+                <label
+                  htmlFor="username"
+                  className="block text-sm font-medium leading-6 text-black-900"
+                >
+                  Benutzername
+                </label>
+                <div className="mt-2">
+                  <input
+                    id="username"
+                    name="username"
+                    type="text"
+                    autoComplete="username"
+                    required
+                    disabled={loading}
+                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6 px-3"
+                    value={username.value}
+                    onChange={(e) =>
+                      setUsername({
+                        value: e.target.value,
+                        isValid: true,
+                        notSet: false,
+                      })
+                    }
+                    onBlur={validateUsernameInput}
+                  ></input>
+                </div>
+              </div>
+              <div>
+                <div className="flex items-center justify-between pt-4"></div>
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium leading-6 text-black-900"
+                >
+                  Email Adresse
+                </label>
+                <div className="mt-2">
+                  <input
+                    id="email"
+                    name="email"
+                    type="text"
+                    autoComplete="email"
+                    required
+                    disabled={loading}
+                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6 px-3"
+                    value={email.value}
+                    onChange={(e) =>
+                      setEmail({
+                        value: e.target.value,
+                        isValid: true,
+                        notSet: false,
+                      })
+                    }
+                    onBlur={validateEmailInput}
+                  ></input>
+                </div>
+              </div>
+              <div>
+                <div className="flex items-center justify-between pt-4">
+                  <label
+                    htmlFor="password"
+                    className="block text-sm font-medium leading-6 text-gray-900"
+                  >
+                    Passwort
+                  </label>
+                </div>
+                <div className="mt-2">
+                  <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    autoComplete="current-password"
+                    required
+                    disabled={loading}
+                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6 px-3"
+                    value={password.value}
+                    onChange={(e) =>
+                      setPassword({
+                        value: e.target.value,
+                        isValid: true,
+                        notSet: false,
+                      })
+                    }
+                    onBlur={validatePasswordInput}
+                  ></input>
+                </div>
+              </div>
+              <div>
+                <div className="flex items-center justify-between pt-4">
+                  <label
+                    htmlFor="passwordVal"
+                    className="block text-sm font-medium leading-6 text-gray-900"
+                  >
+                    Passwort wiederholen
+                  </label>
+                </div>
+                <div className="mt-2">
+                  <input
+                    id="passwordVal"
+                    name="passwordVal"
+                    type="password"
+                    autoComplete="current-password"
+                    required
+                    disabled={loading}
+                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6 px-3"
+                    value={passwordConfirm.value}
+                    onChange={(e) =>
+                      setPasswordConfirm({
+                        value: e.target.value,
+                        isValid: true,
+                        notSet: false,
+                      })
+                    }
+                    onBlur={validatePasswordConfirmInput}
+                  ></input>
+                </div>
+              </div>
+            </div>
+            <div className={`${styles.footer} ${styles.textcenter}`}>
+              {loading ? (
+                <div
+                  style={{
+                    height: '5rem',
+                    alignItems: 'center',
+                    display: 'flex',
+                  }}
+                >
+                  <i className={`${styles.input_loading}`}></i>
+                </div>
+              ) : (
+                <div
+                  className={styles.alertMessage}
+                  style={{
+                    opacity: getAlertMessage() ? '100%' : '0%',
+                  }}
+                >
+                  {getAlertMessage()}
+                </div>
+              )}
+              <button
+                className={styles.submit}
+                style={{
+                  opacity: getAlertMessage() || loading ? '50%' : '100%',
+                  cursor:
+                    getAlertMessage() || loading ? 'not-allowed' : 'pointer',
+                }}
+                onClick={submit}
+                disabled={getAlertMessage() || loading}
+              >
+                {' '}
+                Registrieren
+              </button>
+            </div>
+            <div className={styles.register}>
+              <button
+                style={{ color: '#009D3A', opacity: loading ? '50%' : '100%'}}
+                className="text-sm"
+                onClick={async (e) => {
+                  e.preventDefault()
+                  setIsLogin(true)
+                }}
+                disabled={loading}
+              >
+                Bereits einen Account? Jetzt anmelden!
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-      <button className={styles.submit} onClick={submitHandler}>
-        Sign Up
-      </button>
     </>
   )
 }

@@ -9,7 +9,7 @@ export default function LoginPage() {
 
   return (
     <form className={styles.form}>
-      {isLogin ? <Login /> : <SignUp />}
+      {isLogin ? <Login setIsLogin={setIsLogin} /> : <SignUp setIsLogin={setIsLogin} />}
     </form>
   )
 }
