@@ -1,11 +1,11 @@
 'use client'
 
-import Homepage from '@/components/homepage/Homepage'
+import TimeLineStart from '@/components/timeline-start/TimelineStart'
 
 export default function Home({ params }) {
   return (
     <div>
-      <Homepage />
+      <TimeLineStart />
     </div>
   )
 }
