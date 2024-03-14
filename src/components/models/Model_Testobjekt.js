@@ -13,7 +13,7 @@ export default function Model_Testobjekt() {
 
   const mobileSize = {
     height: "20vh",
-    width: "60vw",
+    width: "30vw",
   }
 
   useEffect(() => {
