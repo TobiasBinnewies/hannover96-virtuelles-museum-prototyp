@@ -12,7 +12,7 @@ module.exports = {
       description:
         'Hannover 96 wurde 1896 als „Hannoversche Fußball-Club von 1896 (HFC)“ gegründet, begann jedoch erst 1899 mit Fußball und wurde 1901 ein reiner Fußballverein.',
       model: models.Model_Trikot,
-      arlink: 'https://ar.scanblue.cloud/assets/arqr.html?arData=eyJhcklkIjoic2NhbmJsdWUtVHhRTGNnYyIsInNvdXJjZSI6IiJ9',
+      arlink: null,
       content: 'Hannover 96 wurde 1896 als „Hannoversche Fußball-Club von 1896 (HFC)“ gegründet, begann jedoch erst 1899 mit Fußball und wurde 1901 ein reiner Fußballverein.',
       images: [],
     },
@@ -139,8 +139,8 @@ module.exports = {
         'Hannover 96 steigt auf und bricht Zuschauerrekord im Niedersachsenstadion.',
       content:
         'Hannover 96 gelang zusammen mit Borussia Neunkirchen als erster Mannschaften der Aufstieg in die neu gegründete 1. Bundesliga! Dank des Niedersachsenstadions wurde ebenso ein starker Wert an Zuschauerzahlen in diesem Jahr eingefahren. Mit einem Durchschnitt von 40.000 Zuschauern pro Spiel im Niedersachsenstadion stellte 96 einen neuen Rekord auf, der über zehn Jahre in der Bundesliga Bestand haben sollte.',
-      model: null,
-      arlink: null,
+      model: models.Model_Vase,
+      arlink: 'https://ar.scanblue.cloud/assets/arqr.html?arData=eyJhcklkIjoic2NhbmJsdWUtVHhRTGNnYyIsInNvdXJjZSI6IiJ9',
       images: [],
     },
 
