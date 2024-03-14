@@ -7,7 +7,7 @@ export default function Model_Trikot() {
   const mediaQuery = window.matchMedia("(min-width: 1200px)")
 
   const desktopSize = {
-    height: "30vh",
+    height: "40vh",
     width: "30vw",
   }
 
@@ -25,7 +25,7 @@ export default function Model_Trikot() {
   }, [])
 
   return (
-    <model-viewer className={'relative mt-20'}
+    <model-viewer className={'relative mt-1'}
                   alt="Modell H96-Trikot" poster={'/poster_trikot.png'}
                   src='/trikot.glb' ios-src='/trikot.usdz' ar ar-modes="webxr scene-viewer quick-look" shadow-intensity='1' camera-controls
                   touch-action='pan-y' disable-zoom
