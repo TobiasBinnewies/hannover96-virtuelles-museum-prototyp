@@ -26,7 +26,7 @@ export default function Model_Teeservice() {
 
   return (
     <model-viewer className={'relative mt-1'}
-                  alt="Modell Teeservice"
+                  alt="Modell Teeservice" poster={'/poster_teeservice.png'}
                   src='teeservice.glb' ios-src='/teeservice.usdz' ar ar-modes="webxr scene-viewer quick-look" shadow-intensity='1' camera-controls
                   touch-action='pan-y' disable-zoom
                   style={style}>
