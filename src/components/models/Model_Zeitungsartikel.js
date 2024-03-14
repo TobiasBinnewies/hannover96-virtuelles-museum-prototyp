@@ -25,7 +25,7 @@ export default function Model_Zeitungsartikel() {
   }, [])
 
   return (
-    <model-viewer className={'relative mt-20'}
+    <model-viewer className={'relative mt-1'}
                   alt="Modell Zeitungsartikel 1971" poster={'/poster_zeitungsartikel.png'}
                   src='zeitungsartikel.glb' ios-src='/zeitungsartikel.usdz' shadow-intensity='1' camera-controls
                   touch-action='pan-y' disable-zoom

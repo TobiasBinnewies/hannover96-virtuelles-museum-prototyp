@@ -25,7 +25,7 @@ export default function Model_Wimpel2() {
   }, [])
 
   return (
-    <model-viewer className={'relative mt-20'}
+    <model-viewer className={'relative mt-1'}
                   alt="Modell Wimpel" poster={'/poster_wimpel2.png'}
                   src='wimpel2.glb' ios-src='/wimpel2.usdz' ar ar-modes="webxr scene-viewer quick-look" shadow-intensity='1' camera-controls
                   touch-action='pan-y' disable-zoom

@@ -25,7 +25,7 @@ export default function Model_Infoplakat() {
   }, [])
 
   return (
-    <model-viewer className={'relative mt-20'}
+    <model-viewer className={'relative mt-1'}
                   alt="Modell Infoplakat"  poster={'/poster_infoplakat.png'}
                   src='infoplakat.glb' ios-src='/infoplakat.usdz' ar ar-modes="webxr scene-viewer quick-look" shadow-intensity='1' camera-controls
                   touch-action='pan-y' disable-zoom

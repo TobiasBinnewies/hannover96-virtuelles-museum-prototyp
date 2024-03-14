@@ -25,7 +25,7 @@ export default function Model_Gruendung() {
   }, [])
 
   return (
-    <model-viewer className={'relative mt-20'}
+    <model-viewer className={'relative mt-1'}
                   alt="Modell Gründungsschrift" poster={'/poster_gruendung.png'}
                   src='/gruendung.glb' ios-src='/gruendung.usdz' ar ar-modes="webxr scene-viewer quick-look" shadow-intensity='1' camera-controls
                   touch-action='pan-y' disable-zoom

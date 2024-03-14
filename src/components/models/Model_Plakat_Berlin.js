@@ -25,7 +25,7 @@ export default function Model_Plakat_Berlin() {
   }, [])
 
   return (
-    <model-viewer className={'relative mt-20'}
+    <model-viewer className={'relative mt-1'}
                   alt="Modell Plakat Berlin"
                   src='plakat_berlin.glb' ios-src='/plakat_berlin.usdz' ar ar-modes="webxr scene-viewer quick-look" shadow-intensity='1' camera-controls
                   touch-action='pan-y' disable-zoom

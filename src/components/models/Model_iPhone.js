@@ -25,7 +25,7 @@ export default function Model_iPhone() {
   }, [])
 
   return (
-    <model-viewer className={'relative mt-20'}
+    <model-viewer className={'relative mt-1'}
                   alt="xxx"
                   src='/iphone.glb' ios-src='/iphone.usdz' ar ar-modes="webxr scene-viewer quick-look" shadow-intensity='1' camera-controls
                   touch-action='pan-y' disable-zoom
