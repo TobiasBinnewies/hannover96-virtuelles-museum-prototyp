@@ -19,7 +19,7 @@
   content: '';
   width: 100%;
   height: 50%;
-  background-image: linear-gradient(to bottom, #fffbeb, transparent);
+  background-image: linear-gradient(to bottom, #f8f8f8, transparent);
 }
 
 #timeline-list-container::after {
@@ -29,7 +29,7 @@
   content: '';
   width: 100%;
   height: 50%;
-  background-image: linear-gradient(to top, #fffbeb, transparent);
+  background-image: linear-gradient(to top, #f8f8f8, transparent);
 }
 
 #timeline-footer {

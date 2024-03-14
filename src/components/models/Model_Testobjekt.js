@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 export default function Model_Testobjekt() {
   const [style, setStyle] = useState({})
 
-  const mediaQuery = window.matchMedia("(min-width: 640px)")
+  const mediaQuery = window.matchMedia("(min-width: 1200px)")
 
   const desktopSize = {
     height: "30vh",
@@ -13,7 +13,7 @@ export default function Model_Testobjekt() {
 
   const mobileSize = {
     height: "20vh",
-    width: "60vw",
+    width: "30vw",
   }
 
   useEffect(() => {

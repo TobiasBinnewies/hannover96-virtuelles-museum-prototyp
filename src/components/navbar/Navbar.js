@@ -20,13 +20,13 @@ export default function Navbar({ buttons, session }) {
         <div className="absolute z-[60] left-0 top-0 w-screen bg-white">
           <div
             className="bg-black h-8"
-            style={{ width: '100%', height: '64px' }}
+            style={{ width: '100%', height: '60px' }}
           >
             <img
               onClick={() => openBurgerMenu('block')}
               src={'/burgerMenu.png'}
               className={
-                'md:hidden absolute left-0 top-6 h-[10vh] hover:cursor-pointer'
+                'lg:hidden absolute left-0 top-6 h-[10vh] hover:cursor-pointer'
               }
             />
           </div>
@@ -88,7 +88,7 @@ export default function Navbar({ buttons, session }) {
             {/* Left Buttons */}
             <div className="flex items-center justify-start mt-[-50px]">
               {buttons.map((button, index) => (
-                <div key={index} className="items-center ml-4 hidden md:flex">
+                <div key={index} className="items-center ml-4 hidden lg:flex">
                   <Link href={button.destination}>
                     <div className="bg-white rounded-lg p-4">
                       <div className="flex items-center">
@@ -122,7 +122,7 @@ export default function Navbar({ buttons, session }) {
             {/* Right Login Button */}
             {session ? (
               <div
-                className="items-center justify-end hidden md:flex"
+                className="items-center justify-end hidden lg:flex"
                 style={{ marginTop: '-45px', marginRight: '10px' }}
               >
                 <div className="bg-white rounded-lg p-4">
@@ -148,7 +148,7 @@ export default function Navbar({ buttons, session }) {
                 className="flex items-center justify-end"
                 style={{ marginTop: '-45px', marginRight: '10px' }}
               >
-                <div className="bg-white rounded-lg p-4 hidden md:flex">
+                <div className="bg-white rounded-lg p-4 hidden lg:flex">
                   <div className="flex items-center">
                     <div className="flex flex-col">
                       <div className="text-primary-text font-semibold text-sm">
