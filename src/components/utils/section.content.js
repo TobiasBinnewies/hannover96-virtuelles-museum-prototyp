@@ -63,7 +63,7 @@ module.exports = {
       content:
         'Der Bau des neuen Vereinsheims am Misburger Damm wird gestartet.',
       model: models.Model_Vase,
-      arlink: null,
+      arlink: 'https://ar.scanblue.cloud/assets/arqr.html?arData=eyJhcklkIjoic2NhbmJsdWUtVHhRTGNnYyIsInNvdXJjZSI6IiJ9',
       images: [],
     },
     {
@@ -140,7 +140,7 @@ module.exports = {
       content:
         'Hannover 96 steigt auf und bricht Zuschauerrekord im Niedersachsenstadion. Hannover 96 gelang zusammen mit Borussia Neunkirchen als erster Mannschaften der Aufstieg in die neu gegründete 1. Bundesliga! Dank des Niedersachsenstadions wurde ebenso ein starker Wert an Zuschauerzahlen in diesem Jahr eingefahren. Mit einem Durchschnitt von 40.000 Zuschauern pro Spiel im Niedersachsenstadion stellte 96 einen neuen Rekord auf, der über zehn Jahre in der Bundesliga Bestand haben sollte.',
       model: models.Model_Teller,
-      arlink: 'https://ar.scanblue.cloud/assets/arqr.html?arData=eyJhcklkIjoic2NhbmJsdWUtVHhRTGNnYyIsInNvdXJjZSI6IiJ9',
+      arlink: null,
       images: [],
     },
 
