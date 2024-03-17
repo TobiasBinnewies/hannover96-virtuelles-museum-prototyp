@@ -11,7 +11,7 @@ module.exports = {
       date: '12.04.1896',
       description:
         'Hannover 96 wurde 1896 als „Hannoversche Fußball-Club von 1896 (HFC)“ gegründet, begann jedoch erst 1899 mit Fußball und wurde 1901 ein reiner Fußballverein.',
-      model: models.Model_Trikot,
+      model: models.Model_Gruendung,
       arlink: null,
       content: 'Hannover 96 wurde 1896 als „Hannoversche Fußball-Club von 1896 (HFC)“ gegründet, begann jedoch erst 1899 mit Fußball und wurde 1901 ein reiner Fußballverein.',
       images: [],
@@ -22,7 +22,7 @@ module.exports = {
       description: null,
       content:
         'Es entstand der Hannoversche Sportverein von 1896, in dem der Hannoversche FC von 1896 mit dem Verein BV Hannovera 1898 (Vereinsfarben Blau-weiß) fusionierte. Der HSV von 1896 hat die Vereinsfarben des HFC - schwarz-weiß-grün - übernommen, die Spielkleidung war zunächst schwarz. Später kehrte man zum Rot, in dem bereits der HFC spielte, zurück.',
-      model: models.Model_Plakat_Berlin,
+      model: models.Model_Trikot,
       arlink: null,
       images: [],
     },
@@ -32,7 +32,7 @@ module.exports = {
       description: null,
       content:
         'Ein Highlight - das Spiel gegen Tottenham Hotspurs mit über 10.000 Zuschauern an der Radrennbahn.',
-      model: models.Model_Wimpel3,
+      model: null,
       arlink: null,
       images: [],
     },
@@ -42,7 +42,7 @@ module.exports = {
       description: null,
       content:
         'Wiederaufnahme von internationalen Kontakten nach dem Ersten Weltkrieg, Testspiele in Schweden und Hannover gegen IFK Malmö, die fünf Jahre später Gründungsmitglied der professionellen Allsvenskan werden sollten.',
-      model: models.Model_Wimpel2,
+      model: null,
       arlink: null,
       images: [],
     },
@@ -52,7 +52,7 @@ module.exports = {
       description: null,
       content:
         'Bereits 1911 zog Paul von Hindenburg im vorläufigen Ruhestand nach Hannover. Reaktiviert für den Ersten Weltkrieg, wurde er als Generalfeldmarschall und Chef der Obersten Heeresleitung eine der mächtigsten Personen im Deutschen Kaiserreich. Nach der Niederlage und dem damit verbundenen Ausscheiden aus dem Militärdienst zog Paul von Hindenburg wieder nach Hannover und bot in einem an Hannover 96 gerichteten Telegramm an, den Ehrenvorsitz zu übernehmen. Aus dem Angebot lässt sich ableiten, welche wichtige Rolle der Hannoversche Sportverein von 1896 bereits in der Stadt spielte, immerhin wurde Paul von Hindenburg in weiten Teilen der Weimarer Republik als Kriegsheld verehrt. Gleichzeitig sind durch die Übertragung der Ehrenpräsidentschaft Rückschlüsse auf die politischen Einstellungen des damaligen Vereinsvorstandes möglich, da Paul von Hindenburg in rechten und demokratiefeindlichen Kreisen besonders hohes Ansehen genoss. Die Weigerung der Stadt Hannover, das 1922 fertiggestellte Eilenriedestadion nach Hindenburg zu benennen – wie es ein mit großzügigen Spenden verbundener Wunsch aus der Bürgerschaft forderte – zeigt die politische Zerrissenheit der Weimarer Republik.',
-      model: models.Model_Wimpel1,
+      model: null,
       arlink: null,
       images: [],
     },
@@ -62,7 +62,7 @@ module.exports = {
       description: null,
       content:
         'Der Bau des neuen Vereinsheims am Misburger Damm wird gestartet.',
-      model: models.Model_Gruendung,
+      model: models.Model_Vase,
       arlink: null,
       images: [],
     },
@@ -73,7 +73,7 @@ module.exports = {
         'Hannover 96 wurde in den 1930er-Jahren deutschlandweit bekannt, und Robert Fuchs wurde der erste hauptberufliche Trainer, der 16 Jahre lang die Mannschaft betreute.',
       content:
         'Hannover 96 wurde in den 1930er-Jahren deutschlandweit bekannt, und Robert Fuchs wurde der erste hauptberufliche Trainer, der 16 Jahre lang die Mannschaft betreute. In Hannover spielte die Mannschaft stets eine große Rolle, deutschlandweit bekannt wurde sie allerdings erst in den 1930er-Jahren. Infolgedessen wurde Robert Fuchs erstmals als ein hauptberuflicher Trainer für die Fußballmannschaft beschäftigt. Dieser wurde mit Unterbrechung 16 Jahre lang Trainer bei Hannover 96.',
-      model: models.Model_Teeservice,
+      model: models.Model_Zeitungsartikel,
       arlink: null,
       images: [],
     },
@@ -84,7 +84,7 @@ module.exports = {
         'Hannover 96 besiegte in einem dramatischen Finale 1938 den Favoriten Schalke 04 mit einem 4:3-Sieg nach Verlängerung. Damit wurde Hannover 96 sensationell deutscher Meister.',
       content:
         'Hannover 96 besiegte in einem dramatischen Finale 1938 den Favoriten Schalke 04 mit einem 4:3-Sieg nach Verlängerung. Damit wurde Hannover 96 sensationell deutscher Meister. Den ersten großen Titel gewann Hannover 96 gegen den Favoriten FC Schalke 04 aus Gelsenkirchen, die den deutschen Fußball in diesen Jahren dominierten (dreimal Meister, einmal Pokalsieger und drei Vizetitel in den vier vorhergegangen Jahren). Am 26. Juni trennten sich beide Mannschaften im Berliner Olympiastadion nach Verlängerung 3:3, sodass ein Wiederholungsspiel notwendig wurde. Vor erneut 100.000 Zuschauern, darunter zahlreiche Schlachtenbummler aus Hannover, ging es schon wieder mit einem 3:3 in die Verlängerung, bevor Erich Meng in der 117. Minute dramatisch das erlösende 4:3 erzielen konnte.',
-      model: models.Model_Trikot2,
+      model: models.Model_Plakat_Berlin,
       arlink: null,
       images: [],
     },
@@ -94,7 +94,7 @@ module.exports = {
       description: null,
       content:
         'Nach dem Zweiten Weltkrieg wurde Hannover 96 wie alle deutschen Vereine aufgelöst. Im Jahr 1946 erfolgte die Wiedergründung. Sportlich misslang als Fünfter der Oberliga Niedersachsen-Süd zunächst die Qualifikation für die Oberliga Nord, was erstmals in der Vereinsgeschichte Zweitklassigkeit bedeutet hätte. Durch eine Protestwelle und mehrere Wiederholungsspiele wurde man 1947/48 jedoch doch noch – zulasten des SV Linden 07 - in die neu geschaffene Oberliga aufgenommen, die damals höchste deutsche Fußballliga.',
-      model: models.Model_Teller,
+      model: null,
       arlink: null,
       images: [],
     },
@@ -105,7 +105,7 @@ module.exports = {
         '1954 gewann Hannover 96 unter Trainer Helmut Kronsbein die Deutsche Fußballmeisterschaft - ihr zweiter Meisterschaftstitel. Im Endspiel besiegten sie den favorisierten 1. FC Kaiserslautern und schrieben Fußballgeschichte.',
       content:
         '1954 gewann Hannover 96 unter Trainer Helmut Kronsbein die Deutsche Fußballmeisterschaft - ihr zweiter Meisterschaftstitel. Im Endspiel besiegten sie den favorisierten 1. FC Kaiserslautern und schrieben Fußballgeschichte. Im Jahr 1954 feierte Hannover 96 einen historischen Triumph, als sie die Deutsche Fußballmeisterschaft gewannen. Dieser Sieg markierte einen bemerkenswerten Höhepunkt in der Geschichte des Vereins und brachte ihnen den zweiten Meisterschaftstitel ein. Unter der Leitung ihres Trainers Helmut Kronsbein kämpfte sich die Mannschaft erfolgreich durch die Saison. Im Endspiel setzte sich Hannover 96 vor 80.000 Zuschauern schließlich im Endspiel gegen den hoch favorisierten 1. FC Kaiserslautern mit seinen späteren Weltmeistern um Fritz Walter deutlich mit 5:1 durch. Dieser historische Sieg bleibt für die Fans von Hannover 96 unvergesslich und ist ein bedeutender Meilenstein in der Vereinsgeschichte.',
-      model: models.Model_Pferd,
+      model: null,
       arlink: null,
       images: [],
     },
@@ -115,7 +115,7 @@ module.exports = {
       description: null,
       content:
         'Zwischen 1960 und 1967 stand Hannover 96 fünfmal im Finale um die Deutsche Meisterschaft der Amateure und konnte den Titel 1960, 1964 und 1965 gewinnen. Damit ist Hannover 96 (mit SC Jülich 1910 und SV Werder Bremen) Rekordtitelträger. Diese Erfolge festigten die führende Position von Hannover 96 im Nachwuchsbereich.',
-      model: models.Model_Zeitungsartikel,
+      model: models.Model_Teeservice,
       arlink: null,
       images: [],
     },
@@ -127,7 +127,7 @@ module.exports = {
         'Die Gründung der Bundesliga im Jahr 1963 markierte einen Wendepunkt im deutschen Fußball. Sie hat nicht nur die deutsche Fußballlandschaft revolutioniert, sondern auch die Rivalität zwischen Hannover 96 und Eintracht Braunschweig zu einem fesselnden Bestandteil des deutschen Fußballs gemacht.',
       content:
         'Die Gründung der Bundesliga im Jahr 1963 markierte einen Wendepunkt im deutschen Fußball. Sie hat nicht nur die deutsche Fußballlandschaft revolutioniert, sondern auch die Rivalität zwischen Hannover 96 und Eintracht Braunschweig zu einem fesselnden Bestandteil des deutschen Fußballs gemacht. Im Jahr 1963 wurde ein entscheidender Schritt in der Geschichte des deutschen Fußballs gemacht, als die eingleisige Bundesliga gegründet und die mehrgleisigen Oberligen mit Mannschaften im Amateurstatus durch professionelle Strukturen abgelöst wurden. Lange hatte sich der DFB zuvor gegen diesen Schritt gewehrt, der in vielen anderen Ländern längst jahrzehntelang vollzogen war. Das Prestige als Gründungsmitglied wurde 96 verwehrt, stattdessen wurde – aufgrund von nur bedingt transparent kommunizierten Kriterien - Eintracht Braunschweig als dritter Nordklub nach dem Hamburger SV und SV Werder Bremen auserkoren. Das intensivierte die Rivalität zwischen den beiden Vereinen, deren Heimatstädte seit Jahrhunderten in Konkurrenz standen und die bis heute anhält. Die Duelle zwischen Hannover 96 und Eintracht Braunschweig, auch als das "Niedersachsenderby" bekannt, sind stets mit großer Spannung und Leidenschaft verbunden.',
-      model: models.Model_Infoplakat,
+      model: null,
       arlink: null,
       images: [],
     },
@@ -139,7 +139,7 @@ module.exports = {
         'Hannover 96 steigt auf und bricht Zuschauerrekord im Niedersachsenstadion.',
       content:
         'Hannover 96 steigt auf und bricht Zuschauerrekord im Niedersachsenstadion. Hannover 96 gelang zusammen mit Borussia Neunkirchen als erster Mannschaften der Aufstieg in die neu gegründete 1. Bundesliga! Dank des Niedersachsenstadions wurde ebenso ein starker Wert an Zuschauerzahlen in diesem Jahr eingefahren. Mit einem Durchschnitt von 40.000 Zuschauern pro Spiel im Niedersachsenstadion stellte 96 einen neuen Rekord auf, der über zehn Jahre in der Bundesliga Bestand haben sollte.',
-      model: models.Model_Vase,
+      model: models.Model_Teller,
       arlink: 'https://ar.scanblue.cloud/assets/arqr.html?arData=eyJhcklkIjoic2NhbmJsdWUtVHhRTGNnYyIsInNvdXJjZSI6IiJ9',
       images: [],
     },
@@ -163,7 +163,7 @@ module.exports = {
         'Im Jahr 1971 unternahm Hannover 96 eine außergewöhnliche Reise in die USA und Kanada, für die der Verein ein spezielles, schwarz-weiß kariertes Trikot anfertigen ließ, um das 75. Vereinsjubiläum zu feiern.',
       content:
         'Im Jahr 1971 unternahm Hannover 96 eine außergewöhnliche Reise in die USA und Kanada, für die der Verein ein spezielles, schwarz-weiß kariertes Trikot anfertigen ließ, um das 75. Vereinsjubiläum zu feiern. Im Jahr 1971 wagte Hannover 96 ein außergewöhnliches Abenteuer, als die Mannschaft zu einer Reise nach Südamerika aufbrach. Was diese Reise noch bemerkenswerter machte, war die Tatsache, dass der Verein eigens für dieses Unterfangen ein spezielles Trikot anfertigen ließ - eine Praxis, die zu dieser Zeit äußerst unüblich war. Dieses Trikot war ein schwarz-weiß gefärbtes Karo anlässlich des 75. Vereinsjubiläums. Damit spielte 96 unter anderem in Vancouver gegen den FC Santos mit Pelé. Dem Weltstar gelang in seinem 900. Spiel beim 3:1 Sieg ein Tor gegen die Roten.',
-      model: models.Model_Zeitungsartikel,
+      model: null,
       arlink: null,
       images: [],
     },
@@ -187,7 +187,7 @@ module.exports = {
         '1974 wurde Deutschland im eigenen Land Weltmeister, und im Niedersachsenstadion fand das historische Spiel zwischen der DDR und Brasilien statt, das Brasilien mit 1:0 gewann.',
       content:
         '1974 wurde Deutschland im eigenen Land Weltmeister, und im Niedersachsenstadion fand das historische Spiel zwischen der DDR und Brasilien statt, das Brasilien mit 1:0 gewann. Das Jahr 1974 war ein unvergessliches in der gesamten deutschen Fußballhistorie. Deutschland wurde Weltmeister bei einer WM im eigenen Land - bzw. in Westdeutschland. Im Niedersachsenstadion fand hierbei auch ein spannendes Spiel mit einer gewissen politischen Dynamik durch den Kalten Krieg zwischen der DDR und Brasilien statt, das Brasilien 1:0 für sich entschied. Eigentlich hatten die Zuschauer beim Kartenkauf für diese 2. Finalrunde mit der BRD gerechnet, die jedoch durch die 0:1-Niederlage gegen die DDR in die andere Gruppe rutschte. Insgesamt wurden vier Spiele in Hannover ausgetragen, darunter auch heute noch bemerkenswerte Begegnungen wie die Niederlande um Johan Cruyff gegen Uruguay oder Brasilien gegen Argentinien.',
-      model: null,
+      model: models.Model_Infoplakat,
       arlink: null,
       images: [],
     },
@@ -223,7 +223,7 @@ module.exports = {
         'Nach dem direkten Abstieg aus der 1. Bundesliga wurde im darauffolgenden Jahr sofort der Wiederaufstieg ermöglicht.',
       content:
         'Nach dem direkten Abstieg aus der 1. Bundesliga wurde im darauffolgenden Jahr sofort der Wiederaufstieg ermöglicht. Nachdem 96 sich zunächst nicht in der ersten Liga halten konnte, wurde in der nächsten Spielzeit der sofortige Wiederaufstieg ermöglicht. Nach einem 4:3-Sieg gegen St. Pauli am 30. Mai 1987 war der Aufstieg bereits vier Spieltage vor Ende der Saison vor 4.000 mitgereisten Hannoveranern dingfest. Siegfried Reich wurde mit 26 Toren Torschützenkönig der zweiten Liga.',
-      model: null,
+      model: models.Model_Pferd,
       arlink: null,
       images: [],
     },
@@ -235,7 +235,7 @@ module.exports = {
         '96 darf als erste und bisher letzte Mannschaft aus der 2. Bundesliga den DFB-Pokal in den Himmel strecken. Was für ein Erfolg!',
       content:
         '96 darf als erste und bisher letzte Mannschaft aus der 2. Bundesliga den DFB-Pokal in den Himmel strecken. Was für ein Erfolg! In diesem Jahr wurde der größte Erfolg der jüngeren Geschichte von Hannover 96 gefeiert. Nach Siegen über unter anderem Werder Bremen, Borussia Dortmund und insgesamt fünf Bundesligisten gelang zum ersten und bisher auch letzten Mal einer Mannschaft aus der 2. Bundesliga der Triumph im DFB-Pokal. Das Finale wurde auf denkbar spannende Art und Weise im Elfmeterschießen gegen Borussia Mönchengladbach gewonnen. Der Pokalheld war Jörg Sievers, der sowohl im Halbfinale und Finale mehrere Elfmeter parieren konnte und außerdem den entscheidenden Elfmeter im Halbfinale selbst verwandelte.',
-      model: null,
+      model: models.Model_Wimpel3,
       arlink: null,
       images: [],
     },
@@ -316,7 +316,7 @@ module.exports = {
       description: null,
       content:
         'Einer der wohl traurigsten Tage der Vereinsgeschichte. 96-Kapitän, Nationaltorwart und Vereinslegende Robert Enke verstirbt an diesem Tag. Niemals Allein!',
-      model: null,
+      model: models.Model_Trikot2,
       arlink: null,
       images: [],
     },
@@ -340,7 +340,7 @@ module.exports = {
         'Die neue Saison stand unter ganz neuen Vorzeichen. Slomkas 10-Sekunden-Umschaltspiel führte zu Hannovers Rekordsaison auf Platz 4 und bedeutete europäischen Fußball in der nächsten Spielzeit!',
       content:
         'Die neue Saison stand unter ganz neuen Vorzeichen. Slomkas 10-Sekunden-Umschaltspiel führte zu Hannovers Rekordsaison auf Platz 4 und bedeutete europäischen Fußball in der nächsten Spielzeit! Ein erster Meilenstein in der Saison wurde am 13. Spieltag der Saison erreicht: 96 überholte Braunschweig in der ewigen Tabelle. Bis heute ist es die Rekordsaison der Vereinsgeschichte. Es war ein Kopf-an-Kopf-Rennen mit Bayern München um den dritten Platz. Am 25. Spieltag erregte ein 3:1-Sieg gegen den Konkurrenten große mediale Aufregung. Am Ende ging das Rennen gegen den Rekordmeister verloren, trotzdem endete die Saison auf einem unglaublichen 4. Platz. Das Motto für die nächste Saison sollte heißen: „Auf nach Europa“!',
-      model: null,
+      model: models.Model_Wimpel1,
       arlink: null,
       images: [],
     },
@@ -364,7 +364,7 @@ module.exports = {
         'Eine kräftezehrende Spielzeit mit vielen Spielen hinterließ ihre Spuren. In der Europa League ging es dieses Mal bis ins Sechzehntelfinale und in der Liga stand der 9. Platz zum Abschluss.',
       content:
         'Eine kräftezehrende Spielzeit mit vielen Spielen hinterließ ihre Spuren. In der Europa League ging es dieses Mal bis ins Sechzehntelfinale und in der Liga stand der 9. Platz zum Abschluss. In der Europa League ging es so gut weiter, wie es aufgehört hat. Die Gruppe konnte ungeschlagen als Gruppenerster überstanden werden. Allerdings war im Sechzehntelfinale Schluss, dort unterlag man Anschi Machatschkala mit Starspieler Samuel Eto‘o. In der Liga riss außerdem die Serie der 22 ungeschlagenen Spiele in der Heimat. Insgesamt war es eine kräftezehrende Hinrunde, mit insgesamt 30 Pflichtspielen hatte 96 die meisten Pflichtspiele der deutschen Vereine im Profifußball. Im Endeffekt stand trotzdem eine ordentliche Saison auf dem neunten Platz zu Buche.',
-      model: null,
+      model: models.Model_Wimpel2,
       arlink: null,
       images: [],
     },
