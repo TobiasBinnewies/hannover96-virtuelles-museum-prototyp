@@ -26,7 +26,7 @@ export default function Model_Trikot() {
 
   return (
     <model-viewer className={'relative mt-1'}
-                  alt="Modell H96-Trikot" poster={'/poster_trikot.png'}
+                  alt="Modell H96-Trikot" poster={'/poster_trikot1.png'}
                   src='/trikot.glb' ios-src='/trikot.usdz' ar ar-modes="webxr scene-viewer quick-look" shadow-intensity='1' camera-controls
                   touch-action='pan-y' disable-zoom
                   style={style}>
