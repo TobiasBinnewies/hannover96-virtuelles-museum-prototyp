@@ -108,16 +108,18 @@ export default function Navbar({ buttons, session }) {
             </div>
 
             {/* Logo (centered) */}
-            <div className="navbarBrand text-center">
-              <a className="navbarIcon">
-                <Image
-                  src="/H96_Header_Logo.png"
-                  alt="Logo"
-                  width={110}
-                  height={96}
-                ></Image>
-              </a>
-            </div>
+            <Link href='/'>
+              <div className="navbarBrand text-center">
+                <a className="navbarIcon">
+                  <Image
+                    src="/H96_Header_Logo.png"
+                    alt="Logo"
+                    width={110}
+                    height={96}
+                  ></Image>
+                </a>
+              </div>
+            </Link>
 
             {/* Right Login Button */}
             {session ? (
