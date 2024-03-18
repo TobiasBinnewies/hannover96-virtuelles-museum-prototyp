@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Kachel from './Kachel'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 const kacheln = [
   {
@@ -35,10 +35,8 @@ function Homepage() {
 
       if (isWrongOrientation) {
         timeoutId = setTimeout(() => {
-          // Die Funktion, die nach 5 Sekunden falscher Orientierung ausgeführt wird
-          alert("Frohe Ostern!");
-          // Hier kannst du deine gewünschte Funktion aufrufen
-        }, 5000);
+          playAudio();
+        }, 20000);
       } else {
         clearTimeout(timeoutId);
       }
@@ -51,6 +49,11 @@ function Homepage() {
       clearTimeout(timeoutId);
     };
   }, []);
+
+  const playAudio = () => {
+    const audio = new Audio('/digitales_museum.mp3');
+    audio.play();
+  };
 
   return (
     <div className={'h-screen bg-primary-bg p-10 flex items-center'}>
