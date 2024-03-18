@@ -35,7 +35,7 @@ function Homepage() {
 
       if (isWrongOrientation) {
         timeoutId = setTimeout(() => {
-          playAudio();
+          window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
         }, 20000);
       } else {
         clearTimeout(timeoutId);
@@ -49,11 +49,6 @@ function Homepage() {
       clearTimeout(timeoutId);
     };
   }, []);
-
-  const playAudio = () => {
-    const audio = new Audio('/digitales_museum.mp3');
-    audio.play();
-  };
 
   return (
     <div className={'h-screen bg-primary-bg p-10 flex items-center'}>
