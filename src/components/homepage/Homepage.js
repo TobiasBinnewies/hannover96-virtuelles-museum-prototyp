@@ -23,32 +23,35 @@ const kacheln = [
 ]
 
 function Homepage() {
+
+  const [wrongOrientation, setWrongOrientation] = useState(false);
+
   useEffect(() => {
-    let shakeTimeout;
+    let timeoutId;
 
-    const handleShake = () => {
-      clearTimeout(shakeTimeout);
-      shakeTimeout = setTimeout(() => {
-        // Funktion aufrufen, wenn das Handy 5 Sekunden lang geschüttelt wurde
-        yourFunction();
-      }, 5000); // 5000 Millisekunden entsprechen 5 Sekunden
+    const handleOrientationChange = () => {
+      const isWrongOrientation = window.orientation !== 0;
+      setWrongOrientation(isWrongOrientation);
+
+      if (isWrongOrientation) {
+        timeoutId = setTimeout(() => {
+          // Die Funktion, die nach 5 Sekunden falscher Orientierung ausgeführt wird
+          alert("Frohe Ostern!");
+          // Hier kannst du deine gewünschte Funktion aufrufen
+        }, 5000);
+      } else {
+        clearTimeout(timeoutId);
+      }
     };
 
-    // Event-Listener für das devicemotion-Ereignis registrieren
-    window.addEventListener('devicemotion', handleShake);
+    window.addEventListener('orientationchange', handleOrientationChange);
 
-    // Event-Listener beim Komponentenabbau entfernen
     return () => {
-      window.removeEventListener('devicemotion', handleShake);
-      clearTimeout(shakeTimeout);
+      window.removeEventListener('orientationchange', handleOrientationChange);
+      clearTimeout(timeoutId);
     };
-  }, []); // useEffect nur einmal beim Laden des Komponenten ausführen
+  }, []);
 
-  // Die Funktion, die ausgeführt werden soll
-  const yourFunction = () => {
-    // Hier den Code einfügen, den Sie ausführen möchten
-    window.alert("Oh man, du hast aber zittrige Finger!");
-  };
   return (
     <div className={'h-screen bg-primary-bg p-10 flex items-center'}>
       <div
