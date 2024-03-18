@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import Kachel from './Kachel'
 import { useEffect, useState } from 'react'
 
@@ -25,6 +24,8 @@ const kacheln = [
 function Homepage() {
 
   const [wrongOrientation, setWrongOrientation] = useState(false);
+  const [keyQueue, setKeyQueue] = useState([]);
+
 
   useEffect(() => {
     let timeoutId;
@@ -35,8 +36,8 @@ function Homepage() {
 
       if (isWrongOrientation) {
         timeoutId = setTimeout(() => {
-          window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
-        }, 20000);
+          goodluck("Vielen Dank für deine Geduld! Du wirst es nicht bereuen!");
+        }, 96000);
       } else {
         clearTimeout(timeoutId);
       }
@@ -49,6 +50,34 @@ function Homepage() {
       clearTimeout(timeoutId);
     };
   }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      setKeyQueue(prevQueue => [...prevQueue, event.key]);
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    checkKeyCombination();
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [keyQueue]);
+
+  const checkKeyCombination = () => {
+    if (keyQueue.length >= 3) {
+      if (keyQueue[keyQueue.length - 3] === 'h' && keyQueue[keyQueue.length - 2] === '9' && keyQueue[keyQueue.length - 1] === '6') {
+        goodluck("Wow! Du hast den Code geknackt! Herzlichen Glückwunsch!");
+        setKeyQueue([]);
+      }
+    }
+  };
+
+  const goodluck = (msg) => {
+    window.alert(msg);
+    window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
+  }
 
   return (
     <div className={'h-screen bg-primary-bg p-10 flex items-center'}>
