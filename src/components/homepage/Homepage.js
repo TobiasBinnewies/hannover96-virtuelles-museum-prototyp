@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Kachel from './Kachel'
+import { useEffect } from 'react'
 
 const kacheln = [
   {
@@ -22,6 +23,32 @@ const kacheln = [
 ]
 
 function Homepage() {
+  useEffect(() => {
+    let shakeTimeout;
+
+    const handleShake = () => {
+      clearTimeout(shakeTimeout);
+      shakeTimeout = setTimeout(() => {
+        // Funktion aufrufen, wenn das Handy 5 Sekunden lang geschüttelt wurde
+        yourFunction();
+      }, 5000); // 5000 Millisekunden entsprechen 5 Sekunden
+    };
+
+    // Event-Listener für das devicemotion-Ereignis registrieren
+    window.addEventListener('devicemotion', handleShake);
+
+    // Event-Listener beim Komponentenabbau entfernen
+    return () => {
+      window.removeEventListener('devicemotion', handleShake);
+      clearTimeout(shakeTimeout);
+    };
+  }, []); // useEffect nur einmal beim Laden des Komponenten ausführen
+
+  // Die Funktion, die ausgeführt werden soll
+  const yourFunction = () => {
+    // Hier den Code einfügen, den Sie ausführen möchten
+    window.alert("Oh man, du hast aber zittrige Finger!");
+  };
   return (
     <div className={'h-screen bg-primary-bg p-10 flex items-center'}>
       <div
