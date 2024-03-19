@@ -54,7 +54,7 @@ module.exports = {
         'Bereits 1911 zog Paul von Hindenburg im vorläufigen Ruhestand nach Hannover. Reaktiviert für den Ersten Weltkrieg, wurde er als Generalfeldmarschall und Chef der Obersten Heeresleitung eine der mächtigsten Personen im Deutschen Kaiserreich. Nach der Niederlage und dem damit verbundenen Ausscheiden aus dem Militärdienst zog Paul von Hindenburg wieder nach Hannover und bot in einem an Hannover 96 gerichteten Telegramm an, den Ehrenvorsitz zu übernehmen. Aus dem Angebot lässt sich ableiten, welche wichtige Rolle der Hannoversche Sportverein von 1896 bereits in der Stadt spielte, immerhin wurde Paul von Hindenburg in weiten Teilen der Weimarer Republik als Kriegsheld verehrt. Gleichzeitig sind durch die Übertragung der Ehrenpräsidentschaft Rückschlüsse auf die politischen Einstellungen des damaligen Vereinsvorstandes möglich, da Paul von Hindenburg in rechten und demokratiefeindlichen Kreisen besonders hohes Ansehen genoss. Die Weigerung der Stadt Hannover, das 1922 fertiggestellte Eilenriedestadion nach Hindenburg zu benennen – wie es ein mit großzügigen Spenden verbundener Wunsch aus der Bürgerschaft forderte – zeigt die politische Zerrissenheit der Weimarer Republik.',
       model: null,
       arlink: null,
-      images: [],
+      images: ['/Hindenburg_Brief.jpeg'],
     },
     {
       title: 'Bau des neuen Vereinszentrums',
