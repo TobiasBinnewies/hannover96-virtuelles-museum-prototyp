@@ -22,7 +22,7 @@ module.exports = {
       description: null,
       content:
         'Es entstand der Hannoversche Sportverein von 1896, in dem der Hannoversche FC von 1896 mit dem Verein BV Hannovera 1898 (Vereinsfarben Blau-weiß) fusionierte. Der HSV von 1896 hat die Vereinsfarben des HFC - schwarz-weiß-grün - übernommen, die Spielkleidung war zunächst schwarz. Später kehrte man zum Rot, in dem bereits der HFC spielte, zurück.',
-      model: models.Model_Trikot,
+      model: null,
       arlink: null,
       images: [],
     },
@@ -73,7 +73,7 @@ module.exports = {
         'Hannover 96 wurde in den 1930er-Jahren deutschlandweit bekannt, und Robert Fuchs wurde der erste hauptberufliche Trainer, der 16 Jahre lang die Mannschaft betreute.',
       content:
         'Hannover 96 wurde in den 1930er-Jahren deutschlandweit bekannt, und Robert Fuchs wurde der erste hauptberufliche Trainer, der 16 Jahre lang die Mannschaft betreute. In Hannover spielte die Mannschaft stets eine große Rolle, deutschlandweit bekannt wurde sie allerdings erst in den 1930er-Jahren. Infolgedessen wurde Robert Fuchs erstmals als ein hauptberuflicher Trainer für die Fußballmannschaft beschäftigt. Dieser wurde mit Unterbrechung 16 Jahre lang Trainer bei Hannover 96.',
-      model: models.Model_Zeitungsartikel,
+      model: null,
       arlink: null,
       images: [],
     },
@@ -105,7 +105,7 @@ module.exports = {
         '1954 gewann Hannover 96 unter Trainer Helmut Kronsbein die Deutsche Fußballmeisterschaft - ihr zweiter Meisterschaftstitel. Im Endspiel besiegten sie den favorisierten 1. FC Kaiserslautern und schrieben Fußballgeschichte.',
       content:
         '1954 gewann Hannover 96 unter Trainer Helmut Kronsbein die Deutsche Fußballmeisterschaft - ihr zweiter Meisterschaftstitel. Im Endspiel besiegten sie den favorisierten 1. FC Kaiserslautern und schrieben Fußballgeschichte. Im Jahr 1954 feierte Hannover 96 einen historischen Triumph, als sie die Deutsche Fußballmeisterschaft gewannen. Dieser Sieg markierte einen bemerkenswerten Höhepunkt in der Geschichte des Vereins und brachte ihnen den zweiten Meisterschaftstitel ein. Unter der Leitung ihres Trainers Helmut Kronsbein kämpfte sich die Mannschaft erfolgreich durch die Saison. Im Endspiel setzte sich Hannover 96 vor 80.000 Zuschauern schließlich im Endspiel gegen den hoch favorisierten 1. FC Kaiserslautern mit seinen späteren Weltmeistern um Fritz Walter deutlich mit 5:1 durch. Dieser historische Sieg bleibt für die Fans von Hannover 96 unvergesslich und ist ein bedeutender Meilenstein in der Vereinsgeschichte.',
-      model: null,
+      model: models.Model_Teeservice,
       arlink: null,
       images: [],
     },
@@ -115,7 +115,7 @@ module.exports = {
       description: null,
       content:
         'Zwischen 1960 und 1967 stand Hannover 96 fünfmal im Finale um die Deutsche Meisterschaft der Amateure und konnte den Titel 1960, 1964 und 1965 gewinnen. Damit ist Hannover 96 (mit SC Jülich 1910 und SV Werder Bremen) Rekordtitelträger. Diese Erfolge festigten die führende Position von Hannover 96 im Nachwuchsbereich.',
-      model: models.Model_Teeservice,
+      model: null,
       arlink: null,
       images: [],
     },
@@ -163,7 +163,7 @@ module.exports = {
         'Im Jahr 1971 unternahm Hannover 96 eine außergewöhnliche Reise in die USA und Kanada, für die der Verein ein spezielles, schwarz-weiß kariertes Trikot anfertigen ließ, um das 75. Vereinsjubiläum zu feiern.',
       content:
         'Im Jahr 1971 unternahm Hannover 96 eine außergewöhnliche Reise in die USA und Kanada, für die der Verein ein spezielles, schwarz-weiß kariertes Trikot anfertigen ließ, um das 75. Vereinsjubiläum zu feiern. Im Jahr 1971 wagte Hannover 96 ein außergewöhnliches Abenteuer, als die Mannschaft zu einer Reise nach Südamerika aufbrach. Was diese Reise noch bemerkenswerter machte, war die Tatsache, dass der Verein eigens für dieses Unterfangen ein spezielles Trikot anfertigen ließ - eine Praxis, die zu dieser Zeit äußerst unüblich war. Dieses Trikot war ein schwarz-weiß gefärbtes Karo anlässlich des 75. Vereinsjubiläums. Damit spielte 96 unter anderem in Vancouver gegen den FC Santos mit Pelé. Dem Weltstar gelang in seinem 900. Spiel beim 3:1 Sieg ein Tor gegen die Roten.',
-      model: null,
+      model: models.Model_Zeitungsartikel,
       arlink: null,
       images: [],
     },
@@ -199,7 +199,7 @@ module.exports = {
         'Trotz finanzieller Schwierigkeiten schaffte Hannover 96 den Aufstieg in die 1. Bundesliga. Sie konnten das benötigte Geld für die Lizenz durch Spendenaktionen aufbringen, um letztendlich die Lizenzgebühren zu bezahlen.',
       content:
         'Trotz finanzieller Schwierigkeiten schaffte Hannover 96 den Aufstieg in die 1. Bundesliga. Sie konnten das benötigte Geld für die Lizenz durch Spendenaktionen aufbringen, um letztendlich die Lizenzgebühren zu bezahlen. Hannover gelang erneut der Aufstieg in die 1. Bundesliga - Probleme hatten sie dabei ganz andere. In diesem Jahr ging es Hannover 96 finanziell sehr schlecht, sodass sie kaum über genug Geld verfügt haben, um eine Lizenz für die Bundesliga zu erwerben. Jedoch konnten sie das Geld dennoch bereitstellen, indem sie Spendenaktionen gestartet haben (Kampagne: „96 startet durch – wir ziehen mit!“), sodass am Ende das Geld reichte, um die Lizenzgebühren zahlen zu können. Nur drei Jahre später musste ein zweites Mal ganz erheblich um die Lizenz gezittert werden.',
-      model: null,
+      model: models.Model_Pferd,
       arlink: null,
       images: [],
     },
@@ -223,7 +223,7 @@ module.exports = {
         'Nach dem direkten Abstieg aus der 1. Bundesliga wurde im darauffolgenden Jahr sofort der Wiederaufstieg ermöglicht.',
       content:
         'Nach dem direkten Abstieg aus der 1. Bundesliga wurde im darauffolgenden Jahr sofort der Wiederaufstieg ermöglicht. Nachdem 96 sich zunächst nicht in der ersten Liga halten konnte, wurde in der nächsten Spielzeit der sofortige Wiederaufstieg ermöglicht. Nach einem 4:3-Sieg gegen St. Pauli am 30. Mai 1987 war der Aufstieg bereits vier Spieltage vor Ende der Saison vor 4.000 mitgereisten Hannoveranern dingfest. Siegfried Reich wurde mit 26 Toren Torschützenkönig der zweiten Liga.',
-      model: models.Model_Pferd,
+      model: null,
       arlink: null,
       images: [],
     },
@@ -293,7 +293,7 @@ module.exports = {
       description: null,
       content:
         'Ein ganz exklusives Trikot in der Sammlung ist das Trikot der Saison 05/06, welches zunächst mit einem Reißverschluss an der Seite konzipiert wurde. Der DFB verbot diesen jedoch, weshalb 96 ein Jahr mit einem zugenähten Reißverschluss aufs Feld lief. Die Version mit dem Reißverschluss blieb jedoch den Fans vorbehalten.',
-      model: null,
+      model: models.Model_Trikot,
       arlink: null,
       images: [],
     },
