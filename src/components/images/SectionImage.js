@@ -1,6 +1,5 @@
 import { CldImage, getCldImageUrl } from 'next-cloudinary'
 import Image from 'next/image'
-// import demo_one_img from './H96.jpeg'
 import { useEffect, useState } from 'react'
 
 export default function SectionImage({ image }) {
@@ -20,7 +19,6 @@ export default function SectionImage({ image }) {
     <div className="p-3" style={{ width: '100%' }}>
       <div
         className="border p-5 rounded-2xl bg-primary-bg h-[100%] flex flex-col justify-between"
-        // style={{ width: '100%' }}
       >
         <div className="text-center">
           <p className="text-highlight-text text-2xl font-sans font-bold">
@@ -42,20 +40,14 @@ export default function SectionImage({ image }) {
                 fit
               />
             ) : (
-              // <Image width="900" height="200" fit src={url} />
               <Image
-                // width="1000"
-                // height="200"
                 src="/H96_Header_Logo.png"
                 blurDataURL="/H96_Header_Logo.png"
                 placeholder="blur"
                 alt=""
-                //   fill="responsive"
                 style={{
                   objectFit: 'contain',
                 }}
-                // layout="fill"
-                // sizes="100vh"
                 height={200}
                 width={200}
               />
