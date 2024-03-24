@@ -9,6 +9,9 @@ export default function apiHandler(handler) {
       if (url.startsWith('/api/secure')) {
         req.auth = await getUserAuth()
       }
+      if (url.startsWith('/api/admin')) {
+
+      }
       // route handler
       return await handler(req)
     } catch (err) {
