@@ -3,9 +3,12 @@ import SectionList from '@/components/section/SectionList'
 import prisma from '@/lib/prisma'
 
 async function getSectionData() {
-  const sections = await prisma.section.findMany()
-  const sortedSections = sections.toSorted((a, b) => a.id - b.id)
-  return sortedSections
+  const sections = await prisma.section.findMany({
+    orderBy: {
+      id: 'asc',
+    },
+  })
+  return sections
 }
 
 export default async function Home({ params }) {
