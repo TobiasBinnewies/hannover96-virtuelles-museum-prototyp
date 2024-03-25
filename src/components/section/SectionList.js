@@ -14,7 +14,7 @@ export default async function SectionList({ images, session, sections: sectionDa
         session={session}
         obj={item}
         model={models[item.model]}
-        arlink={item.arlink}
+        arlink={item.arLink}
         images={images}
       />
     </Suspense>

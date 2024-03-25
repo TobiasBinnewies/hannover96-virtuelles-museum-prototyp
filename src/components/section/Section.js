@@ -7,7 +7,6 @@ import AR_Modal from '@components/section/AR_Modal'
 // import Image from '@/components/section/Image'
 import Image from 'next/image'
 import { Suspense, useEffect, useState } from 'react'
-import models from '@components/models/models'
 
 export default function Section({
   obj: section,
