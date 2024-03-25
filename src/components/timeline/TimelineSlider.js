@@ -1,12 +1,14 @@
 'use client'
 
-import postcss from 'postcss'
 import styles from './timelineSlider.modular.css'
 import { useEffect } from 'react'
 import Link from 'next/link'
+import { useHoverEffect } from '../utils/useHoverEffect'
 
 export default function TimelineSlider(props) {
   const { sections } = props
+
+  useHoverEffect()
 
   useEffect(() => {
     const sectionList = document.getElementById('section-list')

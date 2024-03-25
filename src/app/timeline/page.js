@@ -1,49 +1,37 @@
-'use client'
-
-import content from '@/components/utils/section.content'
 import TimelineSlider from '@/components/timeline/TimelineSlider'
 import SectionList from '@/components/section/SectionList'
-import useExternalScripts from '@components/utils/useExternalScripts'
-import { useEffect } from 'react'
-import { Suspense } from 'react'
+import prisma from '@/lib/prisma'
 
-const setMouseXY = (e, card) => {
-  const rect = card.getBoundingClientRect()
-  const x = e.clientX - rect.left
-  const y = e.clientY - rect.top
-
-  card.style.setProperty('--mouse-x', x + 'px')
-  card.style.setProperty('--mouse-y', y + 'px')
-}
-const onMouseMove = (e) => {
-  for (const card of document.getElementsByClassName('light-effect')) {
-    setMouseXY(e, card)
-  }
+async function getSectionData() {
+  const sections = await prisma.section.findMany()
+  console.log(sections);
+  return sections
 }
 
-export default function Home({ params }) {
+export default async function Home({ params }) {
   const { session, images } = params
-  useExternalScripts('https://ar.scanblue.cloud/assets/scanblue.3.js')
-
-  useEffect(() => {
-    const page = document.getElementById('page')
-    page.addEventListener('mousemove', (e) => {
-      onMouseMove(e)
-    })
-    return () => {
-      page.removeEventListener('mousemove', (e) => {
-        onMouseMove(e)
-      })
-    }
-  }, [])
+  // const sections = [
+  //   {
+  //     title: 'Hannover 96 wird gegründet!',
+  //     date: '12.04.1896',
+  //     description:
+  //       'Hannover 96 wurde 1896 als „Hannoversche Fußball-Club von 1896 (HFC)“ gegründet, begann jedoch erst 1899 mit Fußball und wurde 1901 ein reiner Fußballverein.',
+  //     model: 'Model_Gruendung',
+  //     arlink: null,
+  //     content:
+  //       'Hannover 96 wurde 1896 als „Hannoversche Fußball-Club von 1896 (HFC)“ gegründet, begann jedoch erst 1899 mit Fußball und wurde 1901 ein reiner Fußballverein.',
+  //     images: [],
+  //   },
+  // ]
+  const sections = await getSectionData()
   return (
     <div
       id="page"
       className={'bg-primary-bg h-screen'}
       style={{ overflow: 'hidden' }}
     >
-      <TimelineSlider sections={content.sections} />
-      <SectionList images={images} session={session} />
+      <TimelineSlider sections={sections} />
+      <SectionList images={images} session={session} sections={sections} />
     </div>
   )
 }
